@@ -1,0 +1,6 @@
+[submodule "monthlyfinance/3dparty/SmartDataModels"]
+	path = monthlyfinance/3dparty/SmartDataModels
+	url = http://gitlab.unique-conception.org/qt-qml-tricks/qt-qml-models.git
+[submodule "monthlyfinance/3dparty/SuperMacros"]
+	path = monthlyfinance/3dparty/SuperMacros
+	url = http://gitlab.unique-conception.org/qt-qml-tricks/qt-supermacros.git

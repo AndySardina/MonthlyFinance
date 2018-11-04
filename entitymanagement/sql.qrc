@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/schema/01 - expense_category.sql</file>
+        <file>resources/schema/02 - expense.sql</file>
+        <file>resources/data/01 - expense_category.sql</file>
+    </qresource>
+</RCC>
