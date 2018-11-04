@@ -16,7 +16,7 @@ public:
         m_entityName = entity->entityName();
     }
 
-    std::shared_ptr<Entity> findById(const ID& id){
+    Entity* findById(const ID& id){
         QSqlQuery q;
 
         q.prepare( QString("SELECT * FROM %1 WHERE id = :id").arg( m_entityName ) );
@@ -25,7 +25,7 @@ public:
 
         QSqlRecord record = q.record();
 
-        std::shared_ptr<Entity> entity = nullptr;
+        Entity* entity = nullptr;
 
         if (q.first()) {
             entity = createEntity(q);
@@ -34,10 +34,10 @@ public:
         return entity;
     }
 
-    virtual QList<std::shared_ptr<Entity>> findAll(){
+    virtual QList<Entity*> findAll(){
         QSqlQuery q( QLatin1String("SELECT * FROM ") + m_entityName);
 
-        QList<std::shared_ptr<Entity>> entities;
+        QList<Entity*> entities;
 
         while (q.next()) {
             entities.append( createEntity(q) );
@@ -46,9 +46,9 @@ public:
         return entities;
     }
 
-    virtual void save(const std::shared_ptr<Entity> entity) = 0;
+    virtual void save(Entity* entity) = 0;
 
-    void saveAll(QList<std::shared_ptr<Entity>> entities){
+    void saveAll(QList<Entity*> entities){
         for(auto entity: entities)
             save(entity);
     }
@@ -66,7 +66,7 @@ public:
     }
 
 protected:
-    virtual std::shared_ptr<Entity> createEntity(const QSqlQuery& q) = 0;
+    virtual Entity* createEntity(const QSqlQuery& q) = 0;
 
     QString m_entityName;
 };

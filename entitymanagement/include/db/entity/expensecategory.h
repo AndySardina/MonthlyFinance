@@ -8,18 +8,14 @@
 
 class ENTITYMANAGEMENTSHARED_EXPORT ExpenseCategory : public Entity
 {
+    Q_OBJECT
+    QML_WRITABLE_VAR_PROPERTY(QString, name)
+    QML_WRITABLE_VAR_PROPERTY(QString, description)
+
 public:
-    ExpenseCategory() = default;
+    ExpenseCategory(QObject* parent = Q_NULLPTR);
 
-    QString name() const;
-    void setName(const QString &name);
-
-    QString description() const;
-    void setDescription(const QString &description);
-
-private:
-    QString m_name;
-    QString m_description;
+    virtual ~ExpenseCategory();
 
 // Entity interface
 public:

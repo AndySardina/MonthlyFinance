@@ -14,10 +14,10 @@ public:
 
     // Repository interface
 public:
-    void save(const std::shared_ptr<Currency> entity);
+    void save(Currency* entity);
 
 protected:
-    std::shared_ptr<Currency> createEntity(const QSqlQuery &q);
+    Currency* createEntity(const QSqlQuery &q);
 };
 
 #endif // CURRENCYREPOSITORY_H

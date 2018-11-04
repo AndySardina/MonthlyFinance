@@ -15,10 +15,10 @@ public:
 
     // Repository interface
 public:
-    void save(const std::shared_ptr<ExpenseCategory> entity);
+    void save(ExpenseCategory *entity);
 
 protected:
-    std::shared_ptr<ExpenseCategory> createEntity(const QSqlQuery &q);
+   ExpenseCategory* createEntity(const QSqlQuery &q);
 };
 
 #endif // EXPENSECATEGORYREPOSITORY_H

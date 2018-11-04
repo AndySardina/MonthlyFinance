@@ -10,30 +10,20 @@
 
 class ENTITYMANAGEMENTSHARED_EXPORT Expense : public Entity
 {
+    Q_OBJECT
+    QML_WRITABLE_VAR_PROPERTY(ExpenseCategory*, category)
+    QML_WRITABLE_VAR_PROPERTY(QDate, date)
+    QML_WRITABLE_VAR_PROPERTY(double, amount)
+    QML_WRITABLE_VAR_PROPERTY(QString, description)
+
 public:
-    Expense() = default;
+    Expense(QObject * parent = Q_NULLPTR);
 
-    std::shared_ptr<ExpenseCategory> category() const;
-    void setCategory(const std::shared_ptr<ExpenseCategory> &category);
-
-    QDate date() const;
-    void setDate(const QDate &date);
-
-    double amount() const;
-    void setAmount(double amount);
-
-    QString description() const;
-    void setDescription(const QString &description);
-
-private:
-    std::shared_ptr<ExpenseCategory> m_category;
-    QDate m_date;
-    double m_amount;
-    QString m_description;
+    virtual ~Expense();
 
 // Entity interface
 public:
-    QString entityName();
+    virtual QString entityName();
 };
 
 #endif // EXPENSE_H

@@ -1,9 +1,3 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2018-11-03T22:21:07
-#
-#-------------------------------------------------
-
 QT       += sql
 
 QT       -= gui
@@ -11,20 +5,15 @@ QT       -= gui
 TARGET = entitymanagement
 TEMPLATE = lib
 
-DEFINES += ENTITYMANAGEMENT_LIBRARY
+CONFIG += c++1z
 
-# The following define makes your compiler emit warnings if you use
-# any feature of Qt which has been marked as deprecated (the exact warnings
-# depend on your compiler). Please consult the documentation of the
-# deprecated API in order to know how to port your code away from it.
-DEFINES += QT_DEPRECATED_WARNINGS
+DEFINES += ENTITYMANAGEMENT_LIBRARY \
+           QT_DEPRECATED_WARNINGS \
+           QTQMLTRICKS_NO_PREFIX_ON_GETTERS
 
-# You can also make your code fail to compile if you use deprecated APIs.
-# In order to do so, uncomment the following line.
-# You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 INCLUDEPATH += \
-    $$PWD/include/
+    $$PWD/include/ \
+    $$PWD/../3dparty/QtSuperMacros
 
 SOURCES += \
     src/entitymanager.cpp \
@@ -55,3 +44,16 @@ unix {
 
 RESOURCES += \
     sql.qrc
+
+win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../3dparty/QtSuperMacros/release/ -lQtSuperMacros
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../3dparty/QtSuperMacros/debug/ -lQtSuperMacros
+else:unix: LIBS += -L$$OUT_PWD/../3dparty/QtSuperMacros/ -lQtSuperMacros
+
+INCLUDEPATH += $$PWD/../3dparty/QtSuperMacros
+DEPENDPATH += $$PWD/../3dparty/QtSuperMacros
+
+win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/../3dparty/QtSuperMacros/release/libQtSuperMacros.a
+else:win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/../3dparty/QtSuperMacros/debug/libQtSuperMacros.a
+else:win32:!win32-g++:CONFIG(release, debug|release): PRE_TARGETDEPS += $$OUT_PWD/../3dparty/QtSuperMacros/release/QtSuperMacros.lib
+else:win32:!win32-g++:CONFIG(debug, debug|release): PRE_TARGETDEPS += $$OUT_PWD/../3dparty/QtSuperMacros/debug/QtSuperMacros.lib
+else:unix: PRE_TARGETDEPS += $$OUT_PWD/../3dparty/QtSuperMacros/libQtSuperMacros.a

@@ -11,4 +11,14 @@ Page {
         text: qsTr("You are on Page 1.")
         anchors.centerIn: parent
     }
+
+    ComboBox {
+        id: currencyComboBox
+        x: 99
+        y: 59
+        width: 308
+        height: 48
+        model: currencyModel
+        textRole: "name"
+    }
 }

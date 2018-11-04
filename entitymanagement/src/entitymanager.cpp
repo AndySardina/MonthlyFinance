@@ -21,7 +21,7 @@ void EntityManager::initConection()
     QDir dataDir(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation));
     dataDir.mkpath(dataDir.path());
 
-    QString dbFile = dataDir.path() + "monthlyfinance.db";
+    QString dbFile = dataDir.filePath("monthlyfinance.db");
     bool initialize = !QFileInfo::exists(dbFile);
 
     qDebug() << dbFile;

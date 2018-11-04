@@ -1,14 +1,11 @@
 #include "db/entity/currency.h"
 
-QString Currency::name() const
-{
-    return m_name;
-}
+Currency::Currency(QObject *parent)
+    : Entity(parent)
+{}
 
-void Currency::setName(const QString &name)
-{
-    m_name = name;
-}
+Currency::~Currency()
+{}
 
 QString Currency::entityName()
 {

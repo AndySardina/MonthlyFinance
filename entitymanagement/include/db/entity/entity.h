@@ -3,19 +3,20 @@
 
 #include "entitymanagement_global.h"
 
-class ENTITYMANAGEMENTSHARED_EXPORT Entity
-{
-public:
-    Entity() = default;
+#include "QQmlVarPropertyHelpers.h"
 
-    int id() const;
-    void setId(int id);
+class ENTITYMANAGEMENTSHARED_EXPORT Entity : public QObject
+{
+    Q_OBJECT
+    QML_WRITABLE_VAR_PROPERTY(int, id)
+
+public:
+    Entity(QObject * parent = Q_NULLPTR);
 
     virtual QString entityName() = 0;
 
     virtual ~Entity() = default;
-protected:
-    int m_id;
+
 };
 
 #endif // ENTITY_H

@@ -8,18 +8,17 @@
 
 class ENTITYMANAGEMENTSHARED_EXPORT Currency : public Entity
 {
+    Q_OBJECT
+    QML_WRITABLE_VAR_PROPERTY(QString, name)
+
 public:
-    Currency() = default;
+    Currency(QObject * parent = Q_NULLPTR);
 
-    QString name() const;
-    void setName(const QString &name);
-
-private:
-    QString m_name;
+    virtual ~Currency();
 
     // Entity interface
 public:
-    QString entityName();
+    virtual QString entityName();
 };
 
 #endif // CURRENCY_H

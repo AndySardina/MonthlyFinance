@@ -56,12 +56,12 @@ void EntitiesTest::expense()
 {
     auto category = expenseCategoryRepository.findById(1);
 
-    std::shared_ptr<Expense> entity = std::make_shared<Expense>();
-    entity->setId(1);
-    entity->setCategory(category);
-    entity->setDate(QDate::currentDate());
-    entity->setAmount(5.5);
-    entity->setDescription("Manzanas");
+    Expense* entity = new Expense();
+    entity->set_id(1);
+    entity->set_category(category);
+    entity->set_date(QDate::currentDate());
+    entity->set_amount(5.5);
+    entity->set_description("Manzanas");
 
     expenseRepository.save(entity);
 
@@ -87,7 +87,7 @@ void EntitiesTest::currencies()
 void EntitiesTest::cleanupTestCase()
 {
     QDir dataDir(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation));
-    QString dbFile = dataDir.path() + "monthlyfinance.db";
+    QString dbFile = dataDir.filePath("monthlyfinance.db");
 
     dataDir.remove(dbFile);
 }

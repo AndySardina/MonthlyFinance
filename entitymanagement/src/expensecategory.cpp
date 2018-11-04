@@ -1,25 +1,11 @@
 #include "db/entity/expensecategory.h"
 
+ExpenseCategory::ExpenseCategory(QObject *parent)
+    : Entity (parent)
+{}
 
-QString ExpenseCategory::name() const
-{
-    return m_name;
-}
-
-void ExpenseCategory::setName(const QString &name)
-{
-    m_name = name;
-}
-
-QString ExpenseCategory::description() const
-{
-    return m_description;
-}
-
-void ExpenseCategory::setDescription(const QString &description)
-{
-    m_description = description;
-}
+ExpenseCategory::~ExpenseCategory()
+{}
 
 QString ExpenseCategory::entityName()
 {

@@ -6,7 +6,7 @@
 
 #include <db/repository/expensecategoryrepository.h>
 
-void ExpenseRepository::save(const std::shared_ptr<Expense> entity)
+void ExpenseRepository::save(Expense* entity)
 {
     QString query = QString("INSERT INTO %1 (id, category_id, expenseDate, amount, description) VALUES (:id, :category_id, :expenseDate, :amount, :description)")
                      .arg(m_entityName);
@@ -23,7 +23,7 @@ void ExpenseRepository::save(const std::shared_ptr<Expense> entity)
     q.exec();
 }
 
-std::shared_ptr<Expense> ExpenseRepository::createEntity(const QSqlQuery &q)
+Expense* ExpenseRepository::createEntity(const QSqlQuery &q)
 {
     QSqlRecord record = q.record();
 
@@ -34,16 +34,16 @@ std::shared_ptr<Expense> ExpenseRepository::createEntity(const QSqlQuery &q)
         descIndex     = record.indexOf("description")
         ;
 
-    std::shared_ptr<Expense> entity = std::make_shared<Expense>();
+    Expense* entity = new Expense();
 
-    entity->setId(q.value(idIndex).toInt());
-    entity->setDate( q.value(dateIndex).toDate() );
-    entity->setAmount( q.value(amontIndex).toDouble() );
-    entity->setDescription( q.value(descIndex).toString() );
+    entity->set_id(q.value(idIndex).toInt());
+    entity->set_date( q.value(dateIndex).toDate() );
+    entity->set_amount( q.value(amontIndex).toDouble() );
+    entity->set_description( q.value(descIndex).toString() );
 
     ExpenseCategoryRepository categoryRepository;
-    std::shared_ptr<ExpenseCategory> category = categoryRepository.findById(q.value(categoryIndex).toInt());
-    entity->setCategory(category);
+    ExpenseCategory* category = categoryRepository.findById(q.value(categoryIndex).toInt());
+    entity->set_category(category);
 
     return entity;
 }

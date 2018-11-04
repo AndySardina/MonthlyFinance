@@ -2,7 +2,7 @@
 
 #include <QVariant>
 
-void ExpenseCategoryRepository::save(const std::shared_ptr<ExpenseCategory> entity)
+void ExpenseCategoryRepository::save(ExpenseCategory *entity)
 {
     QString query = QString("INSERT INTO %1 (id, name, description) VALUES (:id, :name, :description)").arg(m_entityName);
 
@@ -16,7 +16,7 @@ void ExpenseCategoryRepository::save(const std::shared_ptr<ExpenseCategory> enti
     q.exec();
 }
 
-std::shared_ptr<ExpenseCategory> ExpenseCategoryRepository::createEntity(const QSqlQuery &q)
+ExpenseCategory* ExpenseCategoryRepository::createEntity(const QSqlQuery &q)
 {
     QSqlRecord record = q.record();
 
@@ -25,11 +25,11 @@ std::shared_ptr<ExpenseCategory> ExpenseCategoryRepository::createEntity(const Q
         descIndex = record.indexOf("description")
     ;
 
-    std::shared_ptr<ExpenseCategory> entity = std::make_shared<ExpenseCategory>();
+    ExpenseCategory* entity = new ExpenseCategory();
 
-    entity->setId( q.value(idIndex).toInt() );
-    entity->setName( q.value(nameIndex).toString() );
-    entity->setDescription( q.value(descIndex).toString() );
+    entity->set_id( q.value(idIndex).toInt() );
+    entity->set_name( q.value(nameIndex).toString() );
+    entity->set_description( q.value(descIndex).toString() );
 
     return entity;
 }
