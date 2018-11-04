@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS currency (
+    id INTEGER PRIMARY KEY,
+    name TEXT NOT NULL
+);

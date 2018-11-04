@@ -1,11 +1,9 @@
 #include <QtTest/QtTest>
 
-#include <db/entity/expensecategory.h>
-
-#include <db/repository/expenserepository.h>
-
 #include "db/entitymanager.h"
+#include <db/repository/expenserepository.h>
 #include "db/repository/expensecategoryrepository.h"
+#include "db/repository/currencyrepository.h"
 
 class EntitiesTest: public QObject
 {
@@ -16,11 +14,13 @@ public:
 private slots:
     void expenseCategories();
     void expense();
+    void currencies();
     void cleanupTestCase();
 
 private:
     ExpenseCategoryRepository expenseCategoryRepository;
     ExpenseRepository expenseRepository;
+    CurrencyRepository currencyRepository;
 };
 
 
@@ -74,6 +74,14 @@ void EntitiesTest::expense()
     QCOMPARE(expenses.at(0)->description(), entity->description());
 
     expenseRepository.deleteAll();
+}
+
+void EntitiesTest::currencies()
+{
+    auto currencies = currencyRepository.findAll();
+
+    QCOMPARE(currencies.size(), 2);
+    QCOMPARE(currencies.at(0)->name(), "EUR");
 }
 
 void EntitiesTest::cleanupTestCase()

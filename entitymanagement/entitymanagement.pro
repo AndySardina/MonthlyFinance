@@ -32,7 +32,9 @@ SOURCES += \
     src/entity.cpp \
     src/expensecategoryrepository.cpp \
     src/expense.cpp \
-    src/expenserepository.cpp
+    src/expenserepository.cpp \
+    src/currency.cpp \
+    src/currencyrepository.cpp
 
 HEADERS += \
     include/entitymanagement_global.h \
@@ -42,7 +44,9 @@ HEADERS += \
     include/db/repository/expensecategoryrepository.h \
     include/db/repository/repository.h \
     include/db/entity/expense.h \
-    include/db/repository/expenserepository.h
+    include/db/repository/expenserepository.h \
+    include/db/entity/currency.h \
+    include/db/repository/currencyrepository.h
 
 unix {
     target.path = /usr/lib

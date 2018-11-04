@@ -13,7 +13,6 @@ class ENTITYMANAGEMENTSHARED_EXPORT Expense : public Entity
 public:
     Expense() = default;
 
-public:
     std::shared_ptr<ExpenseCategory> category() const;
     void setCategory(const std::shared_ptr<ExpenseCategory> &category);
 

@@ -3,5 +3,8 @@
         <file>resources/schema/01 - expense_category.sql</file>
         <file>resources/schema/02 - expense.sql</file>
         <file>resources/data/01 - expense_category.sql</file>
+        <file>resources/schema/03 - currency.sql</file>
+        <file>resources/schema/04 - exchange_rate.sql</file>
+        <file>resources/data/02 - currency.sql</file>
     </qresource>
 </RCC>
