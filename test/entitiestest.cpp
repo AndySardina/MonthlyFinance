@@ -39,7 +39,7 @@ EntitiesTest::EntitiesTest()
 void EntitiesTest::expenseCategories(){
     auto categories = expenseCategoryRepository.findAll();
 
-    QCOMPARE(categories.size(), 1);
+    QCOMPARE(categories.size(), 10);
 
     QCOMPARE(categories.at(0)->name(), "Comida");
 
