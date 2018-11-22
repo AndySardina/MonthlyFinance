@@ -2,7 +2,6 @@
 #define CURRENCY_H
 
 #include "entity.h"
-#include "entitymanagement_global.h"
 
 #include <QString>
 

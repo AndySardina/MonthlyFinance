@@ -17,25 +17,37 @@ INCLUDEPATH += \
 
 SOURCES += \
     src/entitymanager.cpp \
-    src/expensecategory.cpp \
     src/entity.cpp \
-    src/expensecategoryrepository.cpp \
-    src/expense.cpp \
-    src/expenserepository.cpp \
     src/currency.cpp \
-    src/currencyrepository.cpp
+    src/currencyrepository.cpp \
+    src/exchangerate.cpp \
+    src/operationtype.cpp \
+    src/element.cpp \
+    src/invoice.cpp \
+    src/operation.cpp \
+    src/exchangeraterepository.cpp \
+    src/operationtyperepository.cpp \
+    src/elementrepository.cpp \
+    src/invoicerepository.cpp \
+    src/operationrepository.cpp
 
 HEADERS += \
     include/entitymanagement_global.h \
     include/db/entitymanager.h \
-    include/db/entity/expensecategory.h \
     include/db/entity/entity.h \
-    include/db/repository/expensecategoryrepository.h \
     include/db/repository/repository.h \
-    include/db/entity/expense.h \
-    include/db/repository/expenserepository.h \
     include/db/entity/currency.h \
-    include/db/repository/currencyrepository.h
+    include/db/repository/currencyrepository.h \
+    include/db/entity/exchangerate.h \
+    include/db/entity/operationtype.h \
+    include/db/entity/element.h \
+    include/db/entity/invoice.h \
+    include/db/entity/operation.h \
+    include/db/repository/exchangeraterepository.h \
+    include/db/repository/operationtyperepository.h \
+    include/db/repository/elementrepository.h \
+    include/db/repository/invoicerepository.h \
+    include/db/repository/operationrepository.h
 
 unix {
     target.path = /usr/lib

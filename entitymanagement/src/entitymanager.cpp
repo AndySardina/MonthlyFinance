@@ -11,7 +11,6 @@
 #include <QSqlError>
 #include <QDirIterator>
 
-#include "db/entity/expensecategory.h"
 
 EntityManager::EntityManager()
 {}
@@ -61,7 +60,6 @@ void EntityManager::initializeDB()
         QSqlError error = query.lastError();
         if( error.isValid() )
             throw std::runtime_error(error.text().toStdString());
-
     };
 
 
