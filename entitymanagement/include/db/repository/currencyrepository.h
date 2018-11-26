@@ -7,10 +7,6 @@
 
 class ENTITYMANAGEMENTSHARED_EXPORT CurrencyRepository : public Repository<Currency, int>
 {
-public:
-    CurrencyRepository() = default;
-
-    virtual ~CurrencyRepository() = default;
 };
 
 #endif // CURRENCYREPOSITORY_H

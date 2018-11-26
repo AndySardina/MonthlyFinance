@@ -7,10 +7,6 @@
 
 class ENTITYMANAGEMENTSHARED_EXPORT OperationTypeRepository : public Repository<OperationType, int>
 {
-public:
-    OperationTypeRepository() = default;
-
-    virtual ~OperationTypeRepository() = default;
 };
 
 #endif // OPERATIONTYPEREPOSITORY_H

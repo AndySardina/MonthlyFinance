@@ -5,13 +5,8 @@
 
 #include <db/entity/operation.h>
 
-class OperationRepository : public Repository<Operation, int>
+class ENTITYMANAGEMENTSHARED_EXPORT OperationRepository : public Repository<Operation, int>
 {
-public:
-    OperationRepository() = default;
-
-    virtual ~OperationRepository() = default;
-
 };
 
 #endif // OPERATIONREPOSITORY_H

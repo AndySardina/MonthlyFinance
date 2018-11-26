@@ -6,10 +6,6 @@
 
 class ENTITYMANAGEMENTSHARED_EXPORT ExchangeRateRepository : public Repository<ExchangeRate, int>
 {
-public:
-    ExchangeRateRepository() = default;
-
-    virtual ~ExchangeRateRepository() = default;
 };
 
 #endif // EXCHANGERATEREPOSITORY_H

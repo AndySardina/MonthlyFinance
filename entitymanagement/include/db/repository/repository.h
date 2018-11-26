@@ -38,7 +38,7 @@ public:
         return entity;
     }
 
-    virtual QList<Entity*> findAll(){
+    QList<Entity*> findAll(){
         QSqlQuery q( QLatin1String("SELECT * FROM ") + m_entityName);
 
         QList<Entity*> entities;
@@ -50,7 +50,7 @@ public:
         return entities;
     }
 
-    virtual void save(Entity* entity) {
+    void save(Entity* entity) {
         QStringList fieldHolders;
         QVariantMap fields;
         for(int i = m_meta->propertyOffset(); i < m_propertyCount; ++i){
@@ -94,7 +94,7 @@ public:
     }
 
 private:
-    virtual Entity* createEntity(const QSqlQuery& q) {
+    Entity* createEntity(const QSqlQuery& q) {
         Entity* entity = new Entity();
 
         QSqlRecord record = q.record();
