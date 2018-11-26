@@ -4,8 +4,6 @@
 #include "repository.h"
 #include "db/entity/exchangerate.h"
 
-class ENTITYMANAGEMENTSHARED_EXPORT ExchangeRateRepository : public Repository<ExchangeRate, int>
-{
-};
+typedef Repository<ExchangeRate, int> ExchangeRateRepository;
 
 #endif // EXCHANGERATEREPOSITORY_H

@@ -4,8 +4,6 @@
 #include "repository.h"
 #include <db/entity/invoice.h>
 
-class ENTITYMANAGEMENTSHARED_EXPORT InvoiceRepository : public Repository<Invoice, int>
-{
-};
+typedef Repository<Invoice, int> InvoiceRepository;
 
 #endif // INVOICEREPOSITORY_H

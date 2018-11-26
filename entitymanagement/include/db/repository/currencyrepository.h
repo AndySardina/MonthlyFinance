@@ -5,8 +5,6 @@
 #include "repository.h"
 #include "db/entity/currency.h"
 
-class ENTITYMANAGEMENTSHARED_EXPORT CurrencyRepository : public Repository<Currency, int>
-{
-};
+typedef Repository<Currency, int> CurrencyRepository;
 
 #endif // CURRENCYREPOSITORY_H

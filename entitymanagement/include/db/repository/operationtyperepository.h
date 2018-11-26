@@ -5,8 +5,6 @@
 
 #include <db/entity/operationtype.h>
 
-class ENTITYMANAGEMENTSHARED_EXPORT OperationTypeRepository : public Repository<OperationType, int>
-{
-};
+typedef Repository<OperationType, int> OperationTypeRepository;
 
 #endif // OPERATIONTYPEREPOSITORY_H

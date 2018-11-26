@@ -4,8 +4,6 @@
 #include "repository.h"
 #include <db/entity/element.h>
 
-class ENTITYMANAGEMENTSHARED_EXPORT ElementRepository : public Repository<Element, int>
-{
-};
+typedef Repository<Element, int> ElementRepository;
 
 #endif // ELEMENTREPOSITORY_H
