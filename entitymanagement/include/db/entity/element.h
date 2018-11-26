@@ -10,12 +10,8 @@ class ENTITYMANAGEMENTSHARED_EXPORT Element : public Entity
     QML_WRITABLE_VAR_PROPERTY(QString, description)
 
 public:
-    Element(QObject * parent = Q_NULLPTR);
+    Element(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~Element();
-
-    // Entity interface
-public:
-    virtual QString entityName();
+    virtual ~Element() = default;
 };
 #endif // ELEMENT_H

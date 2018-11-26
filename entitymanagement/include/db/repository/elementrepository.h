@@ -10,13 +10,6 @@ public:
     ElementRepository() = default;
 
     virtual ~ElementRepository() = default;
-
-    // Repository interface
-public:
-    void save(Element* entity);
-
-protected:
-    Element* createEntity(const QSqlQuery &q);
 };
 
 #endif // ELEMENTREPOSITORY_H

@@ -11,13 +11,6 @@ public:
     CurrencyRepository() = default;
 
     virtual ~CurrencyRepository() = default;
-
-    // Repository interface
-public:
-    void save(Currency* entity);
-
-protected:
-    Currency* createEntity(const QSqlQuery &q);
 };
 
 #endif // CURRENCYREPOSITORY_H

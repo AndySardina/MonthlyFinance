@@ -10,13 +10,6 @@ public:
     InvoiceRepository() = default;
 
     virtual ~InvoiceRepository() = default;
-
-    // Repository interface
-public:
-    void save(Invoice* entity);
-
-protected:
-    Invoice* createEntity(const QSqlQuery &q);
 };
 
 #endif // INVOICEREPOSITORY_H

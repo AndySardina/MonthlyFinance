@@ -11,13 +11,6 @@ public:
     OperationTypeRepository() = default;
 
     virtual ~OperationTypeRepository() = default;
-
-    // Repository interface
-public:
-    void save(OperationType* entity);
-
-protected:
-    OperationType* createEntity(const QSqlQuery &q);
 };
 
 #endif // OPERATIONTYPEREPOSITORY_H

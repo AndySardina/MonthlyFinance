@@ -11,13 +11,9 @@ class ENTITYMANAGEMENTSHARED_EXPORT Invoice : public Entity
     QML_WRITABLE_VAR_PROPERTY(QString, quantity)
 
 public:
-    Invoice(QObject * parent = Q_NULLPTR);
+    Invoice(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~Invoice();
-
-    // Entity interface
-public:
-    virtual QString entityName();
+    virtual ~Invoice() = default;
 };
 
 #endif // INVOICE_H

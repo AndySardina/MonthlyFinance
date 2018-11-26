@@ -10,13 +10,6 @@ public:
     ExchangeRateRepository() = default;
 
     virtual ~ExchangeRateRepository() = default;
-
-    // Repository interface
-public:
-    void save(ExchangeRate* entity);
-
-protected:
-    ExchangeRate* createEntity(const QSqlQuery &q);
 };
 
 #endif // EXCHANGERATEREPOSITORY_H

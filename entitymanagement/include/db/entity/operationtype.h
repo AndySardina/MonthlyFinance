@@ -10,13 +10,9 @@ class ENTITYMANAGEMENTSHARED_EXPORT OperationType : public Entity
     QML_WRITABLE_VAR_PROPERTY(QString, description)
 
 public:
-    OperationType(QObject * parent = Q_NULLPTR);
+    OperationType(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~OperationType();
-
-    // Entity interface
-public:
-    virtual QString entityName();
+    virtual ~OperationType() = default;
 };
 
 #endif // OPERATIONTYPE_H

@@ -14,13 +14,9 @@ class ENTITYMANAGEMENTSHARED_EXPORT ExchangeRate: public Entity
     QML_WRITABLE_VAR_PROPERTY(double, amount)
 
 public:
-    ExchangeRate(QObject * parent = Q_NULLPTR);
+    ExchangeRate(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~ExchangeRate();
-
-    // Entity interface
-public:
-    virtual QString entityName();
+    virtual ~ExchangeRate() = default;
 };
 
 #endif // EXCHANGERATE_H
