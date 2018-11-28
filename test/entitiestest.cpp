@@ -1,4 +1,6 @@
 #include <QtTest/QtTest>
+#include <QDebug>
+#include <QVariant>
 
 #include "db/entitymanager.h"
 #include "db/repository/currencyrepository.h"
@@ -32,6 +34,9 @@ EntitiesTest::EntitiesTest()
 
 void EntitiesTest::currencies()
 {
+    QVariant a(2.5);
+    qDebug() << a.toString();
+
     auto currencies = currencyRepository.findAll();
 
     QCOMPARE(currencies.size(), 2);
