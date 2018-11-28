@@ -34,7 +34,9 @@ HEADERS += \
     include/db/repository/operationtyperepository.h \
     include/db/repository/elementrepository.h \
     include/db/repository/invoicerepository.h \
-    include/db/repository/operationrepository.h
+    include/db/repository/operationrepository.h \
+    include/db/repository/predicate.h \
+    include/exception/incorrectresultsizedataaccessexception.h
 
 unix {
     target.path = /usr/lib

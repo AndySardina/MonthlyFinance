@@ -9,10 +9,13 @@
 #include <QVariantMap>
 #include <QMetaProperty>
 
+#include "predicate.h"
+
 template <typename Entity, typename ID>
 class Repository
 {
 public:
+
     Repository(){
         std::shared_ptr<Entity> entity = std::make_shared<Entity>();
         m_meta = entity->metaObject();
@@ -50,6 +53,40 @@ public:
         return entities;
     }
 
+    /**
+     * Returns a single entity matching the given {@link Predicate} or {@literal null} if none was found.
+     *
+     * @param predicate can be {@literal null}.
+     * @return a single entity matching the given {@link Predicate} or {@literal null} if none was found.
+     * @throws IncorrectResultSizeDataAccessException if the predicate yields more than one result.
+     */
+    Entity* findOne(Predicate predicate);
+
+    /**
+     * Returns all entities matching the given {@link Predicate}. In case no match could be found an empty
+     * {@link QList} is returned.
+     *
+     * @param predicate can be {@literal null}.
+     * @return all entities matching the given {@link Predicate}.
+     */
+    QList<Entity> findAll(Predicate predicate);
+
+    /**
+     * Returns the number of instances matching the given {@link Predicate}.
+     *
+     * @param predicate the {@link Predicate} to count instances for, can be {@literal null}.
+     * @return the number of instances matching the {@link Predicate}.
+     */
+    long count(Predicate predicate);
+
+    /**
+     * Checks whether the data store contains elements that match the given {@link Predicate}.
+     *
+     * @param predicate the {@link Predicate} to use for the existance check, can be {@literal null}.
+     * @return {@literal true} if the data store contains elements that match the given {@link Predicate}.
+     */
+    bool exists(Predicate predicate);
+
     void save(Entity* entity) {
         QStringList fieldHolders;
         QVariantMap fields;
@@ -60,10 +97,10 @@ public:
         }
 
         QString query =
-            QString::fromLatin1("INSERT INTO %1 (%2) VALUES (%3)").arg(
-                m_entityName,
-                fields.keys().join(QLatin1String(", ")), fieldHolders.join(QLatin1String(", "))
-        );
+                QString::fromLatin1("INSERT INTO %1 (%2) VALUES (%3)").arg(
+                    m_entityName,
+                    fields.keys().join(QLatin1String(", ")), fieldHolders.join(QLatin1String(", "))
+                    );
 
         QSqlQuery q;
         q.prepare(query);
