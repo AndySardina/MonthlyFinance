@@ -9,7 +9,7 @@
 #include <QVariantMap>
 #include <QMetaProperty>
 
-#include "predicate.h"
+#include "db/querydsl/predicate.h"
 
 template <typename Entity, typename ID>
 class Repository
@@ -28,17 +28,8 @@ public:
 
         q.prepare( QString("SELECT * FROM %1 WHERE id = :id").arg( m_entityName ) );
         q.bindValue(":id", id);
-        q.exec();
 
-        QSqlRecord record = q.record();
-
-        Entity* entity = nullptr;
-
-        if (q.first()) {
-            entity = createEntity(q);
-        }
-
-        return entity;
+        return findOne(q);
     }
 
     QList<Entity*> findAll(){
@@ -60,7 +51,13 @@ public:
      * @return a single entity matching the given {@link Predicate} or {@literal null} if none was found.
      * @throws IncorrectResultSizeDataAccessException if the predicate yields more than one result.
      */
-    Entity* findOne(Predicate predicate);
+    Entity* findOne(Predicate* predicate){
+        QSqlQuery q;
+
+        q.prepare( QString("SELECT * FROM %1 WHERE %2").arg( m_entityName, predicate->getSqlQuery() ) );
+
+        return findOne(q);
+    }
 
     /**
      * Returns all entities matching the given {@link Predicate}. In case no match could be found an empty
@@ -69,7 +66,7 @@ public:
      * @param predicate can be {@literal null}.
      * @return all entities matching the given {@link Predicate}.
      */
-    QList<Entity> findAll(Predicate predicate);
+    QList<Entity> findAll(Predicate* predicate);
 
     /**
      * Returns the number of instances matching the given {@link Predicate}.
@@ -77,7 +74,7 @@ public:
      * @param predicate the {@link Predicate} to count instances for, can be {@literal null}.
      * @return the number of instances matching the {@link Predicate}.
      */
-    long count(Predicate predicate);
+    long count(Predicate* predicate);
 
     /**
      * Checks whether the data store contains elements that match the given {@link Predicate}.
@@ -85,7 +82,7 @@ public:
      * @param predicate the {@link Predicate} to use for the existance check, can be {@literal null}.
      * @return {@literal true} if the data store contains elements that match the given {@link Predicate}.
      */
-    bool exists(Predicate predicate);
+    bool exists(Predicate* predicate);
 
     void save(Entity* entity) {
         QStringList fieldHolders;
@@ -131,6 +128,20 @@ public:
     }
 
 private:
+    Entity* findOne(QSqlQuery& q){
+        q.exec();
+
+        QSqlRecord record = q.record();
+
+        Entity* entity = nullptr;
+
+        if (q.first()) {
+            entity = createEntity(q);
+        }
+
+        return entity;
+    }
+
     Entity* createEntity(const QSqlQuery& q) {
         Entity* entity = new Entity();
 
