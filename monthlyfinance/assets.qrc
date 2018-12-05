@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/js"/>
+    <qresource prefix="/">
+        <file>js/utils.js</file>
+        <file>js/moment.min.js</file>
+    </qresource>
+</RCC>

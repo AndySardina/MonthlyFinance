@@ -1,9 +1,18 @@
 <RCC>
     <qresource prefix="/">
         <file>qtquickcontrols2.conf</file>
-        <file>qml/HomeForm.ui.qml</file>
+        <file>qml/components/DrawerNavigationBar.qml</file>
+        <file>qml/components/DrawerTitleBar.qml</file>
+        <file>qml/components/qmldir</file>
+        <file>qml/views/CreateCategory.qml</file>
+        <file>qml/views/CreateOperation.qml</file>
+        <file>qml/views/Home.qml</file>
+        <file>qml/views/Report.qml</file>
+        <file>qml/views/Settings.qml</file>
         <file>qml/main.qml</file>
-        <file>qml/Page1Form.ui.qml</file>
-        <file>qml/Page2Form.ui.qml</file>
+        <file>qml/components/DatePicker.qml</file>
+        <file>qml/components/ButtonFlat.qml</file>
+        <file>qml/components/LabelBodySecondary.qml</file>
+        <file>qml/components/DateFieldInput.qml</file>
     </qresource>
 </RCC>

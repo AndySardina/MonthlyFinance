@@ -13,9 +13,10 @@ int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
-    QCoreApplication::setOrganizationName("Nautam");
-    QCoreApplication::setOrganizationDomain("nautam.com");
+    QCoreApplication::setOrganizationName("ingenii");
+    QCoreApplication::setOrganizationDomain("ingenii.com");
     QCoreApplication::setApplicationName("MonthlyFinance");
+
 
     QGuiApplication app(argc, argv);
 

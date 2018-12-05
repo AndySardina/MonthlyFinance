@@ -1,0 +1,3 @@
+module components
+DrawerNavigationBar 1.0 DrawerNavigationBar.qml
+DrawerTitleBar 1.0 DrawerTitleBar.qml
