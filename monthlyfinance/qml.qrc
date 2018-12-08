@@ -13,6 +13,13 @@
         <file>qml/components/DatePicker.qml</file>
         <file>qml/components/ButtonFlat.qml</file>
         <file>qml/components/LabelBodySecondary.qml</file>
-        <file>qml/components/DateFieldInput.qml</file>
+        <file>qml/components/DateRangePicker.qml</file>
+        <file>qml/components/DateRangeInput.qml</file>
+        <file>qml/components/DateInput.qml</file>
+        <file>qml/components/IconActive.qml</file>
+        <file>qml/components/IconColored.qml</file>
+        <file>qml/components/IconInactive.qml</file>
+        <file>qml/components/IconOnAccent.qml</file>
+        <file>qml/components/IconOnPrimary.qml</file>
     </qresource>
 </RCC>

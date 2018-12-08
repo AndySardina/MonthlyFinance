@@ -27,8 +27,7 @@ Drawer {
 //                    console.log(iconName)
 //                }
 //                display: AbstractButton.IconOnly
-
-                text: iconName
+                text: title
                 width: parent.width
                 onClicked: {
                     goToClicked(url)

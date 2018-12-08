@@ -1,3 +1,9 @@
-module components
+module Ingenii.Components
+
 DrawerNavigationBar 1.0 DrawerNavigationBar.qml
 DrawerTitleBar 1.0 DrawerTitleBar.qml
+DateInput 1.0 DateInput.qml
+DatePicker 1.0 DatePicker.qml
+DateRangeInput 1.0 DateRangeInput.qml
+DateRangePicker 1.0 DateRangePicker.qml
+#plugin ingeniicomponents

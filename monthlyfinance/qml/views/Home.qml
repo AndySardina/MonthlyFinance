@@ -16,6 +16,7 @@ Page {
         property int preferredWidth: width /  4
         RowLayout{
             Layout.fillWidth: true
+            anchors.horizontalCenter: parent.horizontalCenter
             ComboBox {
                 id:categories
                 model: ['Todos','Comida','Ropa', 'Miselania','Salario','Otros']
@@ -26,10 +27,10 @@ Page {
                 currentIndex: 0
             }
 
-            DateFieldInput {
+            DateRangeInput {
                 id:date
                 viewPortParent:rootHomePage
-                Layout.preferredWidth: tool.preferredWidth
+                Layout.preferredWidth: tool.preferredWidth //+ 50
                 Layout.alignment:  Qt.AlignRight
 
             }

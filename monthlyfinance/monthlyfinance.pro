@@ -13,10 +13,23 @@ SOURCES += \
 
 RESOURCES += \
     assets.qrc \
-    qml.qrc
+    qml.qrc \
+    images.qrc
+
+OTHER_FILES += images/black/*.png \
+    images/black/x18/*.png \
+    images/black/x36/*.png \
+    images/black/x48/*.png \
+    images/white/*.png \
+    images/white/x18/*.png \
+    images/white/x36/*.png \
+    images/white/x48/*.png \
+    images/extra/*.png \
+    translations/*.* \
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-QML_IMPORT_PATH =
+#QML_IMPORT_PATH =
+QML_IMPORT_PATH += $$PWD/qml
 
 # Additional import path used to resolve QML modules just for Qt Quick Designer
 QML_DESIGNER_IMPORT_PATH =

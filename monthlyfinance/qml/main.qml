@@ -30,29 +30,33 @@ ApplicationWindow {
         ListElement {
             title:qsTr("Home")
             url:"views/Home.qml"
-            iconName:"\ue72a"
+            icon:"home.png"
+            canGoBack:false
         }
         ListElement {
             title:qsTr("Register Operation")
             url:"views/CreateOperation.qml"
-            iconName:"\ue145"
+            icon:"home.png"
+            canGoBack:false
         }
         ListElement {
             title:qsTr("Categories")
             url:"views/CreateCategory.qml"
-            iconName:"\ue88a"
+            icon:"\ue88a"
+            canGoBack:true
         }
         ListElement {
             title:qsTr("Report")
             url:"views/Report.qml"
-            iconName:"\ue88a"
+            icon:"\ue88a"
+            canGoBack:false
         }
         ListElement {
             title:qsTr("Settings")
             url:"views/Settings.qml"
-            iconName:"\ue88a"
+            icon:"\ue88a"
+            canGoBack:false
         }
-
     }
 
     Loader {
