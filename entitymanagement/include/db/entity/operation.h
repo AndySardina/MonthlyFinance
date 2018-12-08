@@ -13,13 +13,9 @@ class  ENTITYMANAGEMENTSHARED_EXPORT Operation : public Entity
     QML_WRITABLE_VAR_PROPERTY(int, currency_id)
 
 public:
-    Operation(QObject * parent = Q_NULLPTR);
+    Operation(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~Operation();
-
-    // Entity interface
-public:
-    virtual QString entityName();
+    virtual ~Operation() = default;
 };
 
 #endif // OPERATION_H

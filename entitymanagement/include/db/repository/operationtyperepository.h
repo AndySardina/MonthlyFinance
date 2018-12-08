@@ -5,19 +5,6 @@
 
 #include <db/entity/operationtype.h>
 
-class ENTITYMANAGEMENTSHARED_EXPORT OperationTypeRepository : public Repository<OperationType, int>
-{
-public:
-    OperationTypeRepository() = default;
-
-    virtual ~OperationTypeRepository() = default;
-
-    // Repository interface
-public:
-    void save(OperationType* entity);
-
-protected:
-    OperationType* createEntity(const QSqlQuery &q);
-};
+typedef Repository<OperationType, int> OperationTypeRepository;
 
 #endif // OPERATIONTYPEREPOSITORY_H

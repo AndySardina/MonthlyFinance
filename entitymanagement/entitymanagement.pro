@@ -16,20 +16,7 @@ INCLUDEPATH += \
     $$PWD/../3dparty/QtSuperMacros
 
 SOURCES += \
-    src/entitymanager.cpp \
-    src/entity.cpp \
-    src/currency.cpp \
-    src/currencyrepository.cpp \
-    src/exchangerate.cpp \
-    src/operationtype.cpp \
-    src/element.cpp \
-    src/invoice.cpp \
-    src/operation.cpp \
-    src/exchangeraterepository.cpp \
-    src/operationtyperepository.cpp \
-    src/elementrepository.cpp \
-    src/invoicerepository.cpp \
-    src/operationrepository.cpp
+    src/entitymanager.cpp
 
 HEADERS += \
     include/entitymanagement_global.h \

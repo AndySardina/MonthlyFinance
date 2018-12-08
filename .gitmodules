@@ -1,6 +1,0 @@
-[submodule "3dparty/QtQmlModels"]
-	path = 3dparty/QtQmlModels
-	url = http://gitlab.unique-conception.org/qt-qml-tricks/qt-qml-models.git
-[submodule "3dparty/QtSuperMacros"]
-	path = 3dparty/QtSuperMacros
-	url = http://gitlab.unique-conception.org/qt-qml-tricks/qt-supermacros.git

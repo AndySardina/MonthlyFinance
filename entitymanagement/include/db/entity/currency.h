@@ -11,13 +11,9 @@ class ENTITYMANAGEMENTSHARED_EXPORT Currency : public Entity
     QML_WRITABLE_VAR_PROPERTY(QString, name)
 
 public:
-    Currency(QObject * parent = Q_NULLPTR);
+    Currency(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~Currency();
-
-    // Entity interface
-public:
-    virtual QString entityName();
+    virtual ~Currency() = default;
 };
 
 #endif // CURRENCY_H

@@ -4,19 +4,6 @@
 #include "repository.h"
 #include <db/entity/element.h>
 
-class ElementRepository : public Repository<Element, int>
-{
-public:
-    ElementRepository() = default;
-
-    virtual ~ElementRepository() = default;
-
-    // Repository interface
-public:
-    void save(Element* entity);
-
-protected:
-    Element* createEntity(const QSqlQuery &q);
-};
+typedef Repository<Element, int> ElementRepository;
 
 #endif // ELEMENTREPOSITORY_H

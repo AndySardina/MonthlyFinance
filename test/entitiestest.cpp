@@ -36,6 +36,15 @@ void EntitiesTest::currencies()
 
     QCOMPARE(currencies.size(), 2);
     QCOMPARE(currencies.at(0)->name(), "EUR");
+
+    Currency *sek = new Currency();
+    sek->set_id(3);
+    sek->set_name("SEK");
+    currencyRepository.save(sek);
+
+    currencies = currencyRepository.findAll();
+
+    QCOMPARE(currencies.size(), 3);
 }
 
 void EntitiesTest::cleanupTestCase()

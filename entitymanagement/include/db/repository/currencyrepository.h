@@ -5,19 +5,6 @@
 #include "repository.h"
 #include "db/entity/currency.h"
 
-class ENTITYMANAGEMENTSHARED_EXPORT CurrencyRepository : public Repository<Currency, int>
-{
-public:
-    CurrencyRepository() = default;
-
-    virtual ~CurrencyRepository() = default;
-
-    // Repository interface
-public:
-    void save(Currency* entity);
-
-protected:
-    Currency* createEntity(const QSqlQuery &q);
-};
+typedef Repository<Currency, int> CurrencyRepository;
 
 #endif // CURRENCYREPOSITORY_H
