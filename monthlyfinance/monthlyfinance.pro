@@ -52,7 +52,7 @@ else:unix: LIBS += -L$$OUT_PWD/../3dparty/QtQmlModels/ -lQtQmlModels
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../3dparty/QtSuperMacros/release/ -lQtSuperMacros
 else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../3dparty/QtSuperMacros/debug/ -lQtSuperMacros
-else:unix: LIBS += -L$$OUT_PWD/../3dparty/QtSuperMacros/ -QtSuperMacros
+else:unix: LIBS += -L$$OUT_PWD/../3dparty/QtSuperMacros/ -lQtSuperMacros
 
 INCLUDEPATH += $$PWD/../3dparty/QtQmlModels \
                $$PWD/../3dparty/QtSuperMacros
