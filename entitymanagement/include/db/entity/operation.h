@@ -15,7 +15,7 @@ class  ENTITYMANAGEMENTSHARED_EXPORT Operation : public Entity
 public:
     Operation(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~Operation() = default;
+     ~Operation() override = default;
 };
 
 #endif // OPERATION_H

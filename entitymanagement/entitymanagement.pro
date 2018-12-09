@@ -16,7 +16,9 @@ INCLUDEPATH += \
     $$PWD/../3dparty/QtSuperMacros
 
 SOURCES += \
-    src/entitymanager.cpp
+    src/entitymanager.cpp \
+    src/stringpredicate.cpp \
+    src/expression.cpp
 
 HEADERS += \
     include/entitymanagement_global.h \
@@ -35,9 +37,12 @@ HEADERS += \
     include/db/repository/elementrepository.h \
     include/db/repository/invoicerepository.h \
     include/db/repository/operationrepository.h \
-    include/db/repository/predicate.h \
     include/exception/incorrectresultsizedataaccessexception.h \
-    include/db/querydsl/predicate.h
+    include/db/querydsl/dsldefs.h \
+    include/db/querydsl/predicate/stringpredicate.h \
+    include/db/querydsl/expression/expression.h \
+    include/db/querydsl/private/tree.h \
+    include/db/querydsl/predicate/predicate.h
 
 unix {
     target.path = /usr/lib

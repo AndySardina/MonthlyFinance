@@ -6,12 +6,12 @@
 class ENTITYMANAGEMENTSHARED_EXPORT Element : public Entity
 {
     Q_OBJECT
-    QML_WRITABLE_VAR_PROPERTY(QString, name)
-    QML_WRITABLE_VAR_PROPERTY(QString, description)
+    QML_WRITABLE_CSTREF_PROPERTY(QString, name)
+    QML_WRITABLE_CSTREF_PROPERTY(QString, description)
 
 public:
     Element(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~Element() = default;
+     ~Element() override = default;
 };
 #endif // ELEMENT_H

@@ -15,16 +15,16 @@
             return m_##name ; \
         } \
     public Q_SLOTS: \
-        bool set_##name (const type & name) { \
+        bool set_##name (const type & (name)) { \
             bool ret = false; \
-            if ((ret = (m_##name != name))) { \
+            if ((ret = (m_##name != (name)))) { \
                 m_##name = name; \
                 emit name##Changed (m_##name); \
             } \
             return ret; \
         } \
     Q_SIGNALS: \
-        void name##Changed (const type & name); \
+        void name##Changed (const type & (name)); \
     private:
 
 #define QML_READONLY_CSTREF_PROPERTY(type, name) \
@@ -36,16 +36,16 @@
         const type & MAKE_GETTER_NAME (name) (void) const { \
             return m_##name ; \
         } \
-        bool update_##name (const type & name) { \
+        bool update_##name (const type & (name)) { \
             bool ret = false; \
-            if ((ret = (m_##name != name))) { \
+            if ((ret = (m_##name != (name)))) { \
                 m_##name = name; \
                 emit name##Changed (m_##name); \
             } \
             return ret; \
         } \
     Q_SIGNALS: \
-        void name##Changed (const type & name); \
+        void name##Changed (const type & (name)); \
     private:
 
 #define QML_CONSTANT_CSTREF_PROPERTY(type, name) \
