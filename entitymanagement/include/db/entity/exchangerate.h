@@ -16,7 +16,7 @@ class ENTITYMANAGEMENTSHARED_EXPORT ExchangeRate: public Entity
 public:
     ExchangeRate(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-    virtual ~ExchangeRate() = default;
+     ~ExchangeRate() override = default;
 };
 
 #endif // EXCHANGERATE_H

@@ -2,8 +2,7 @@
 #define ENTITY_H
 
 #include "entitymanagement_global.h"
-
-#include "QQmlVarPropertyHelpers.h"
+#include "db/querydsl/dsldefs.h"
 
 class ENTITYMANAGEMENTSHARED_EXPORT Entity : public QObject
 {
@@ -11,9 +10,9 @@ class ENTITYMANAGEMENTSHARED_EXPORT Entity : public QObject
     QML_WRITABLE_VAR_PROPERTY(int, id)
 
 public:
-    Entity(QObject * parent = Q_NULLPTR) : QObject(parent) {}
+    Entity(QObject * parent = Q_NULLPTR) : QObject(parent), m_id(0) {}
 
-    virtual ~Entity() = default;
+     ~Entity() override = default;
 };
 
 #endif // ENTITY_H

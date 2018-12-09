@@ -34,20 +34,19 @@ EntitiesTest::EntitiesTest()
 
 void EntitiesTest::currencies()
 {
-    QVariant a(2.5);
-    qDebug() << a.toString();
-
     auto currencies = currencyRepository.findAll();
 
     QCOMPARE(currencies.size(), 2);
     QCOMPARE(currencies.at(0)->name(), "EUR");
 
-    Currency *sek = new Currency();
+    auto *sek = new Currency();
     sek->set_id(3);
     sek->set_name("SEK");
     currencyRepository.save(sek);
 
     currencies = currencyRepository.findAll();
+
+    qDebug() << sek->q_name.contains("hola").containsIgnoreCase("pepe").getSqlQuery();
 
     QCOMPARE(currencies.size(), 3);
 }

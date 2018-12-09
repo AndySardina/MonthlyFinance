@@ -5,19 +5,19 @@
 
 // NOTE : SFINAE trickery to find which type is the cheapest between T and const T &
 
-template<typename T> struct CheapestType          { typedef const T & type_def; };
-template<>           struct CheapestType<bool>    { typedef bool      type_def; };
-template<>           struct CheapestType<quint8>  { typedef quint8    type_def; };
-template<>           struct CheapestType<quint16> { typedef quint16   type_def; };
-template<>           struct CheapestType<quint32> { typedef quint32   type_def; };
-template<>           struct CheapestType<quint64> { typedef quint64   type_def; };
-template<>           struct CheapestType<qint8>   { typedef qint8     type_def; };
-template<>           struct CheapestType<qint16>  { typedef qint16    type_def; };
-template<>           struct CheapestType<qint32>  { typedef qint32    type_def; };
-template<>           struct CheapestType<qint64>  { typedef qint64    type_def; };
-template<>           struct CheapestType<float>   { typedef float     type_def; };
-template<>           struct CheapestType<double>  { typedef double    type_def; };
-template<typename T> struct CheapestType<T *>     { typedef T *       type_def; };
+template<typename T> struct CheapestType          { using type_def = const T &; };
+template<>           struct CheapestType<bool>    { using type_def = bool; };
+template<>           struct CheapestType<quint8>  { using type_def = quint8; };
+template<>           struct CheapestType<quint16> { using type_def = quint16; };
+template<>           struct CheapestType<quint32> { using type_def = quint32; };
+template<>           struct CheapestType<quint64> { using type_def = quint64; };
+template<>           struct CheapestType<qint8>   { using type_def = qint8; };
+template<>           struct CheapestType<qint16>  { using type_def = qint16; };
+template<>           struct CheapestType<qint32>  { using type_def = qint32; };
+template<>           struct CheapestType<qint64>  { using type_def = qint64; };
+template<>           struct CheapestType<float>   { using type_def = float; };
+template<>           struct CheapestType<double>  { using type_def = double; };
+template<typename T> struct CheapestType<T *>     { using type_def = T *; };
 
 // NOTE : define to add/remove 'get_' prefix on getters
 
