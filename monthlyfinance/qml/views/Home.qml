@@ -35,11 +35,13 @@ Page {
 
             }
 
-            TextField {
-                id:input
+            SearchInput
+            {
+                id:searchInput
                 Layout.preferredWidth: tool.preferredWidth
                 Layout.alignment:  Qt.AlignRight
-                placeholderText: qsTr("search")
+                hint: 'search'
+                focus: true
             }
         }
     }

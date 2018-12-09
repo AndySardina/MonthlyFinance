@@ -21,5 +21,6 @@
         <file>qml/components/IconInactive.qml</file>
         <file>qml/components/IconOnAccent.qml</file>
         <file>qml/components/IconOnPrimary.qml</file>
+        <file>qml/components/SearchInput.qml</file>
     </qresource>
 </RCC>
