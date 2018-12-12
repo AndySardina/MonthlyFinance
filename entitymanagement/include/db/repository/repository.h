@@ -9,7 +9,7 @@
 #include <QVariantMap>
 #include <QMetaProperty>
 
-#include "db/querydsl/predicate/predicate.h"
+#include "db/querydsl/expression/expression.h"
 
 template <typename Entity, typename ID>
 class Repository
@@ -35,13 +35,7 @@ public:
     QList<Entity*> findAll(){
         QSqlQuery q( QLatin1String("SELECT * FROM ") + m_entityName);
 
-        QList<Entity*> entities;
-
-        while (q.next()) {
-            entities.append( createEntity(q) );
-        }
-
-        return entities;
+        return findAll(q);
     }
 
     /**
@@ -51,7 +45,11 @@ public:
      * @return a single entity matching the given {@link Predicate} or {@literal null} if none was found.
      * @throws IncorrectResultSizeDataAccessException if the predicate yields more than one result.
      */
-    Entity* findOne(Predicate predicate);
+    Entity* findOne(Expression predicate){
+        QSqlQuery q( QString("SELECT * FROM %1 WHERE %2").arg( m_entityName, predicate.getQuery() ) );
+
+        return findOne(q);
+    }
 
     /**
      * Returns all entities matching the given {@link Predicate}. In case no match could be found an empty
@@ -60,7 +58,11 @@ public:
      * @param predicate can be {@literal null}.
      * @return all entities matching the given {@link Predicate}.
      */
-    QList<Entity> findAll(Predicate predicate);
+    QList<Entity*> findAll(Expression predicate){
+        QSqlQuery q( QString("SELECT * FROM %1 WHERE %2").arg( m_entityName, predicate.getQuery() ) );
+
+        return findAll(q);
+    }
 
     /**
      * Returns the number of instances matching the given {@link Predicate}.
@@ -68,7 +70,9 @@ public:
      * @param predicate the {@link Predicate} to count instances for, can be {@literal null}.
      * @return the number of instances matching the {@link Predicate}.
      */
-    long count(Predicate predicate);
+    long count(Expression predicate){
+        return count( QString("SELECT COUNT(id) AS count FROM %1 WHERE %2").arg(m_entityName, predicate.getQuery()) );
+    }
 
     /**
      * Checks whether the data store contains elements that match the given {@link Predicate}.
@@ -76,7 +80,11 @@ public:
      * @param predicate the {@link Predicate} to use for the existance check, can be {@literal null}.
      * @return {@literal true} if the data store contains elements that match the given {@link Predicate}.
      */
-    bool exists(Predicate predicate);
+    bool exists(Expression predicate);
+
+    long count(){
+        return count( QString("SELECT COUNT(id) AS count FROM %1").arg(m_entityName) );
+    }
 
     void save(Entity* entity) {
         QStringList fieldHolders;
@@ -95,8 +103,8 @@ public:
 
         QSqlQuery q;
         q.prepare(query);
-        for(QString column: fields.keys()){
-            QVariant value = entity->property(column.toStdString().c_str());
+        for(auto column = fields.keyBegin(); column != fields.keyEnd(); column++){
+            QVariant value = entity->property(column->toStdString().c_str());
             q.addBindValue(value);
         }
 
@@ -125,8 +133,6 @@ private:
     Entity* findOne(QSqlQuery& q){
         q.exec();
 
-        QSqlRecord record = q.record();
-
         Entity* entity = nullptr;
 
         if (q.first()) {
@@ -136,8 +142,34 @@ private:
         return entity;
     }
 
+    QList<Entity*> findAll(QSqlQuery& q){
+        q.exec();
+
+        QList<Entity*> entities;
+
+        while (q.next()) {
+            entities.append( createEntity(q) );
+        }
+
+        return entities;
+    }
+
+    long count(const QString& query){
+        long count = 0;
+
+        QSqlQuery q( query  );
+
+        if (q.first()) {
+            QSqlRecord record = q.record();
+            const int countIndex = record.indexOf("count");
+            count = q.value(countIndex).toLongLong();
+        }
+
+        return count;
+    }
+
     Entity* createEntity(const QSqlQuery& q) {
-        Entity* entity = new Entity();
+        auto* entity = new Entity();
 
         QSqlRecord record = q.record();
 

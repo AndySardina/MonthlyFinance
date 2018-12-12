@@ -9,19 +9,42 @@ StringPredicate::StringPredicate(QString fieldName)
 {
 }
 
-StringPredicate &StringPredicate::contains(const QString &str)
+Expression StringPredicate::contains(const QString &str)
 {
-    m_query.append( QString(" %1 LIKE \'\%%2\%\' ").arg(m_fieldName, str) );
-    return *this;
+    return Expression(Type::LIKE, m_fieldName, QString("\%%1\%").arg(str), Type::STRING);
 }
 
-StringPredicate &StringPredicate::containsIgnoreCase(const QString &str)
+Expression StringPredicate::containsIgnoreCase(const QString &str)
 {
-    m_query.append(  QString(" upper(\'%1\') LIKE \'\%%2\%\' ").arg(m_fieldName, str)  );
-    return *this;
+   return Expression(Type::LIKE, QString("upper(%1)").arg(m_fieldName), QString("\%%1\%").arg(str.toUpper()), Type::STRING);
 }
 
-QString StringPredicate::getSqlQuery()
+Expression StringPredicate::eq(const QString &str)
 {
-    return m_query;
+   return Expression(Type::EQ, m_fieldName, str, Type::STRING);
+}
+
+Expression StringPredicate::eqIgnoreCase(const QString &str)
+{
+    return Expression(Type::EQ, QString("upper(%1)").arg(m_fieldName), str.toUpper(), Type::STRING);
+}
+
+Expression StringPredicate::neq(const QString &str)
+{
+    return Expression(Type::NEQ, m_fieldName, str, Type::STRING);
+}
+
+Expression StringPredicate::neqIgnoreCase(const QString &str)
+{
+     return Expression(Type::NEQ, QString("upper(%1)").arg(m_fieldName), str.toUpper(), Type::STRING);
+}
+
+Expression StringPredicate::startWith(const QString &str)
+{
+    return Expression(Type::LIKE, m_fieldName, QString("%1\%").arg(str), Type::STRING);
+}
+
+Expression StringPredicate::endWith(const QString &str)
+{
+    return Expression(Type::LIKE, m_fieldName, QString("\%%1").arg(str), Type::STRING);
 }

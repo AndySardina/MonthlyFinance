@@ -39,10 +39,12 @@ HEADERS += \
     include/db/repository/operationrepository.h \
     include/exception/incorrectresultsizedataaccessexception.h \
     include/db/querydsl/dsldefs.h \
-    include/db/querydsl/predicate/stringpredicate.h \
     include/db/querydsl/expression/expression.h \
     include/db/querydsl/private/tree.h \
-    include/db/querydsl/predicate/predicate.h
+    include/db/querydsl/constants.h \
+    include/db/querydsl/predicate/numberpredicate.h \
+    include/exception/illegalargumentexception.h \
+    include/db/querydsl/predicate/stringpredicate.h
 
 unix {
     target.path = /usr/lib

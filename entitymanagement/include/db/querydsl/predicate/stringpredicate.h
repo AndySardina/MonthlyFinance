@@ -1,25 +1,24 @@
 #ifndef STRINGPREDICATE_H
 #define STRINGPREDICATE_H
 
-#include "db/querydsl/predicate/predicate.h"
+#include "db/querydsl/expression/expression.h"
 
-class Expression;
-
-class StringPredicate : public Predicate {
+class StringPredicate {
 
 public:
     StringPredicate(QString fieldName);
 
-    StringPredicate& contains(const QString& str);
-    StringPredicate& containsIgnoreCase(const QString& str);
-
-    // Predicate interface
-public:
-    QString getSqlQuery() override;
+    Expression contains(const QString& str);
+    Expression containsIgnoreCase(const QString& str);
+    Expression eq(const QString& str);
+    Expression eqIgnoreCase(const QString& str);
+    Expression neq(const QString& str);
+    Expression neqIgnoreCase(const QString& str);
+    Expression startWith(const QString& str);
+    Expression endWith(const QString& str);
 
 private:
     QString m_fieldName;
-    QString m_query;
 };
 
 #endif // STRINGPREDICATE_H
