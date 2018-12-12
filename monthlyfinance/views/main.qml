@@ -46,19 +46,19 @@ ApplicationWindow {
         ListElement {
             title:qsTr("Categories")
             url:"CreateCategory.qml"
-            icon:"\ue88a"
+            icon:"home.png"
             canGoBack:true
         }
         ListElement {
             title:qsTr("Report")
             url:"Report.qml"
-            icon:"\ue88a"
+            icon:"home.png"
             canGoBack:false
         }
         ListElement {
             title:qsTr("Settings")
             url:"Settings.qml"
-            icon:"\ue88a"
+            icon:"home.png"
             canGoBack:false
         }
     }

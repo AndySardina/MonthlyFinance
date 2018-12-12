@@ -3,6 +3,8 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
 import QtQuick.Layouts 1.11
 
+import components 1.0
+
 FocusScope {
     id: wrapper
 
@@ -16,6 +18,7 @@ FocusScope {
         id: input
         anchors.left: wrapper.left
         anchors.right:  icon.left
+        anchors.verticalCenter: parent.verticalCenter
         focus: true
         verticalAlignment: Text.AlignVCenter
 
@@ -25,9 +28,10 @@ FocusScope {
         placeholderText: 'search'
     }
 
-    Image {
+    IconActive {
         id:icon
         anchors.right: wrapper.right
+        anchors.verticalCenter: parent.verticalCenter
         source: "qrc:/images/white/search.png"
         MouseArea {
             anchors { fill: parent; margins: -10 }

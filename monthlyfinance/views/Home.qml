@@ -29,9 +29,7 @@ Page {
             DateRangeInput {
                 id:date
                 viewPortParent:rootHomePage
-                Layout.preferredWidth: tool.preferredWidth //+ 50
-//                Layout.alignment:  Qt.AlignRight
-
+                Layout.preferredWidth: tool.preferredWidth //+ 50                
             }
 
             SearchInput

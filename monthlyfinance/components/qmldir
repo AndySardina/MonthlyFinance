@@ -9,6 +9,7 @@ LabelBodySecondary 1.0 LabelBodySecondary.qml
 ButtonFlat 1.0 ButtonFlat.qml
 FloatingActionButton 1.0 FloatingActionButton.qml
 FloatingActionMiniButton 1.0 FloatingActionMiniButton.qml
+DrawerNavigationButton 1.0 DrawerNavigationButton.qml
 ComboBoxWithIcon 1.0 ComboBoxWithIcon.qml
 SearchInput 1.0 SearchInput.qml
 DateInput 1.0 DateInput.qml
@@ -17,3 +18,4 @@ DateRangeInput 1.0 DateRangeInput.qml
 DateRangePicker 1.0 DateRangePicker.qml
 DrawerNavigationBar 1.0 DrawerNavigationBar.qml
 DrawerTitleBar 1.0 DrawerTitleBar.qml
+singleton Style 1.0 Style.qml

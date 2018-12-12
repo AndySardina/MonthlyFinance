@@ -5,6 +5,7 @@ import QtQuick.Controls 2.4
 import Qt.labs.calendar 1.0
 import QtQuick.Controls.Material 2.4
 
+import assets 1.0
 
 Popup {
     id: datePickerRoot
@@ -73,7 +74,7 @@ Popup {
                             leftPadding: 24
                             font.pointSize: 18
                             text: datePickerRoot.fromDisplayYear
-                            //                    color: textOnPrimary
+                            color: Style.textOnPrimary
                             opacity: 0.8
                         }
                         Label {
@@ -81,7 +82,7 @@ Popup {
                             bottomPadding: 12
                             font.pointSize: 36
                             text: Qt.formatDate(datePickerRoot.fromSelectedDate, "ddd")+", "+Qt.formatDate(datePickerRoot.fromSelectedDate, "d")+". "+Qt.formatDate(datePickerRoot.fromSelectedDate, "MMM")
-                            //                    color: textOnPrimary
+                            color: Style.textOnPrimary
                         }
                     }
                 } // portraitHeader
@@ -266,7 +267,7 @@ Popup {
                             width: Math.min(parent.width, parent.height) * 1.2
                             height: width
                             radius: width / 2
-                            //                    color: primaryColor
+                            color: Style.primaryColor
                             visible: pressed || parent.selected
                         }
                         // WORKAROUND !! see onClicked()

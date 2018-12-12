@@ -18,6 +18,8 @@
         <file alias="IconOnPrimary.qml">components/IconOnPrimary.qml</file>
         <file alias="LabelBody.qml">components/LabelBody.qml</file>
         <file alias="LabelBodySecondary.qml">components/LabelBodySecondary.qml</file>
-        <file  alias="SearchInput.qml">components/SearchInput.qml</file>
+        <file alias="SearchInput.qml">components/SearchInput.qml</file>
+        <file alias="DrawerNavigationButton.qml">components/DrawerNavigationButton.qml</file>
+        <file alias="Style.qml">components/Style.qml</file>
     </qresource>
 </RCC>

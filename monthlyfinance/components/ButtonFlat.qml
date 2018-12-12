@@ -5,10 +5,11 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
 import QtGraphicalEffects 1.0
 
+import assets 1.0
+
 // Flat Button
 Button {
     id: button
-    // default: flatButtonTextColor
     property alias textColor: buttonText.color
     property bool materialBackground: false
     property alias textAlignment: buttonText.horizontalAlignment
@@ -21,7 +22,7 @@ Button {
         id: buttonText
         text: button.text
         opacity: enabled ? 1.0 : 0.3
-//        color: flatButtonTextColor
+        color: Style.flatButtonTextColor
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         elide: Text.ElideRight
