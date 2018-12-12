@@ -2419,5 +2419,37 @@
         <file>images/white/zoom_out@2x.png</file>
         <file>images/white/zoom_out@3x.png</file>
         <file>images/white/zoom_out@4x.png</file>
+        <file>images/white/ic_credit_card.png</file>
+        <file>images/white/x18/ic_credit_card.png</file>
+        <file>images/white/x36/ic_credit_card.png</file>
+        <file>images/white/x48/ic_credit_card.png</file>
+        <file>images/white/ic_credit_card@2x.png</file>
+        <file>images/white/ic_credit_card@3x.png</file>
+        <file>images/white/ic_credit_card@4x.png</file>
+        <file>images/white/x18/ic_credit_card@2x.png</file>
+        <file>images/white/x18/ic_credit_card@3x.png</file>
+        <file>images/white/x18/ic_credit_card@4x.png</file>
+        <file>images/white/x36/ic_credit_card@2x.png</file>
+        <file>images/white/x36/ic_credit_card@3x.png</file>
+        <file>images/white/x36/ic_credit_card@4x.png</file>
+        <file>images/white/x48/ic_credit_card@2x.png</file>
+        <file>images/white/x48/ic_credit_card@3x.png</file>
+        <file>images/white/x48/ic_credit_card@4x.png</file>
+        <file>images/black/ic_credit_card.png</file>
+        <file>images/black/ic_credit_card@2x.png</file>
+        <file>images/black/ic_credit_card@3x.png</file>
+        <file>images/black/ic_credit_card@4x.png</file>
+        <file>images/black/x18/ic_credit_card.png</file>
+        <file>images/black/x18/ic_credit_card@2x.png</file>
+        <file>images/black/x18/ic_credit_card@3x.png</file>
+        <file>images/black/x18/ic_credit_card@4x.png</file>
+        <file>images/black/x36/ic_credit_card.png</file>
+        <file>images/black/x36/ic_credit_card@2x.png</file>
+        <file>images/black/x36/ic_credit_card@3x.png</file>
+        <file>images/black/x36/ic_credit_card@4x.png</file>
+        <file>images/black/x48/ic_credit_card.png</file>
+        <file>images/black/x48/ic_credit_card@2x.png</file>
+        <file>images/black/x48/ic_credit_card@3x.png</file>
+        <file>images/black/x48/ic_credit_card@4x.png</file>
     </qresource>
 </RCC>

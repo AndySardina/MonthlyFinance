@@ -2,9 +2,9 @@ import QtQuick 2.11
 import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
 import QtQuick.Layouts 1.11
+import QtQuick.Window 2.11
 
-
-import "components"
+import components 1.0
 
 ApplicationWindow {
     id: appWindow
@@ -18,8 +18,12 @@ ApplicationWindow {
     property string currentTitle: ""
 
     visible: true
-    width: 640
-    height: 480
+    visibility: Window.Maximized
+//    width: 640
+//    height: 480
+    minimumHeight: 600
+    minimumWidth: 300
+
     title: qsTr("Monthly Finance")
 //    Material.primary: Qt.black
 //    Material.background: Qt.white
@@ -29,42 +33,53 @@ ApplicationWindow {
         id: navigationModel
         ListElement {
             title:qsTr("Home")
-            url:"views/Home.qml"
+            url:"Home.qml"
             icon:"home.png"
             canGoBack:false
         }
         ListElement {
             title:qsTr("Register Operation")
-            url:"views/CreateOperation.qml"
+            url:"CreateOperation.qml"
             icon:"home.png"
             canGoBack:false
         }
         ListElement {
             title:qsTr("Categories")
-            url:"views/CreateCategory.qml"
+            url:"CreateCategory.qml"
             icon:"\ue88a"
             canGoBack:true
         }
         ListElement {
             title:qsTr("Report")
-            url:"views/Report.qml"
+            url:"Report.qml"
             icon:"\ue88a"
             canGoBack:false
         }
         ListElement {
             title:qsTr("Settings")
-            url:"views/Settings.qml"
+            url:"Settings.qml"
             icon:"\ue88a"
             canGoBack:false
         }
     }
 
+    Component
+    {
+        id: titleBarComponent
+        DrawerTitleBar {
+
+        }
+    }
+
     Loader {
         id:titleBarLoader
-        source: "components/DrawerTitleBar.qml"
+        sourceComponent: titleBarComponent
         asynchronous: true
         onLoaded: {
             appWindow.header = item
+        }
+        onStatusChanged: {
+            console.log()
         }
 
         Binding {
@@ -105,7 +120,7 @@ ApplicationWindow {
 
     StackView {
         id: stackView
-        initialItem: Qt.createComponent('views/Home.qml')
+        initialItem: Qt.createComponent('Home.qml')
         anchors.fill: parent
          background: Rectangle {color: 'white'}
         onCurrentItemChanged: {

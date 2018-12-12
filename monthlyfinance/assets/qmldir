@@ -1,0 +1,4 @@
+module assets
+Utils 1.0 utils.js
+Moment 1.0 moment.min.js
+MomentLocale 1.0 moment-with-locales.min.js

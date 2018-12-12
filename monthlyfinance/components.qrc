@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/components">
+        <file alias="qmldir">components/qmldir</file>
+        <file alias="ButtonFlat.qml">components/ButtonFlat.qml</file>
+        <file alias="ComboBoxWithIcon.qml">components/ComboBoxWithIcon.qml</file>
+        <file alias="DateInput.qm">components/DateInput.qml</file>
+        <file alias="DatePicker.qml">components/DatePicker.qml</file>
+        <file alias="DateRangeInput.qml">components/DateRangeInput.qml</file>
+        <file alias="DateRangePicker.qml">components/DateRangePicker.qml</file>
+        <file alias="DrawerNavigationBar.qml">components/DrawerNavigationBar.qml</file>
+        <file alias="DrawerTitleBar.qml">components/DrawerTitleBar.qml</file>
+        <file alias="FloatingActionButton.qml">components/FloatingActionButton.qml</file>
+        <file alias="FloatingActionMiniButton.qml">components/FloatingActionMiniButton.qml</file>
+        <file alias="IconActive.qml">components/IconActive.qml</file>
+        <file alias="IconColored.qml">components/IconColored.qml</file>
+        <file alias="IconInactive.qml">components/IconInactive.qml</file>
+        <file alias="IconOnAccent.qm">components/IconOnAccent.qml</file>
+        <file alias="IconOnPrimary.qml">components/IconOnPrimary.qml</file>
+        <file alias="LabelBody.qml">components/LabelBody.qml</file>
+        <file alias="LabelBodySecondary.qml">components/LabelBodySecondary.qml</file>
+        <file  alias="SearchInput.qml">components/SearchInput.qml</file>
+    </qresource>
+</RCC>

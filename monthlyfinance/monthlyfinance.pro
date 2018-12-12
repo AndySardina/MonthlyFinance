@@ -14,7 +14,9 @@ SOURCES += \
 RESOURCES += \
     assets.qrc \
     qml.qrc \
-    images.qrc
+    images.qrc \
+    components.qrc \
+    views.qrc
 
 OTHER_FILES += images/black/*.png \
     images/black/x18/*.png \
@@ -28,11 +30,10 @@ OTHER_FILES += images/black/*.png \
     translations/*.* \
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
-#QML_IMPORT_PATH =
-QML_IMPORT_PATH += $$PWD/qml
+QML_IMPORT_PATH = $$PWD/componets
 
 # Additional import path used to resolve QML modules just for Qt Quick Designer
-QML_DESIGNER_IMPORT_PATH =
+QML_DESIGNER_IMPORT_PATH = $$PWD
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

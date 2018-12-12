@@ -1,0 +1,19 @@
+module components
+IconOnPrimary 1.0 IconOnPrimary.qml
+IconOnAccent 1.0 IconOnAccent.qml
+IconInactive 1.0 IconInactive.qml
+IconColored 1.0 IconColored.qml
+IconActive 1.0 IconActive.qml
+LabelBody 1.0 LabelBody.qml
+LabelBodySecondary 1.0 LabelBodySecondary.qml
+ButtonFlat 1.0 ButtonFlat.qml
+FloatingActionButton 1.0 FloatingActionButton.qml
+FloatingActionMiniButton 1.0 FloatingActionMiniButton.qml
+ComboBoxWithIcon 1.0 ComboBoxWithIcon.qml
+SearchInput 1.0 SearchInput.qml
+DateInput 1.0 DateInput.qml
+DatePicker 1.0 DatePicker.qml
+DateRangeInput 1.0 DateRangeInput.qml
+DateRangePicker 1.0 DateRangePicker.qml
+DrawerNavigationBar 1.0 DrawerNavigationBar.qml
+DrawerTitleBar 1.0 DrawerTitleBar.qml

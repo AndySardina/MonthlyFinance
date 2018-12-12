@@ -1,7 +1,9 @@
 <RCC>
-    <qresource prefix="/js"/>
-    <qresource prefix="/">
-        <file>js/utils.js</file>
-        <file>js/moment.min.js</file>
+    <qresource prefix="/assets">
+        <file alias="qmldir">assets/qmldir</file>
+        <file alias="moment.min.js">assets/moment.min.js</file>
+        <file alias="moment-with-locales.min.js">assets/moment-with-locales.min.js</file>
+        <file alias="utils.js">assets/utils.js</file>
+        <file>qtquickcontrols2.conf</file>
     </qresource>
 </RCC>

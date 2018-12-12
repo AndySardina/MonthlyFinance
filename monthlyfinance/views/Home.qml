@@ -3,8 +3,7 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
 import QtQuick.Layouts 1.11
 
-import "../components"
-//import "../../js/moment.min.js" as Moment
+import components 1.0
 
 Page {
     id:rootHomePage
@@ -31,7 +30,7 @@ Page {
                 id:date
                 viewPortParent:rootHomePage
                 Layout.preferredWidth: tool.preferredWidth //+ 50
-                Layout.alignment:  Qt.AlignRight
+//                Layout.alignment:  Qt.AlignRight
 
             }
 
@@ -39,8 +38,9 @@ Page {
             {
                 id:searchInput
                 Layout.preferredWidth: tool.preferredWidth
-                Layout.alignment:  Qt.AlignRight
-                hint: 'search'
+//                Layout.alignment: Qt.AlignVCenter
+//                Layout.alignment:  Qt.AlignRight
+                placeholderText: 'search'
                 focus: true
             }
         }
