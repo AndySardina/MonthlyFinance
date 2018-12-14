@@ -1,8 +1,8 @@
 // ekke (Ekkehard Gentz) @ekkescorner
-import QtQuick 2.9
-import QtQuick.Layouts 1.3
-import QtQuick.Controls 2.2
-import QtQuick.Controls.Material 2.2
+import QtQuick 2.11
+import QtQuick.Layouts 1.11
+import QtQuick.Controls 2.4
+import QtQuick.Controls.Material 2.4
 
 // thx J-P Nurmi (@jpnurmi) for helping
 // this custom ComboBox works using a JS datamodel where the model is something like this:

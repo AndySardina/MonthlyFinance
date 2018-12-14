@@ -1,11 +1,21 @@
 module components
+singleton Style 1.0 Style.qml
 IconOnPrimary 1.0 IconOnPrimary.qml
 IconOnAccent 1.0 IconOnAccent.qml
 IconInactive 1.0 IconInactive.qml
 IconColored 1.0 IconColored.qml
 IconActive 1.0 IconActive.qml
+IconFloating 1.0 IconFloating.qml
 LabelBody 1.0 LabelBody.qml
 LabelBodySecondary 1.0 LabelBodySecondary.qml
+LabelCaption 1.0 LabelCaption.qml
+LabelHeadline 1.0 LabelHeadline.qml
+LabelSubheading 1.0 LabelSubheading.qml
+LabelTitle 1.0 LabelTitle.qml
+LabelDisplay1 1.0 LabelDisplay1.qml
+LabelDisplay2 1.0 LabelDisplay2.qml
+LabelDisplay3 1.0 LabelDisplay3.qml
+LabelDisplay4 1.0 LabelDisplay4.qml
 ButtonFlat 1.0 ButtonFlat.qml
 FloatingActionButton 1.0 FloatingActionButton.qml
 FloatingActionMiniButton 1.0 FloatingActionMiniButton.qml
@@ -18,4 +28,27 @@ DateRangeInput 1.0 DateRangeInput.qml
 DateRangePicker 1.0 DateRangePicker.qml
 DrawerNavigationBar 1.0 DrawerNavigationBar.qml
 DrawerTitleBar 1.0 DrawerTitleBar.qml
-singleton Style 1.0 Style.qml
+AvatarImage 1.0 AvatarImage.qml
+ButtonIconActive 1.0 ButtonIconActive.qml
+CharButton 1.0 CharButton.qml
+FilePicker 1.0 FilePicker.qml
+FooterCancelSave 1.0 FooterCancelSave.qml
+HorizontalDivider 1.0 HorizontalDivider.qml
+HorizontalListDivider 1.0 HorizontalListDivider.qml
+VerticalDivider 1.0 VerticalDivider.qml
+SearchTextPane 1.0 SearchTextPane.qml
+SimpleTextTitle 1.0 SimpleTextTitle.qml
+StackTextTitle 1.0 StackTextTitle.qml
+SwipeArea 1.0 SwipeArea.qml
+SwipeTextTitle 1.0 SwipeTextTitle.qml
+SwitchWithLeftLabel 1.0 SwitchWithLeftLabel.qml
+TextAreaRow 1.0 TextAreaRow.qml
+TextFieldDecimal 1.0 TextFieldDecimal.qml
+TextFieldDoubleInt 1.0 TextFieldDoubleInt.qml
+TextFieldEmail 1.0 TextFieldEmail.qml
+TextFieldInt 1.0 TextFieldInt.qml
+TextFieldPhoneNumber 1.0 TextFieldPhoneNumber.qml
+TimePicker 1.0 TimePicker.qml
+
+
+

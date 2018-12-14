@@ -14,42 +14,42 @@ ToolBar {
 
     contentHeight: toolButton.implicitHeight
 
-    ToolButton {
-        id: toolButton
-        visible: !backButton.visible && (appWindow.isLandscape || !appWindow.hasOnlyOneMenu)
-        focusPolicy: Qt.NoFocus
-        IconActive {
-            anchors.centerIn: parent
-            //                imageName: "menu.png"
-            //                imageSize: 24
-//            source: "qrc:/images/"+iconOnPrimaryFolder+"/menu.png"
-            source: "qrc:/images/white"+"/menu.png"
-        }
-        onClicked: {
-            toolBar.menuClicked()
-        }
-    }// menu button
+    RowLayout {
+        anchors.fill: parent
+        ToolButton {
+            id: toolButton
+            visible: !backButton.visible && (appWindow.isLandscape || !appWindow.hasOnlyOneMenu)
+            focusPolicy: Qt.NoFocus
+            IconActive {
+                anchors.centerIn: parent
+                //                imageName: "menu.png"
+                //                imageSize: 24
+    //            source: "qrc:/images/"+iconOnPrimaryFolder+"/menu.png"
+                source: "qrc:/images/white"+"/menu.png"
+            }
+            onClicked: {
+                toolBar.menuClicked()
+            }
+        }// menu button
 
-    ToolButton {
-        id: backButton
-        focusPolicy: Qt.NoFocus
-        visible:false
-        Image {
-            anchors.centerIn: parent
-//            source: "qrc:/images/"+iconOnPrimaryFolder+"/arrow_back.png"
-            source: "qrc:/images/white/arrow_back.png"
+        Label {
+            id:titleLabel
+            text: toolBar.title
+//            anchors.centerIn: parent
         }
-        onClicked: {
-            destinations.itemAt(navigationIndex).item.goBack()
-        }
-    } // backButton
 
-
-
-    Label {
-        id:titleLabel
-        //        text: "Title"
-        text: toolBar.title
-        anchors.centerIn: parent
+        ToolButton {
+            id: backButton
+            focusPolicy: Qt.NoFocus
+            visible:false
+            Image {
+                anchors.centerIn: parent
+    //            source: "qrc:/images/"+iconOnPrimaryFolder+"/arrow_back.png"
+                source: "qrc:/images/white/arrow_back.png"
+            }
+            onClicked: {
+                destinations.itemAt(navigationIndex).item.goBack()
+            }
+        } // backButton
     }
 }

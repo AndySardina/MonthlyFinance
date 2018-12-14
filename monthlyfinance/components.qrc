@@ -21,5 +21,35 @@
         <file alias="SearchInput.qml">components/SearchInput.qml</file>
         <file alias="DrawerNavigationButton.qml">components/DrawerNavigationButton.qml</file>
         <file alias="Style.qml">components/Style.qml</file>
+        <file alias="AvatarImage.qml">components/AvatarImage.qml</file>
+        <file alias="ButtonIconActive.qml">components/ButtonIconActive.qml</file>
+        <file alias="CharButton.qml">components/CharButton.qml</file>
+        <file alias="FilePicker.qml">components/FilePicker.qml</file>
+        <file alias="FooterCancelSave.qml">components/FooterCancelSave.qml</file>
+        <file alias="HorizontalDivider.qml">components/HorizontalDivider.qml</file>
+        <file alias="HorizontalListDivider.qml">components/HorizontalListDivider.qml</file>
+        <file alias="IconFloating.qml">components/IconFloating.qml</file>
+        <file alias="LabelCaption.qml">components/LabelCaption.qml</file>
+        <file alias="LabelDisplay1.qml">components/LabelDisplay1.qml</file>
+        <file alias="LabelDisplay2.qml">components/LabelDisplay2.qml</file>
+        <file alias="LabelDisplay3.qml">components/LabelDisplay3.qml</file>
+        <file alias="LabelDisplay4.qml">components/LabelDisplay4.qml</file>
+        <file alias="LabelHeadline.qml">components/LabelHeadline.qml</file>
+        <file alias="LabelSubheading.qml">components/LabelSubheading.qml</file>
+        <file alias="LabelTitle.qml">components/LabelTitle.qml</file>
+        <file alias="SearchTextPane.qml">components/SearchTextPane.qml</file>
+        <file alias="SimpleTextTitle.qml">components/SimpleTextTitle.qml</file>
+        <file alias="StackTextTitle.qml">components/StackTextTitle.qml</file>
+        <file alias="SwipeArea.qml">components/SwipeArea.qml</file>
+        <file alias="SwipeTextTitle.qml">components/SwipeTextTitle.qml</file>
+        <file alias="SwitchWithLeftLabel.qml">components/SwitchWithLeftLabel.qml</file>
+        <file alias="TextAreaRow.qml">components/TextAreaRow.qml</file>
+        <file alias="TextFieldDecimal.qml">components/TextFieldDecimal.qml</file>
+        <file alias="TextFieldDoubleInt.qml">components/TextFieldDoubleInt.qml</file>
+        <file alias="TextFieldEmail.qml">components/TextFieldEmail.qml</file>
+        <file alias="TextFieldInt.qml">components/TextFieldInt.qml</file>
+        <file alias="TextFieldPhoneNumber.qml">components/TextFieldPhoneNumber.qml</file>
+        <file alias="TimePicker.qml">components/TimePicker.qml</file>
+        <file alias="VerticalDivider.qml">components/VerticalDivider.qml</file>
     </qresource>
 </RCC>

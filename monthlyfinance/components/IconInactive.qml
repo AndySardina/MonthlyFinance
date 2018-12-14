@@ -1,5 +1,7 @@
 // ekke (Ekkehard Gentz) @ekkescorner
-import QtQuick 2.9
+import QtQuick 2.11
+
+import assets 1.0
 
 Image {
     property string imageName: ""
@@ -13,13 +15,13 @@ Image {
         }
     }
     //trick: to be triggered if folder changed
-    property string currentIconFolder: iconFolder
+    property string currentIconFolder: Style.iconFolder
     onCurrentIconFolderChanged: {
         if(imageName.length > 0) {
             calculatePath()
         }
     }
-    opacity: iconInactiveOpacity
+    opacity: Style.iconInactiveOpacity
     function calculatePath() {
         var path = "qrc:/images/"+currentIconFolder
         switch(imageSize) {

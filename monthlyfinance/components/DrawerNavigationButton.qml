@@ -10,11 +10,12 @@ import components 1.0
 ItemDelegate {
     id: myButton
     property bool isActive: false
-    property string myIconFolder: 'white'
+    property string myIconFolder: Style.iconFolder
     property int counter: 0//navigationData[index].counter
     property color marker: 'red'//navigationData[index].marker
-    property string theIcon: modelData.icon
-    property string theText: modelData.name
+    property string theIcon: ''//icon
+    property string theText: ''//title
+
     Layout.fillWidth: true
     Layout.fillHeight: true
     Layout.alignment: Qt.AlignHCenter
@@ -34,7 +35,7 @@ ItemDelegate {
 
     Rectangle {
         //        z:1
-        visible: highlightActiveNavigationButton && myButton.isActive
+        visible: myButton.isActive
         height: myButton.height
         width: 5
         //        color:  Material.listHighlightColor
@@ -43,7 +44,7 @@ ItemDelegate {
         //            opacity: 0.10
     }
 
-    RowLayout {       
+    RowLayout {
         width: parent.width
         height: parent.height
         anchors.verticalCenter: parent.verticalCenter
@@ -53,33 +54,22 @@ ItemDelegate {
             Layout.alignment: Qt.AlignVCenter | Qt.AlignLeft
             Layout.leftMargin: 24
             text: theText
-            //            opacity: isActive ? 1.0 :  0.50
+            opacity: isActive ? 1.0 :  0.50
             //            color: isActive? primaryColor : dividerColor // flatButtonTextColor
             color: "white"
-            font.pixelSize: 20
             font.weight: Font.Medium
         } // label
         IconInactive{
-            id:icon
+            id:iconActive
             //            width: 48
             //            height: 48
             imageName: theIcon
-            currentIconFolder: "white"
+            currentIconFolder: Style.iconFolder
             imageSize: 36
             horizontalAlignment: Image.AlignLeft
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
             Layout.leftMargin: 16
-//            opacity: 0.5
-        }   
-    } // row
-    onClicked: {
-        console.log("onClicked: navigationIndex: " + index)
-        if(navigationIndex == index)
-        {
-            closeNavigationBar()
-            return;
+            opacity: 0.5
         }
-
-        navigationIndex = index
-    }
+    } // row
 } // myButton

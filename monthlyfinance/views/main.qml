@@ -9,13 +9,14 @@ import components 1.0
 ApplicationWindow {
     id: appWindow
 
-    property int firstActiveDestination: -1
+    property int firstActiveDestination: 0
     property int navigationIndex: firstActiveDestination
+    property var navigationItem: navigationIndex >= 0 ? navigationModel.get(navigationIndex) : null
+    property alias navigationModel: navigationListModel
     onNavigationIndexChanged:{
-        console.log(navigationIndex)
+        console.log('onNavigationIndexChanged: ' + navigationIndex)
+        console.log('onNavigationIndexChanged: ' + navigationItem)
     }
-
-    property string currentTitle: ""
 
     visible: true
     visibility: Window.Maximized
@@ -30,35 +31,35 @@ ApplicationWindow {
      background: Rectangle {color: 'white'}
 
     ListModel {
-        id: navigationModel
+        id: navigationListModel
         ListElement {
             title:qsTr("Home")
             url:"Home.qml"
-            icon:"home.png"
+            iconName:"home.png"
             canGoBack:false
         }
         ListElement {
             title:qsTr("Register Operation")
             url:"CreateOperation.qml"
-            icon:"home.png"
+            iconName:"home.png"
             canGoBack:false
         }
         ListElement {
             title:qsTr("Categories")
             url:"CreateCategory.qml"
-            icon:"home.png"
+            iconName:"home.png"
             canGoBack:true
         }
         ListElement {
             title:qsTr("Report")
             url:"Report.qml"
-            icon:"home.png"
+            iconName:"home.png"
             canGoBack:false
         }
         ListElement {
             title:qsTr("Settings")
             url:"Settings.qml"
-            icon:"home.png"
+            iconName:"home.png"
             canGoBack:false
         }
     }
@@ -85,7 +86,7 @@ ApplicationWindow {
         Binding {
             target: titleBarLoader.item
             property: 'title'
-            value: currentTitle
+            value: navigationItem.title
         }
 
         Connections {
@@ -106,10 +107,12 @@ ApplicationWindow {
         id: drawer
         width: appWindow.width * 0.66
         height: appWindow.height
-        destination:navigationModel
+        destination:appWindow.navigationModel
 
         onGoToClicked: {
-            console.log(url)
+            var url = navigationListModel.get(index).url
+            navigationIndex = index
+            console.log("Go to: " + url)
             if(stackView.depth > 1)
                 stackView.replace(Qt.createComponent(url), Component.Asynchronous)
             else
@@ -128,10 +131,6 @@ ApplicationWindow {
             console.log(currentItem.title)
             console.log(titleBarLoader.item)
             console.log(stackView.currentItem)
-            appWindow.currentTitle =  stackView.currentItem.title
-            //            if(titleBarLoader.item)
-            //                appWindow.currentTitle =  stackView.currentItem.title
-            //                titleBarLoader.item.title = stackView.currentItem.title
         }
         // STACK VIEW TRANSITIONS
         //        replaceEnter: Transition {

@@ -13,8 +13,7 @@ Image {
         }
     }
     //trick: to be triggered if folder changed
-//    property string currentIconFolder: iconFolder
-    property string currentIconFolder: 'white'
+    property string currentIconFolder: Style.iconFolder
     onCurrentIconFolderChanged: {
         if(imageName.length > 0) {
             calculatePath()

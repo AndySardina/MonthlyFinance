@@ -7,7 +7,7 @@ SUBDIRS += \
   QtSuperMacros \
   entitymanagement \
   monthlyfinance \
-  test
+#  test
 
 
 QtQmlModels.subdir = 3dparty/QtQmlModels
@@ -15,4 +15,4 @@ QtSuperMacros.subdir = 3dparty/QtSuperMacros
 
 entitymanagement.depends = QtSuperMacros
 monthlyfinance.depends = entitymanagement QtQmlModels
-test.depends = QtSuperMacros entitymanagement
+#test.depends = QtSuperMacros entitymanagement

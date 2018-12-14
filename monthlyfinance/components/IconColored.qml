@@ -17,7 +17,7 @@ Image {
     // default: primary color
     property alias color: colorOverlay.color
     //trick: to be triggered if folder changed
-    property string currentIconFolder: iconFolder
+    property string currentIconFolder: Style.iconFolder
     onCurrentIconFolderChanged: {
         if(imageName.length > 0) {
             calculatePath()
