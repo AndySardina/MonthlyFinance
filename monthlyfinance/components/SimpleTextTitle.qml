@@ -26,7 +26,7 @@ ToolBar {
             Image {
                 id: buttonImage
                 anchors.centerIn: parent
-                source: "qrc:/images/"+iconOnPrimaryFolder+"/more_vert.png"
+                source: "qrc:/images/"+Style.iconOnPrimaryFolder+"/more_vert.png"
             }
             onClicked: {
                 optionsMenu.open()   

@@ -12,7 +12,7 @@ Item {
         width: 1
         height: parent.height
         anchors.horizontalCenter: parent.horizontalCenter
-        opacity: dividerOpacity
-        color: dividerColor
+        opacity: Style.dividerOpacity
+        color: Style.dividerColor
     }
 }

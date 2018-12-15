@@ -46,6 +46,36 @@ Item
     property color toastColor: themePalette[13]
     property real toastOpacity: themePalette[14]
 
+    // font sizes - defaults from Google Material Design Guide
+    property int fontSizeDisplay4: 112
+    property int fontSizeDisplay3: 56
+    property int fontSizeDisplay2: 45
+    property int fontSizeDisplay1: 34
+    property int fontSizeHeadline: 24
+    property int fontSizeTitle: 20
+    property int fontSizeSubheading: 16
+    property int fontSizeBodyAndButton: 14 // is Default
+    property int fontSizeCaption: 12
+    property int fontSizeActiveNavigationButton: 14
+    property int fontSizeInactiveNavigationButton: 12
+    // fonts are grouped into primary and secondary with different Opacity
+    // to make it easier to get the right property,
+    // here's the opacity per size:
+    property real opacityDisplay4: secondaryTextOpacity
+    property real opacityDisplay3: secondaryTextOpacity
+    property real opacityDisplay2: secondaryTextOpacity
+    property real opacityDisplay1: secondaryTextOpacity
+    property real opacityHeadline: primaryTextOpacity
+    property real opacityTitle: primaryTextOpacity
+    property real opacitySubheading: primaryTextOpacity
+    // body can be both: primary or secondary text
+    property real opacityBodyAndButton: primaryTextOpacity
+    property real opacityBodySecondary: secondaryTextOpacity
+    property real opacityCaption: secondaryTextOpacity
+    // using Icons as Toggle to recognize 'checked'
+    property real opacityToggleInactive: 0.2
+    property real opacityToggleActive: 1.0
+
     QtObject
     {
         id: style

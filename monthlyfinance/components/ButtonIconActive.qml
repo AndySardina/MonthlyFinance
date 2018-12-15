@@ -20,7 +20,7 @@ Button {
         id: buttonBackground
         implicitHeight: imageSize + 24
         implicitWidth: imageSize + 24
-        color: button.pressed ? accentColor : "transparent"
+        color: button.pressed ? Style.accentColor : "transparent"
         opacity: button.pressed ? 0.12 : 1.0
     } // background
 }

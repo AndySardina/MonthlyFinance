@@ -5,6 +5,6 @@ import QtQuick.Controls 2.4
 
 Label {
     Layout.fillWidth: true
-    font.pixelSize: fontSizeDisplay2
-    opacity: opacityDisplay2
+    font.pixelSize: Style.fontSizeDisplay2
+    opacity: Style.opacityDisplay2
 }

@@ -12,7 +12,7 @@ Page {
     header: ToolBar{
         id:tool
         //         background: Rectangle {border.color: 'red'}
-        property int preferredWidth: width /  4
+        property int preferredWidth: width /  5
         RowLayout{
             Layout.fillWidth: true
             anchors.horizontalCenter: parent.horizontalCenter
@@ -30,6 +30,10 @@ Page {
                 id:date
                 viewPortParent:rootHomePage
                 Layout.preferredWidth: tool.preferredWidth //+ 50                
+            }
+
+            SearchTextPane{
+                Layout.preferredWidth: tool.preferredWidth
             }
 
             SearchInput

@@ -5,8 +5,8 @@ import QtQuick.Controls 2.4
 
 Label {
     Layout.fillWidth: true
-    font.pixelSize: fontSizeCaption
-    opacity: opacityCaption
+    font.pixelSize: Style.fontSizeCaption
+    opacity: Style.opacityCaption
     font.capitalization: Font.AllUppercase
 }
 

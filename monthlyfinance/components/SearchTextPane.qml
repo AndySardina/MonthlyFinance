@@ -23,11 +23,11 @@ Pane {
     topPadding: 0
     z: 1
     Material.elevation: 12
-    width: appWindow.width * 2/3
-    height: 54
-    anchors.horizontalCenter: parent.horizontalCenter
-    anchors.bottomMargin: 10
-    anchors.bottom: parent.bottom
+//    width: appWindow.width * 2/3
+//    height: 54
+//    anchors.horizontalCenter: parent.horizontalCenter
+//    anchors.bottomMargin: 10
+//    anchors.bottom: parent.bottom
     RowLayout {
         width: parent.width - 30
         TextField {
@@ -39,16 +39,15 @@ Pane {
             placeholderText: qsTr("Search")
             // Keys.onReturnPressed: not used here
         }
-
-    } // row
-    ButtonIconActive {
-        visible: theSearchTextField.displayText.length > 0
-        focusPolicy: Qt.ClickFocus
-        anchors.right: parent.right
-        imageName: "clear.png"
-        onClicked: {
-            theSearchTextField.text = ""
-            theSearchTextField.forceActiveFocus()
+        ButtonIconActive {
+            visible: theSearchTextField.displayText.length > 0
+            focusPolicy: Qt.ClickFocus
+            imageName: "clear.png"
+            onClicked: {
+                theSearchTextField.text = ""
+                theSearchTextField.forceActiveFocus()
+            }
         }
-    }
+    } // row
+
 } // searchPane

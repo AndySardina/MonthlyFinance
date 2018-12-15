@@ -19,7 +19,7 @@ ToolBar {
                 id: backImageImage
                 visible: navPane.depth > 1
                 anchors.centerIn: parent
-                source: "qrc:/images/"+iconOnPrimaryFolder+"/arrow_back.png"
+                source: "qrc:/images/"+Style.iconOnPrimaryFolder+"/arrow_back.png"
             }
             onClicked: {
                 navPane.popOnePage()
@@ -39,7 +39,7 @@ ToolBar {
             Image {
                 id: buttonImage
                 anchors.centerIn: parent
-                source: "qrc:/images/"+iconOnPrimaryFolder+"/more_vert.png"
+                source: "qrc:/images/"+Style.iconOnPrimaryFolder+"/more_vert.png"
             }
             onClicked: {
                 optionsMenu.open()
