@@ -3,16 +3,18 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
 import QtQuick.Layouts 1.11
 
-import components 1.0
+//import components 1.0
+import '../components'
 
-Page {
+BaseView {
     id:rootHomePage
     title: qsTr("Home")
+    name:'Home'
 
     header: ToolBar{
         id:tool
         //         background: Rectangle {border.color: 'red'}
-        property int preferredWidth: width /  5
+        property int preferredWidth: width /  4
         RowLayout{
             Layout.fillWidth: true
             anchors.horizontalCenter: parent.horizontalCenter
@@ -29,21 +31,13 @@ Page {
             DateRangeInput {
                 id:date
                 viewPortParent:rootHomePage
-                Layout.preferredWidth: tool.preferredWidth //+ 50                
+                Layout.preferredWidth: tool.preferredWidth
             }
 
             SearchTextPane{
-                Layout.preferredWidth: tool.preferredWidth
-            }
-
-            SearchInput
-            {
                 id:searchInput
                 Layout.preferredWidth: tool.preferredWidth
-//                Layout.alignment: Qt.AlignVCenter
-//                Layout.alignment:  Qt.AlignRight
-                placeholderText: 'search'
-                focus: true
+                Material.background: Material.primary
             }
         }
     }

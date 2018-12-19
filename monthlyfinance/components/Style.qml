@@ -46,6 +46,20 @@ Item
     property color toastColor: themePalette[13]
     property real toastOpacity: themePalette[14]
 
+    // 5.7: dropShadowColor is ok - the shadow is darker as the background
+    // but not so easy to distinguish as in light theme
+    // optional:
+    // isDarkTheme? "#E4E4E4" : Material.dropShadowColor
+    property color dropShadow: Material.dropShadowColor
+
+    onIsDarkThemeChanged: {
+        if(isDarkTheme == 1) {
+            Material.theme = Material.Dark
+        } else {
+            Material.theme = Material.Light
+        }
+    }
+
     // font sizes - defaults from Google Material Design Guide
     property int fontSizeDisplay4: 112
     property int fontSizeDisplay3: 56
@@ -75,6 +89,8 @@ Item
     // using Icons as Toggle to recognize 'checked'
     property real opacityToggleInactive: 0.2
     property real opacityToggleActive: 1.0
+
+
 
     QtObject
     {

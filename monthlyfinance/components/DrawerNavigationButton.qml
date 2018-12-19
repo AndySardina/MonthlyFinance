@@ -5,7 +5,8 @@ import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
 import QtGraphicalEffects 1.0
 
-import components 1.0
+//import components 1.0
+import '../components'
 
 ItemDelegate {
     id: myButton
@@ -61,11 +62,9 @@ ItemDelegate {
         } // label
         IconInactive{
             id:iconActive
-            //            width: 48
-            //            height: 48
+            visible: false
             imageName: theIcon
             currentIconFolder: Style.iconFolder
-            imageSize: 36
             horizontalAlignment: Image.AlignLeft
             Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
             Layout.leftMargin: 16

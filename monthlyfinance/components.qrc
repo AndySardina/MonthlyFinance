@@ -51,5 +51,7 @@
         <file alias="TextFieldPhoneNumber.qml">components/TextFieldPhoneNumber.qml</file>
         <file alias="TimePicker.qml">components/TimePicker.qml</file>
         <file alias="VerticalDivider.qml">components/VerticalDivider.qml</file>
+        <file alias="BaseView.qml">components/BaseView.qml</file>
+        <file alias="BaseForm.qml">components/BaseForm.qml</file>
     </qresource>
 </RCC>

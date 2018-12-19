@@ -11,6 +11,7 @@ ToolBar {
     property alias backButtonVisible: backButton.visible
 
     signal menuClicked()
+    signal backClicked()
 
     contentHeight: toolButton.implicitHeight
 
@@ -18,38 +19,37 @@ ToolBar {
         anchors.fill: parent
         ToolButton {
             id: toolButton
-            visible: !backButton.visible && (appWindow.isLandscape || !appWindow.hasOnlyOneMenu)
+            visible: !backButton.visible
             focusPolicy: Qt.NoFocus
+            Layout.alignment: Qt.AlignLeft
             IconActive {
                 anchors.centerIn: parent
-                //                imageName: "menu.png"
-                //                imageSize: 24
-    //            source: "qrc:/images/"+iconOnPrimaryFolder+"/menu.png"
-                source: "qrc:/images/white"+"/menu.png"
+                imageName: "menu.png"
             }
             onClicked: {
                 toolBar.menuClicked()
             }
         }// menu button
 
-        Label {
-            id:titleLabel
-            text: toolBar.title
-//            anchors.centerIn: parent
-        }
-
         ToolButton {
             id: backButton
             focusPolicy: Qt.NoFocus
             visible:false
-            Image {
+            Layout.alignment: Qt.AlignLeft
+            IconActive {
                 anchors.centerIn: parent
-    //            source: "qrc:/images/"+iconOnPrimaryFolder+"/arrow_back.png"
-                source: "qrc:/images/white/arrow_back.png"
+                imageName: 'arrow_back.png'
             }
             onClicked: {
-                destinations.itemAt(navigationIndex).item.goBack()
+                toolBar.backClicked()
             }
         } // backButton
+
+        Label {
+            id:titleLabel
+            text: toolBar.title
+//            Layout.alignment: Qt.AlignHCenter
+            //            anchors.centerIn: parent // FIXME Error
+        }
     }
 }

@@ -20,15 +20,15 @@ ApplicationWindow {
 
     visible: true
     visibility: Window.Maximized
-//    width: 640
-//    height: 480
+    //    width: 640
+    //    height: 480
     minimumHeight: 600
     minimumWidth: 300
 
     title: qsTr("Monthly Finance")
-//    Material.primary: Qt.black
-//    Material.background: Qt.white
-     background: Rectangle {color: 'white'}
+    //    Material.primary: Qt.black
+    //    Material.background: Qt.white
+    background: Rectangle {color: 'white'}
 
     ListModel {
         id: navigationListModel
@@ -40,14 +40,26 @@ ApplicationWindow {
         }
         ListElement {
             title:qsTr("Register Operation")
-            url:"CreateOperation.qml"
+            url:"qrc:/operation/List.qml"
             iconName:"home.png"
             canGoBack:false
         }
         ListElement {
             title:qsTr("Categories")
-            url:"CreateCategory.qml"
+            url:"qrc:/category/List.qml"
             iconName:"home.png"
+            canGoBack:true
+        }
+        ListElement {
+            title:qsTr("Operation Type")
+            url:"qrc:/operationtype/List.qml"
+            iconName:"tag.png"
+            canGoBack:true
+        }
+        ListElement {
+            title:qsTr("Currency")
+            url:"qrc:/currency/Index.qml"
+            iconName:"tag.png"
             canGoBack:true
         }
         ListElement {
@@ -88,18 +100,24 @@ ApplicationWindow {
             property: 'title'
             value: navigationItem.title
         }
+        Binding {
+            target: titleBarLoader.item
+            property: 'backButtonVisible'
+            value: navigationItem.canGoBack && stackView.currentItem.depth > 1
+        }
 
         Connections {
             target: titleBarLoader.item
             onMenuClicked:{
-//                if (stackView.depth > 1) {
-//                    stackView.pop()
-//                } else {
-//                    drawer.open()
-//                }
-                 drawer.open()
+                drawer.open()
             }
-
+            onBackClicked:{
+                if (stackView.depth > 1 && navigationItem.canGoBack) {
+                    stackView.currentItem.goBack()
+                } else {
+                    drawer.open()
+                }
+            }
         }
     }
 
@@ -117,7 +135,7 @@ ApplicationWindow {
                 stackView.replace(Qt.createComponent(url), Component.Asynchronous)
             else
                 stackView.push(Qt.createComponent(url), Component.Asynchronous)
-             drawer.close()
+            drawer.close()
         }
     }
 
@@ -125,12 +143,12 @@ ApplicationWindow {
         id: stackView
         initialItem: Qt.createComponent('Home.qml')
         anchors.fill: parent
-         background: Rectangle {color: 'white'}
+        background: Rectangle {color: 'white'}
         onCurrentItemChanged: {
             console.log("Main.qml stackView Index: " + stackView.depth)
-            console.log(currentItem.title)
-            console.log(titleBarLoader.item)
-            console.log(stackView.currentItem)
+//            console.log(currentItem.title)
+//            console.log(titleBarLoader.item)
+//            console.log(stackView.currentItem)
         }
         // STACK VIEW TRANSITIONS
         //        replaceEnter: Transition {

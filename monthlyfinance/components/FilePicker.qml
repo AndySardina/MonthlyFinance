@@ -6,7 +6,6 @@ import QtQuick.Window 2.11
 import QtQuick.Controls.Material 2.4
 import Qt.labs.platform 1.0
 
-//import QtQml 2.2
 import components 1.0
 import assets 1.0
 
@@ -166,7 +165,7 @@ Popup {
         showDotAndDotDot:false
         showHidden: false
         sortField : FolderListModel.Name
-        rootFolder: myApp.rootFileSystem()
+//        rootFolder: myApp.rootFileSystem()
 
         onFolderChanged: {
             for(var i=0;i < count; i++)

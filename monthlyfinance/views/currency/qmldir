@@ -1,0 +1,7 @@
+module Views.Currency
+Form 1.0 Form.qml
+Create 1.0 Create.qml
+Update 1.0 Update.qml
+View 1.0 View.qml
+List 1.0 List.qml
+Index 1.0 Index.qml

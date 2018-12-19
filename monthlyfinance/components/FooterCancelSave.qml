@@ -4,6 +4,8 @@ import QtQuick.Layouts 1.11
 import QtQuick.Controls 2.4
 import QtQuick.Controls.Material 2.4
 
+import assets 1.0
+
 Pane {
     property string buttonCANCEL: "CANCEL"
     property string buttonSAVE: "SAVE"
@@ -26,7 +28,7 @@ Pane {
             ButtonFlat {
                 Layout.preferredWidth: 1
                 text: qsTr("Cancel")
-                textColor: accentColor
+                textColor: Style.accentColor
                 onClicked: {
                     buttonClicked = buttonCANCEL
                 }
@@ -34,7 +36,7 @@ Pane {
             ButtonFlat {
                 Layout.preferredWidth: 1
                 text: qsTr("Save")
-                textColor: primaryColor
+                textColor: Style.primaryColor
                 onClicked: {
                     buttonClicked = buttonSAVE
                 }

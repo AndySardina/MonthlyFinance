@@ -49,6 +49,8 @@ TextFieldEmail 1.0 TextFieldEmail.qml
 TextFieldInt 1.0 TextFieldInt.qml
 TextFieldPhoneNumber 1.0 TextFieldPhoneNumber.qml
 TimePicker 1.0 TimePicker.qml
+BaseView 1.0 BaseView.qml
+BaseForm 1.0 BaseForm.qml
 
 
 

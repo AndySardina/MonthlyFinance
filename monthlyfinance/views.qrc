@@ -1,10 +1,42 @@
 <RCC>
     <qresource prefix="/views">
-        <file alias="CreateCategory.qml">views/CreateCategory.qml</file>
-        <file alias="CreateOperation.qml">views/CreateOperation.qml</file>
         <file alias="Home.qml">views/Home.qml</file>
         <file alias="main.qml">views/main.qml</file>
         <file alias="Report.qml">views/Report.qml</file>
         <file alias="Settings.qml">views/Settings.qml</file>
+    </qresource>
+    <qresource prefix="/operation">
+        <file alias="Form.qml">views/operation/Form.qml</file>
+        <file alias="Create.qml">views/operation/Create.qml</file>
+        <file alias="Update.qml">views/operation/Update.qml</file>
+        <file alias="List.qml">views/operation/List.qml</file>
+        <file alias="View.qml">views/operation/View.qml</file>
+        <file alias="qmldir">views/operation/qmldir</file>
+    </qresource>
+    <qresource prefix="/operationtype">
+        <file alias="Form.qml">views/operationtype/Form.qml</file>
+        <file alias="Create.qml">views/operationtype/Create.qml</file>
+        <file alias="Update.qml">views/operationtype/Update.qml</file>
+        <file alias="List.qml">views/operationtype/List.qml</file>
+        <file alias="View.qml">views/operationtype/View.qml</file>
+        <file alias="qmldir">views/operationtype/qmldir</file>
+    </qresource>
+    <qresource prefix="/currency">
+        <file alias="Form.qml">views/currency/Form.qml</file>
+        <file alias="Create.qml">views/currency/Create.qml</file>
+        <file alias="Update.qml">views/currency/Update.qml</file>
+        <file alias="List.qml">views/currency/List.qml</file>
+        <file alias="View.qml">views/currency/View.qml</file>
+        <file alias="Index.qml">views/currency/Index.qml</file>
+        <file alias="qmldir">views/currency/qmldir</file>
+    </qresource>
+    <qresource prefix="/category">
+        <file alias="Form.qml">views/category/Form.qml</file>
+        <file alias="Create.qml">views/category/Create.qml</file>
+        <file alias="Update.qml">views/category/Update.qml</file>
+        <file alias="List.qml">views/category/List.qml</file>
+        <file alias="View.qml">views/category/View.qml</file>
+        <file alias="Index.qml">views/category/Index.qml</file>
+        <file alias="qmldir">views/category/qmldir</file>
     </qresource>
 </RCC>

@@ -21,9 +21,6 @@ Pane {
             //            id:
             imageName: 'calendar.png'
             imageSize: 18
-            //            source: 'qrc:/images/white/calendar.png'
-            //            Layout.preferredWidth: parent.width * 0.2
-
         }
         TextField {
             id:root
@@ -32,7 +29,6 @@ Pane {
             //            inputMask: '00/00/0000 - 00/00/0000'
             //            placeholderText: '00/00/0000 - 00/00/0000'
             readOnly: true
-            //            font.pixelSize: 14
 
             MouseArea {
                 anchors.fill: parent

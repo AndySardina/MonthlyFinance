@@ -1,8 +1,10 @@
 // ekke (Ekkehard Gentz) @ekkescorner
-import QtQuick 2.9
-import QtQuick.Controls 2.2
-import QtQuick.Controls.Material 2.2
+import QtQuick 2.11
+import QtQuick.Controls 2.4
+import QtQuick.Controls.Material 2.4
 import QtGraphicalEffects 1.0
+
+import assets 1.0
 
 Button {
     id: button
@@ -33,7 +35,7 @@ Button {
         layer.effect: DropShadow {
             verticalOffset: 3
             horizontalOffset: 1
-            color: dropShadow
+            color: Style.dropShadow
             samples: button.pressed ? 20 : 10
             spread: 0.5
         }

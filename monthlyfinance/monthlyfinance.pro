@@ -1,4 +1,4 @@
-QT += quick sql
+QT += quick qml sql
 CONFIG += c++1z
 
 DEFINES += QT_DEPRECATED_WARNINGS

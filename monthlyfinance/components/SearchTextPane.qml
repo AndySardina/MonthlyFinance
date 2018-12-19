@@ -22,14 +22,16 @@ Pane {
 
     topPadding: 0
     z: 1
-    Material.elevation: 12
-//    width: appWindow.width * 2/3
-//    height: 54
-//    anchors.horizontalCenter: parent.horizontalCenter
-//    anchors.bottomMargin: 10
-//    anchors.bottom: parent.bottom
     RowLayout {
         width: parent.width - 30
+        IconActive {
+            id:icon
+            imageName: "search.png"
+            MouseArea {
+                anchors { fill: parent; margins: -10 }
+                onClicked: wrapper.accepted()
+            }
+        }
         TextField {
             id: theSearchTextField
             selectByMouse: true
