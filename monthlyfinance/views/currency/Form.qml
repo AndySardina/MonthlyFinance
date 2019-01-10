@@ -1,13 +1,35 @@
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
-import QtQuick.Controls.Material 2.4
+import QtQuick 2.12
+import QtQuick.Layouts 1.12
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 
 //import components 1.0
 import '../../components'
 
 BaseForm {
     id:form
+
+    property var getData: function () {
+
+        console.log('Form Data');
+        // TODO in next version implement this
+//        var itemChildren = form.children
+//        console.log(itemChildren.length)
+//        for (var i = 0; i < itemChildren.length; i++)
+//        {
+//            var item = itemChildren[i]
+//            console.log(item)
+//            console.log(item.id)
+//        }
+
+        var data = {
+            'name': nameTextField.text,
+            'description': descriptionText.text
+        };
+
+        console.log(JSON.toString(data));
+        return data;
+    }
 
     onModelIdChanged: {
         if(modelId > 0) {
@@ -50,7 +72,7 @@ BaseForm {
                         leftPadding: 10
                         rightPadding: 10
                         wrapMode: Text.WordWrap
-                        text: modelId > 0 ? modelId : "-"
+                        text: modelObj ? modelObj.id : "-"
                         Layout.preferredWidth: 2
                     }
                 } // nrLabel
@@ -78,7 +100,7 @@ BaseForm {
                             //rightPadding: 10
                             wrapMode: Text.WordWrap
                             placeholderText: qsTr("Name")
-//                            text: categoryObj ? categoryObj.name : ""
+                            text: modelObj ? modelObj.name : ""
                             // TODO feature request textChanging and textChanged - per ex trim
                             //Layout.fillWidth: true
                             //Layout.preferredWidth: 2
@@ -103,7 +125,7 @@ BaseForm {
                         Layout.fillWidth: true
                         Layout.preferredWidth: 2
                         TextAreaRow{
-                            id: texArea
+                            id: descriptionText
                             elevation: 3
                             anchors.fill: parent
                         }

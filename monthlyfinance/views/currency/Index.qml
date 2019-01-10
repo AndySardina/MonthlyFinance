@@ -1,21 +1,22 @@
 // org.ingenii.cs
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
-import QtQuick.Controls.Material 2.4
+import QtQuick 2.12
+import QtQuick.Layouts 1.12
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 import QtGraphicalEffects 1.0
 
 import components 1.0
 //import '../../components'
 import assets 1.0
 //import Views.Currency 1.0 as Currency
+import Flux 1.0
 
 BaseView {
     id: listPage
 
     focus: true
-//    bottomPadding: 24
-//    topPadding: 16
+    //    bottomPadding: 24
+    //    topPadding: 16
     name: "CurrencyIndexView"
     depth: currencyNavPane.depth
 
@@ -28,7 +29,7 @@ BaseView {
         console.log("Cleanup done from CurrencyIndexView")
     }
 
-   goBack: function () {
+    goBack: function () {
         currencyNavPane.popOnePage()
     }
 
@@ -43,28 +44,37 @@ BaseView {
         Loader {
             id: viewLoader
             property int modelId: -1
+            property var modelObj: null
             active: false
             visible: false
-            source:"qrc:/currency/View.qml"
+            asynchronous: true
             onLoaded: {
-                item.modelId = modelId
-                currencyNavPane.push(item)
-                item.init()
+                console.log('onLoaded: ' + (status == Loader.Ready))
+                console.log(source)
+                if(status == Loader.Ready)
+                {
+                    item.modelId = modelId
+                    item.modelObj = viewLoader.modelObj
+                    currencyNavPane.push(item)
+                    item.init()
+                }
             }
         }
 
-        function pushView(modelId, viewUrl) {
-            viewLoader.modelId = modelId
+        function pushView(modelObj, viewUrl) {
+            viewLoader.modelObj = modelObj
             viewLoader.source = viewUrl
             viewLoader.active = true
-        } 
+        }
 
         function popOnePage() {
 
             if(currencyNavPane.depth > 1) {
                 var page = pop()
                 viewLoader.active = false
-                currencyNavPane.initialItem.init()
+                viewLoader.modelId = -1
+                if(currencyNavPane.depth == 1) // inital list page
+                    currencyNavPane.initialItem.init()
                 return
             }
         } // popOnePage
@@ -77,6 +87,8 @@ BaseView {
         property string imageName: "/add.png"
         z: 1
         anchors.margins: 20
+        anchors.rightMargin: 40
+
         anchors.right: parent.right
         anchors.bottom: parent.bottom
         imageSource: "qrc:/images/" + Style.iconOnPrimaryDarkFolder + imageName
@@ -84,26 +96,40 @@ BaseView {
         showShadow: true
         onClicked: {
             if(currencyNavPane.depth == 1) {
-                currencyNavPane.pushView(-1,'qrc:/currency/Create.qml')
+                currencyNavPane.pushView(null,'qrc:/currency/Create.qml')
             }
         }
     }
 
-//    FloatingActionButton {
-////        visible: currencyNavPane.depth == 0
-//        property string imageName: "/add.png"
-//        z: 2
-//        anchors.margins: 20
-//        anchors.right: parent.right
-//        anchors.bottom: parent.bottom
-//        imageSource: "qrc:/images/" + Style.iconOnPrimaryDarkFolder + imageName
-//        backgroundColor: Style.primaryDarkColor
-//        onClicked: {
-//            if(currencyNavPane.depth == 1) {
-//                currencyNavPane.pushCreateView(-1)
-//            }
-//        }
-//    } // FAB
+    Connections {
+        target:CurrencyStore
+        onSaveCurrencyFinished:{
+            if(!hasError){
+                currencyNavPane.popOnePage()
+                return;
+            }
+            // handlerError()
+        }
+        onAskRequestNewCurrency:{
+            currencyNavPane.popOnePage()
+            currencyNavPane.pushView(null,
+                                     'qrc:/currency/Create.qml')
+        }
+        onAskRequesUpdateCurency:{
+            console.log('onAskRequesUpdateCurency')
+            currencyNavPane.popOnePage()
+            currencyNavPane.pushView(currency,
+                                     'qrc:/currency/Update.qml')
+        }
+        onReadCurrencyFinished: {
+            console.log("onReadCurrencyFinished")
+            if(!hasError){
+                currencyNavPane.pushView(CurrencyStore.currency,
+                                         'qrc:/currency/View.qml')
+                return;
+            }
+        }
+    }
 
     function handlerError(error) {
     }

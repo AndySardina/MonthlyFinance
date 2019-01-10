@@ -1,41 +1,51 @@
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
-import QtQuick.Controls.Material 2.4
+import QtQuick 2.12
+import QtQuick.Layouts 1.12
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 
 import components 1.0
-import views.Currency 1.0
+import Views.Currency 1.0
+//import App.actions 1.0
+import Flux 1.0
 
 BaseView {
     id: createView
-    name:"OperatiornTypeUpdate"
+    name:"CurrencyUpdatePage"
+
+    property alias modelId: form.modelId
+    property alias modelObj: form.modelObj
 
     footer: FooterCancelSave {
         id: footerButtons
-        visible: isModified
+//        visible: form.isModified
         onButtonClickedChanged: {
             if(buttonClicked == footerButtons.buttonRESET) {
                 return;
             }
             if(buttonClicked == footerButtons.buttonSAVE) {
+
+                var formData = form.getData();
+                ActionProvider.updateCurrency(form.modelObj)
+                reset()
                 return;
             }
             if(buttonClicked === footerButtons.buttonCANCEL) {
-                if(modelObj.id > 0) {
+                if(modelObj && modelObj.id > 0) {
 
                 } else {
                     // NEW canceled
                 }
                 // GO back
             }
-            footerButtons.reset()
+            footerButtons.reset();
             // want to go back to list now ?
-            categoryNavPane.popOnePage()
+            categoryNavPane.popOnePage();
         }
     }
 
     Form {
         id: form
         anchors.fill:parent
+        title:'New Currency'
     }
 }

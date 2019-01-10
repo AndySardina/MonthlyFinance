@@ -1,44 +1,42 @@
 // org.ingenii.cs
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
-import QtQuick.Controls.Material 2.4
+import QtQuick 2.12
+import QtQuick.Layouts 1.12
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 import QtGraphicalEffects 1.0
 
 import components 1.0
 //import '../../components'
 import assets 1.0
+//import '../../assets'
+
+//import App.stores 1.0
+
+import Flux 1.0
 
 BaseView {
     id: listPage
+
+    signal newClicked()
+
     focus: true
     name: "CurrencyList"
-//    bottomPadding: 24
-//    topPadding: 16
+    //    bottomPadding: 24
+    //    topPadding: 16
 
     // called immediately after Loader.loaded
     init: function() {
         console.log("Init done from CurrencyListView")
+        ActionProvider.listCurrency();
     }
     // called from Component.destruction
     cleanup: function() {
         console.log("Cleanup done from CurrencyListView")
     }
 
-    ListModel {
-        id:listModel
-        ListElement {
-            modelName:"USD"
-            modelDescritpion:"Dolar Américano"
-        }
-        ListElement {
-            modelName:"CUC"
-            modelDescritpion:"Pesos Convertibles"
-        }
-        ListElement {
-            modelName:"CUC"
-            modelDescritpion:"Euro"
-        }
+    Component.onCompleted:
+    {
+        init()
     }
 
     // HEADER
@@ -49,6 +47,7 @@ BaseView {
         // while scrolling with ListView.OverlayHeader
         ToolBar {
             width: parent.width
+            //            height:listPage.height * 0.1
             // default stackorder of 1 doesn't work
             z:2
             // here we set the background to list background
@@ -56,13 +55,38 @@ BaseView {
             // now header controls work as expected
             ColumnLayout {
                 width: parent.width
+                anchors.leftMargin: 16
                 RowLayout{
                     Layout.fillWidth: true
 
+                    CheckBox
+                    {
+                        id:selectAll
+                        text: Style.isLandscape ? 'Select all':''
+                    }
+
+                    //                    Button {
+                    //                        text: Style.isLandscape ? 'New' : ''
+                    //                        icon.source: 'qrc:/images/'+ Style.iconOnPrimaryFolder + '/add.png'
+
+                    //                        onClicked: {
+                    //                            ActionProvider.askRequesNewCurency();
+                    //                        }
+                    //                    }
+                    Button {
+                        visible: selectAll.checked
+                        Behavior on visible {
+                            PropertyAnimation { properties: "visible"; easing.type: Easing.InBounce;}
+                        }
+
+                        text: Style.isLandscape ? 'Delete' : ''
+                        icon.source: 'qrc:/images/'+ Style.iconOnPrimaryFolder + '/delete_sweep.png'
+                    }
+
                     SearchTextPane{
                         id:searchInput
-                        Layout.alignment: Qt.AlignRight
-//                        Layout.preferredWidth: tool.preferredWidth
+                        //                        Layout.alignment: Qt.AlignRight
+                        //                        Layout.preferredWidth: tool.preferredWidth
                     }
 
                     //                    IconInactive {
@@ -103,11 +127,15 @@ BaseView {
             onClicked: {
                 if(swipe.complete) {
                     // hide the Row from the List
-                    //  removeFake.start()
+                    //                      removeFake.start()
+                    ActionProvider.removeCurrency(listView.model.get(index).id)
                     return
                 }
                 if(swipe.position == 0) {
-
+                    //                    console.log(modelData)
+                    //                    console.log(id)
+                    console.log(listView.model.get(index).id)
+                    ActionProvider.readCurrency(listView.model.get(index).id)
                     return
                 }
             }
@@ -131,16 +159,9 @@ BaseView {
                         //                        topPadding: 6
                         leftPadding: 16
                         //                        rightPadding: 12
-                        text:modelName
-                        //                        horizontalAlignment:Text.AlignLeft
+                        text:name
                         color: 'white'
                         opacity: 1
-                        //                        Layout.alignment: Qt.AlignHCenter
-                        //                        anchors.verticalCenter: parent.verticalCenter
-                        //                                wrapMode: Label.WordWrap
-                        //                                font.bold: true
-                        //                                Layout.alignment: Qt.AlignHCenter
-                        //                                anchors.horizontalCenter: parent.horizontalCenter
                     }
 
                     /*                    Item {
@@ -176,50 +197,13 @@ BaseView {
 
             Component {
                 id: behindComponent
-                Item {
-                    width: parent.width
-                    height: parent.height
-                    Rectangle {
-                        anchors.fill: parent
-                        color: Math.abs(swipe.position) > 0.3? Material.color(Material.Red, rowDelegate.pressed ? Material.Shade300 : Material.Shade500) : Material.color(Material.Grey)
-                    }
-                    ColumnLayout {
-                        visible: Math.abs(swipe.position) == 1
-                        width: parent.width
-                        height: parent.height
-                        LabelSubheading {
-                            topPadding: 12
-                            text: qsTr("Eliminar Categoria")
-                            color: "white"
-                            font.bold: true
-                            horizontalAlignment: Qt.AlignHCenter
-                        } // label
-                        LabelBody {
-                            bottomPadding: 12
-                            text: qsTr("Deslizar para cancelar")
-                            color: "white"
-                            horizontalAlignment: Qt.AlignHCenter
-                        } // label
-                    } // col w Labels
-                    Item {
-                        id: imageItem
-                        property bool isLeftPosition: swipe.position > 0 || Math.abs(swipe.position) == 1
-                        height: parent.height
-                        anchors.left: parent.left
-                        anchors.right: parent.right
-                        Image {
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.horizontalCenter: imageItem.isLeftPosition? parent.left : parent.right
-                            anchors.horizontalCenterOffset: imageItem.isLeftPosition? 42 : -42
-                            height: 36
-                            width: 36
-                            source: "qrc:/images/white/x36/delete_sweep.png"
-                        } // image
-                    } // icon item
-                } // behindItem
-            } // behindComponent
+                BehindDeleteComponent {
+                    text: qsTr('Delete Currency: ') + name
+                    description: qsTr("Deslizar para cancelar")
+                } // behindComponent
+            }
 
-            //            swipe.behind: behindComponent
+            swipe.behind: behindComponent
 
         } // swipe rowDelegate
     } // orderRowSwipeComponent
@@ -233,14 +217,15 @@ BaseView {
         //        currentIndex: -1
         anchors.fill: parent
         // setting the margin to be able to scroll the list above the FAB to use the Switch on last row
-//        bottomMargin: 40
+        //        bottomMargin: 40
         delegate: itemRowSwipeComponent
-        model: listModel
+        model: CurrencyStore.model
         header: headerComponent
         headerPositioning: ListView.OverlayHeader
         // in Landscape header scrolls away
         // in protrait header always visible
         //        headerPositioning: Style.isLandscape? ListView.PullBackHeader : ListView.OverlayHeader
+
         ScrollIndicator.vertical: ScrollIndicator { }
 
     } // end listView

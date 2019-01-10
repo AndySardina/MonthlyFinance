@@ -1,9 +1,9 @@
 #ifndef CURRENCY_H
 #define CURRENCY_H
 
-#include "entity.h"
-
 #include <QString>
+#include "db/entity/entity.h"
+
 
 class ENTITYMANAGEMENTSHARED_EXPORT Currency : public Entity
 {
@@ -14,6 +14,10 @@ public:
     Currency(QObject * parent = Q_NULLPTR): Entity(parent){}
 
      ~Currency() override = default;
+
+    Q_DISABLE_COPY (Currency)
 };
+
+Q_DECLARE_METATYPE(Currency*)
 
 #endif // CURRENCY_H

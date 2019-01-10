@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/components">
-        <file alias="qmldir">components/qmldir</file>
+        <file alias="_Components.qmldir">components/qmldir</file>
+        <file alias="Style.qml">components/Style.qml</file>
         <file alias="ButtonFlat.qml">components/ButtonFlat.qml</file>
         <file alias="ComboBoxWithIcon.qml">components/ComboBoxWithIcon.qml</file>
         <file alias="DateInput.qm">components/DateInput.qml</file>
@@ -20,7 +21,6 @@
         <file alias="LabelBodySecondary.qml">components/LabelBodySecondary.qml</file>
         <file alias="SearchInput.qml">components/SearchInput.qml</file>
         <file alias="DrawerNavigationButton.qml">components/DrawerNavigationButton.qml</file>
-        <file alias="Style.qml">components/Style.qml</file>
         <file alias="AvatarImage.qml">components/AvatarImage.qml</file>
         <file alias="ButtonIconActive.qml">components/ButtonIconActive.qml</file>
         <file alias="CharButton.qml">components/CharButton.qml</file>
@@ -53,5 +53,11 @@
         <file alias="VerticalDivider.qml">components/VerticalDivider.qml</file>
         <file alias="BaseView.qml">components/BaseView.qml</file>
         <file alias="BaseForm.qml">components/BaseForm.qml</file>
+        <file alias="BehindDeleteComponent.qml">components/BehindDeleteComponent.qml</file>
+        <file alias="ButtonOneChar.qml">components/ButtonOneChar.qml</file>
+        <file alias="ButtonRaised.qml">components/ButtonRaised.qml</file>
+        <file alias="ComboBoxButton.qml">components/ComboBoxButton.qml</file>
+        <file alias="ComboBoxModal.qml">components/ComboBoxModal.qml</file>
+        <file alias="CrudToolBar.qml">components/CrudToolBar.qml</file>
     </qresource>
 </RCC>

@@ -17,10 +17,15 @@ LabelDisplay2 1.0 LabelDisplay2.qml
 LabelDisplay3 1.0 LabelDisplay3.qml
 LabelDisplay4 1.0 LabelDisplay4.qml
 ButtonFlat 1.0 ButtonFlat.qml
+ButtonIconActive 1.0 ButtonIconActive.qml
+ButtonOneChar 1.0 ButtonOneChar.qml
+ButtonRaised 1.0 ButtonRaised.qml
 FloatingActionButton 1.0 FloatingActionButton.qml
 FloatingActionMiniButton 1.0 FloatingActionMiniButton.qml
 DrawerNavigationButton 1.0 DrawerNavigationButton.qml
 ComboBoxWithIcon 1.0 ComboBoxWithIcon.qml
+ComboBoxButton 1.0 ComboBoxButton.qml
+ComboBoxModal 1.0 ComboBoxModal.qml
 SearchInput 1.0 SearchInput.qml
 DateInput 1.0 DateInput.qml
 DatePicker 1.0 DatePicker.qml
@@ -29,7 +34,6 @@ DateRangePicker 1.0 DateRangePicker.qml
 DrawerNavigationBar 1.0 DrawerNavigationBar.qml
 DrawerTitleBar 1.0 DrawerTitleBar.qml
 AvatarImage 1.0 AvatarImage.qml
-ButtonIconActive 1.0 ButtonIconActive.qml
 CharButton 1.0 CharButton.qml
 FilePicker 1.0 FilePicker.qml
 FooterCancelSave 1.0 FooterCancelSave.qml
@@ -51,6 +55,8 @@ TextFieldPhoneNumber 1.0 TextFieldPhoneNumber.qml
 TimePicker 1.0 TimePicker.qml
 BaseView 1.0 BaseView.qml
 BaseForm 1.0 BaseForm.qml
+BehindDeleteComponent 1.0 BehindDeleteComponent.qml
+CrudToolBar 1.0 CrudToolBar.qml
 
 
 

@@ -11,7 +11,6 @@
 #include <QSqlError>
 #include <QDirIterator>
 
-
 EntityManager::EntityManager()
 {}
 

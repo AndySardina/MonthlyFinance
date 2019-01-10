@@ -1,9 +1,10 @@
 <RCC>
     <qresource prefix="/views">
         <file alias="Home.qml">views/Home.qml</file>
-        <file alias="main.qml">views/main.qml</file>
         <file alias="Report.qml">views/Report.qml</file>
         <file alias="Settings.qml">views/Settings.qml</file>
+        <file alias="MainWindow.qml">MainWindow.qml</file>
+        <file alias="main.qml">views/main.qml</file>
     </qresource>
     <qresource prefix="/operation">
         <file alias="Form.qml">views/operation/Form.qml</file>

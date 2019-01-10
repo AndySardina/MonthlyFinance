@@ -1,19 +1,43 @@
 // org.ingenii.cs
-import QtQuick 2.11
-import QtQuick.Layouts 1.11
-import QtQuick.Controls 2.4
-import QtQuick.Controls.Material 2.4
+import QtQuick 2.12
+import QtQuick.Layouts 1.12
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 
 
 ToolBar {
     id:toolBar
     property string title: "Title"
     property alias backButtonVisible: backButton.visible
+    property bool isDrawerNavBarOpen: false
 
     signal menuClicked()
     signal backClicked()
 
     contentHeight: toolButton.implicitHeight
+
+    states: [
+        State {
+            name: "drawerOpen"
+            when: isDrawerNavBarOpen
+            PropertyChanges {
+                target: iconBack
+                rotation: 90
+            }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            to: "drawerOpen"
+            reversible: true
+            RotationAnimation {
+                target:iconBack
+                duration: 500
+                direction: RotationAnimation.Counterclockwise
+            }
+        }
+    ]
 
     RowLayout {
         anchors.fill: parent
@@ -23,6 +47,7 @@ ToolBar {
             focusPolicy: Qt.NoFocus
             Layout.alignment: Qt.AlignLeft
             IconActive {
+                id:iconBack
                 anchors.centerIn: parent
                 imageName: "menu.png"
             }
@@ -48,7 +73,7 @@ ToolBar {
         Label {
             id:titleLabel
             text: toolBar.title
-//            Layout.alignment: Qt.AlignHCenter
+            //            Layout.alignment: Qt.AlignHCenter
             //            anchors.centerIn: parent // FIXME Error
         }
     }

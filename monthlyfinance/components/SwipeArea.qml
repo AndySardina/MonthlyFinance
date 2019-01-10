@@ -1,6 +1,6 @@
 /* This code was written by Sergejs Kovrovs and has been placed in the public domain. */
 
-import QtQuick 2.11
+import QtQuick 2.12
 
 
 MouseArea {

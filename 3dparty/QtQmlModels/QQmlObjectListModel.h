@@ -88,8 +88,8 @@ public:
     {
         static QSet<QByteArray> roleNamesBlacklist;
         if (roleNamesBlacklist.isEmpty ()) {
-            roleNamesBlacklist << QByteArrayLiteral ("id")
-                               << QByteArrayLiteral ("index")
+//            roleNamesBlacklist << QByteArrayLiteral ("id")
+            roleNamesBlacklist << QByteArrayLiteral ("index")
                                << QByteArrayLiteral ("class")
                                << QByteArrayLiteral ("model")
                                << QByteArrayLiteral ("modelData");
@@ -320,10 +320,10 @@ public: // QML slots implementation
         return indexOf (get (uid));
     }
     QObject * get (int idx) const Q_DECL_FINAL {
-        return static_cast<QObject *> (at (idx));
+        return qobject_cast<QObject *> (at (idx));
     }
     QObject * get (const QString & uid) const Q_DECL_FINAL {
-        return static_cast<QObject *> (getByUid (uid));
+        return qobject_cast<QObject *> (getByUid (uid));
     }
     QObject * getFirst (void) const Q_DECL_FINAL {
         return static_cast<QObject *> (first ());

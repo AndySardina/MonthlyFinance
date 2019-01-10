@@ -7,7 +7,8 @@
 class ENTITYMANAGEMENTSHARED_EXPORT Entity : public QObject
 {
     Q_OBJECT
-    DSL_WRITABLE_VAR_PROPERTY(int, id)
+//    DSL_WRITABLE_VAR_PROPERTY(int, id)
+    DSL_WRITABLE_CSTREF_PROPERTY(int, id)
 
 public:
     Entity(QObject * parent = Q_NULLPTR) : QObject(parent), m_id(0) {}

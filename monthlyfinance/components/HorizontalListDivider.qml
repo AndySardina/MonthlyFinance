@@ -1,8 +1,8 @@
 // org.ingenii.cs
-import QtQuick 2.11
-import QtQuick.Controls 2.4
-import QtQuick.Layouts 1.11
-import QtQuick.Controls.Material 2.4
+import QtQuick 2.12
+import QtQuick.Controls 2.12
+import QtQuick.Layouts 1.12
+import QtQuick.Controls.Material 2.12
 
 // special divider for list elements
 // using height 1 ensures that it looks good if highlighted

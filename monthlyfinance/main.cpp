@@ -1,13 +1,9 @@
+#include <functional>
+
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-#include <db/entity/currency.h>
-
-#include "db/entitymanager.h"
-#include "QtQmlTricksPlugin_SmartDataModels.h"
-#include "QQmlObjectListModel.h"
-
-#include "db/repository/currencyrepository.h"
+#include "app/appview.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,23 +13,13 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationDomain("ingenii.com");
     QCoreApplication::setApplicationName("MonthlyFinance");
 
-
     QGuiApplication app(argc, argv);
-
-    EntityManager manager;
-    manager.initConection();
 
     QQmlApplicationEngine engine;
 
-    registerQtQmlTricksSmartDataModel (&engine);
+    AppView appView;
 
-    QQmlObjectListModel<Currency> currencyModel;
-
-    CurrencyRepository currencyRep;
-
-    currencyModel.append( currencyRep.findAll() );
-
-    engine.rootContext ()->setContextProperty ("currencyModel", &currencyModel);
+    appView.registerElement(&engine);  
 
     engine.load(QUrl(QStringLiteral("qrc:/views/main.qml")));
     if (engine.rootObjects().isEmpty())

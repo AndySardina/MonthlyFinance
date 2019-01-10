@@ -1,6 +1,6 @@
 pragma Singleton
-import QtQuick 2.11
-import QtQuick.Controls.Material 2.4
+import QtQuick 2.12
+import QtQuick.Controls.Material 2.12
 
 Item
 {
@@ -134,4 +134,8 @@ Item
 
     Material.primary: primaryColor
     Material.accent: accentColor
+
+    function setIsLandscape(value) {
+        isLandscape = value
+    }
 }

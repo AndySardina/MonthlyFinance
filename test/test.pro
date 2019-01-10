@@ -13,10 +13,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 SOURCES += \
     entitiestest.cpp
 
+include($$PWD/../3dparty/QtQmlModels/QtQmlModels.pri)
+
 
 INCLUDEPATH += \
     $$PWD/../entitymanagement/include \
-    $$PWD/../3dparty/QtSuperMacros
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../entitymanagement/release/ -lentitymanagement
