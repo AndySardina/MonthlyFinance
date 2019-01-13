@@ -55,6 +55,11 @@ public:
         emit newActionAdded();
     }
 
+    Dispatcher(const Dispatcher&) = delete;
+    Dispatcher(Dispatcher&&) = delete;
+    Dispatcher& operator=(const Dispatcher&) = delete;
+    Dispatcher& operator=(Dispatcher&&) = delete;
+
 signals:
     void newActionAdded();
 
@@ -66,11 +71,8 @@ private:
         }, Qt::QueuedConnection);
     }
 
-    Dispatcher(const Dispatcher&) = delete;
-    Dispatcher(Dispatcher&&) = delete;
-    Dispatcher& operator=(const Dispatcher&) = delete;
-    Dispatcher& operator=(Dispatcher&&) = delete;
-    ~Dispatcher() = default;
+
+   ~Dispatcher() override = default;
 
     void onNewActionAdded()
     {

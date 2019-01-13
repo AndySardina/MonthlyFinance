@@ -26,9 +26,7 @@ FtpMiddleware::FtpMiddleware()
 {
 }
 
-FtpMiddleware::~FtpMiddleware()
-{
-}
+FtpMiddleware::~FtpMiddleware() = default;
 
 QSharedPointer<flux_qt::Action> FtpMiddleware::process(const QSharedPointer<flux_qt::Action>& action)
 {
@@ -36,7 +34,7 @@ QSharedPointer<flux_qt::Action> FtpMiddleware::process(const QSharedPointer<flux
 
     case ActionType::UploadFtp:
         impl_->service_->onUploadFtp(action->getPayload<QString>());
-        return QSharedPointer<flux_qt::Action>(new flux_qt::Action(ActionType::UploadFtpStarted, action->getPayload<QString>()));
+        return QSharedPointer<flux_qt::Action>(flux_qt::Action::actionOf(ActionType::UploadFtpStarted, action->getPayload<QString>()));
     }
 
     return action;

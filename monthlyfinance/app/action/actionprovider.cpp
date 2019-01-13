@@ -9,52 +9,52 @@
 
 void ActionProvider::showFileDialog(bool show)
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::ShowFileDialog, show));
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::ShowFileDialog, show));
 }
 
 void ActionProvider::selectFile(const QString &filename)
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::SelectFile, filename));
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::SelectFile, filename));
 }
 
 void ActionProvider::uploadFtp(const QString &filename)
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::UploadFtp, filename));
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::UploadFtp, filename));
 }
 
 void ActionProvider::createCurrency(const QString& name)
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::CreateCurrency, name));
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::CreateCurrency, name));
 }
 
 void ActionProvider::readCurrency(int id)
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::ReadCurrency,id));
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::ReadCurrency,id));
 }
 
 void ActionProvider::updateCurrency(Currency* currency)
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::UpdateCurrency,
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::UpdateCurrency,
                                                                  QVariant::fromValue(currency)));
 }
 
 void ActionProvider::removeCurrency(int id)
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::RemoveCurrency, id));
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::RemoveCurrency, id));
 }
 
 void ActionProvider::listCurrency()
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::ListCurrency));
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::ListCurrency));
 }
 
 void ActionProvider::askRequesNewCurency()
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::AskRequesNewCurency));
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::AskRequesNewCurency));
 }
 
 void ActionProvider::askRequesUpdateCurency(Currency* currency)
 {
-    flux_qt::Dispatcher::instance().dispatch(new flux_qt::Action(ActionType::AskRequesUpdateCurency,
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::AskRequesUpdateCurency,
                                                                  QVariant::fromValue(currency)));
 }
