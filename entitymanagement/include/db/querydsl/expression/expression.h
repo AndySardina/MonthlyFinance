@@ -5,7 +5,7 @@
 
 #include "db/querydsl/private/tree.h"
 
-class Expression
+class ENTITYMANAGEMENTSHARED_EXPORT Expression
 {
     using stringtree_t = btree<QString>;
 
