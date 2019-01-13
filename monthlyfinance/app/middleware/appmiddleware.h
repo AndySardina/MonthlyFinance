@@ -17,7 +17,6 @@ public:
     AppMiddleware& operator=(AppMiddleware&&) = delete;
 
     // Middleware interface
-public:
     QSharedPointer<flux_qt::Action> process(const QSharedPointer<flux_qt::Action> &action) override;
 
 };

@@ -11,10 +11,10 @@ QSharedPointer<flux_qt::Action> AppMiddleware::process(const QSharedPointer<flux
 
     case ActionType::CreateCurrency:
         return QSharedPointer<flux_qt::Action>(flux_qt::Action::actionOf(ActionType::CreateCurrency, action->getPayload<QString>()));
+
     case ActionType::AskRequesNewCurency:
         return QSharedPointer<flux_qt::Action>(flux_qt::Action::actionOf(ActionType::AskRequesNewCurency));
     }
-
 
     return action;
 

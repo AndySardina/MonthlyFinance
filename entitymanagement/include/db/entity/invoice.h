@@ -13,7 +13,9 @@ class ENTITYMANAGEMENTSHARED_EXPORT Invoice : public Entity
 public:
     Invoice(QObject * parent = Q_NULLPTR): Entity(parent), m_element_id(-1), m_amount(0.0){}
 
-     ~Invoice() override = default;
+    ~Invoice() override = default;
+
+    Q_DISABLE_COPY (Invoice)
 };
 
 #endif // INVOICE_H

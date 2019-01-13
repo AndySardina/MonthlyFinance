@@ -12,6 +12,8 @@ class ENTITYMANAGEMENTSHARED_EXPORT Element : public Entity
 public:
     Element(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-     ~Element() override = default;
+    ~Element() override = default;
+
+    Q_DISABLE_COPY (Element)
 };
 #endif // ELEMENT_H

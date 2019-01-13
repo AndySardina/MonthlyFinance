@@ -49,7 +49,10 @@ void CurrencyStore::create(const QSharedPointer<flux_qt::Action> &action)
     auto* currency = new Currency(this);
     currency->set_name(action->getPayload<QString>());
     currency->set_id(m_model->count()+1);
+
+    currencyRepository.save(currency);
     m_model->append(currency);
+
     emit modelChange();
     emit saveCurrencyFinished();
 
@@ -94,29 +97,7 @@ void CurrencyStore::list(const QSharedPointer<flux_qt::Action> &action)
         return;
     }
 
-    auto* currency = new Currency();
-    currency->set_name("CUP");
-    currency->set_id(m_model->count()+1);
-
-    m_model->append(currency);
-
-    currency = new Currency();
-    currency->set_name("CUC");
-    currency->set_id(m_model->count()+1);
-
-    m_model->append(currency);
-
-    currency = new Currency();
-    currency->set_name("USD");
-    currency->set_id(m_model->count()+1);
-
-    m_model->append(currency);
-
-    currency = new Currency();
-    currency->set_name("EUR");
-    currency->set_id(m_model->count()+1);
-
-    m_model->append(currency);
+    m_model->append( currencyRepository.findAll() );
 
     emit modelChange();
 }

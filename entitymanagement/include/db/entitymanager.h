@@ -6,7 +6,7 @@
 class ENTITYMANAGEMENTSHARED_EXPORT EntityManager
 {
 public:
-    EntityManager();
+    EntityManager() = default;
 
 public:
     void initConection();

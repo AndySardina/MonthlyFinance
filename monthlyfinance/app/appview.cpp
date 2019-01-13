@@ -8,7 +8,6 @@
 
 #include "flux_qt/dispatcher.h"
 #include "action/actionprovider.h"
-#include "middleware/ftpmiddleware.h"
 #include "store/mainstore.h"
 #include "store/currencystore.h"
 #include "middleware/appmiddleware.h"
@@ -27,7 +26,6 @@ void AppView::onDispatched(QString type, QJSValue message)
 void AppView::registerElement(QQmlApplicationEngine* engine)
 {
     Q_UNUSED(engine)
-//    registerQtQmlTricksSmartDataModel(engine);
 
     qmlRegisterSingletonType<ActionProvider>("Flux", 1, 0, "ActionProvider",
                                              [](QQmlEngine* engine, QJSEngine* scriptEngine) -> QObject* {
@@ -66,7 +64,7 @@ void AppView::registerElement(QQmlApplicationEngine* engine)
         return &CurrencyStore::instance();
     });
 
-    flux_qt::Dispatcher::instance().registerMiddleware(new FtpMiddleware);
+
     flux_qt::Dispatcher::instance().registerMiddleware(new AppMiddleware);
 
     flux_qt::Dispatcher::instance().registerStore(QSharedPointer<flux_qt::Store>(&MainStore::instance(),

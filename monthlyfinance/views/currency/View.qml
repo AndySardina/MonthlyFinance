@@ -5,7 +5,6 @@ import QtQuick.Controls.Material 2.12
 
 import components 1.0
 import Views.Currency 1.0
-//import App.actions 1.0
 import Flux 1.0
 
 BaseView {
@@ -17,12 +16,13 @@ BaseView {
 
     footer: CrudToolBar {
         id: crudButtons
-//        visible: form.isModified
+
         onButtonClickedChanged: {
             if(buttonClicked == crudButtons.buttonUpdate) {
                 ActionProvider.askRequesUpdateCurency(modelObj)
                 return;
             }
+
             if(buttonClicked == crudButtons.buttonDelete) {
                 ActionProvider.removeCurrency(modelObj.id)
                 reset()

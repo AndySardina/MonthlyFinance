@@ -27,13 +27,12 @@ public:
     Q_INVOKABLE void askRequesNewCurency();
     Q_INVOKABLE void askRequesUpdateCurency(Currency* currency);
 
-private:
     ActionProvider() = default;
     ActionProvider(const ActionProvider&) = delete;
     ActionProvider(ActionProvider&&) = delete;
     ActionProvider& operator=(const ActionProvider&) = delete;
     ActionProvider& operator=(ActionProvider&&) = delete;
-    ~ActionProvider() = default;
+    ~ActionProvider() override = default;
 };
 
 #endif

@@ -3,8 +3,18 @@ TEMPLATE = subdirs
 CONFIG += ordered
 
 SUBDIRS += \
+  QtQmlModels \
+  QtSuperMacros \
   entitymanagement \
   monthlyfinance \
-#  test
+  test
 
-monthlyfinance.depends = entitymanagement
+
+QtQmlModels.subdir = 3dparty/QtQmlModels
+QtSuperMacros.subdir = 3dparty/QtSuperMacros
+
+entitymanagement.depends = QtSuperMacros
+monthlyfinance.depends = entitymanagement QtQmlModels
+test.depends = QtSuperMacros entitymanagement
+
+

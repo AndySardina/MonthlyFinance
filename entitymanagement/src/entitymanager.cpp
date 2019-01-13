@@ -11,9 +11,6 @@
 #include <QSqlError>
 #include <QDirIterator>
 
-EntityManager::EntityManager()
-{}
-
 void EntityManager::initConection()
 {
     QDir dataDir(QStandardPaths::writableLocation(QStandardPaths::AppLocalDataLocation));
