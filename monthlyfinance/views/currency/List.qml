@@ -112,6 +112,11 @@ BaseView {
             padding: 0
             text: " "
             down: pressed || swipe.complete
+            highlighted: selectAll.checked
+            onHighlightedChanged: {
+                console.log("onHighlightedChanged: " + highlighted)
+            }
+
             //            background: Rectangle {
             //                color: "transparent"
             //            }
