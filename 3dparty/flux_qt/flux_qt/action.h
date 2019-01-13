@@ -15,17 +15,13 @@ using is_scoped_enum = std::integral_constant<bool, std::is_enum<E>::value && !s
 class Action final
 {
 public:
-    template <class ScopedEnum = typename std::enable_if<is_scoped_enum<ScopedEnum>::value>::type>
-    Action(ScopedEnum type, QVariant& payload, bool error = false)
-        : type_(static_cast<int>(type)), payload_(payload), error_(error)
-    {
+    template<class ScopedEnum>
+    static Action* actionOf(ScopedEnum type, QVariant&& payload = QVariant(), bool error = false,
+                            typename std::enable_if<is_scoped_enum<ScopedEnum>::value, ScopedEnum>::type* = 0){
+        return new Action(type, payload, error);
     }
 
-    template <class ScopedEnum = typename std::enable_if<is_scoped_enum<ScopedEnum>::value>::type>
-    Action(ScopedEnum type, QVariant&& payload = QVariant(), bool error = false)
-        : type_(static_cast<int>(type)), payload_(std::move(payload)), error_(error)
-    {
-    }
+
 
     Action(const Action&) = default;
     Action(Action&&) = default;
@@ -33,8 +29,8 @@ public:
     Action& operator=(Action&&) = default;
     ~Action() = default;
 
-    template <class ScopedEnum = typename std::enable_if<is_scoped_enum<ScopedEnum>::value>::type>
-    ScopedEnum getType() const
+    template <class ScopedEnum>
+    typename std::enable_if_t<is_scoped_enum<ScopedEnum>::value, ScopedEnum> getType() const
     {
         return static_cast<ScopedEnum>(type_);
     }
@@ -48,6 +44,19 @@ public:
     bool getError() const
     {
         return error_;
+    }
+
+private:
+    template <class ScopedEnum>
+    Action(ScopedEnum type, QVariant& payload, bool error = false)
+        : type_(static_cast<int>(type)), error_(error), payload_(payload)
+    {
+    }
+
+    template <class ScopedEnum>
+    Action(ScopedEnum type, QVariant&& payload = QVariant(), bool error = false)
+        : type_(static_cast<int>(type)), error_(error), payload_(std::move(payload))
+    {
     }
 
 private:

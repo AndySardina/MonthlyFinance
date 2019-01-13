@@ -1,4 +1,5 @@
 #include <functional>
+#include <iostream>
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
@@ -15,6 +16,18 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
+    EntityManager entityManager;
+
+    try {
+
+        entityManager.initConection();
+
+    } catch (const std::runtime_error& e) {
+        std::cerr << e.what();
+
+        QGuiApplication::exit(-1);
+    }
+
     QQmlApplicationEngine engine;
 
     AppView appView;
@@ -25,5 +38,5 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
-    return app.exec();
+    return QGuiApplication::exec();
 }

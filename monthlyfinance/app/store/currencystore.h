@@ -9,6 +9,7 @@
 #include <flux_qt/store.h>
 
 #include "store/declaremetatype.h"
+#include "db/repository/currencyrepository.h"
 
 class CurrencyStore final: public QObject, public flux_qt::Store
 {
@@ -28,7 +29,7 @@ public:
 
     // Store interface
 public:
-    void process(const QSharedPointer<flux_qt::Action> &action);
+    void process(const QSharedPointer<flux_qt::Action> &action) override;
     QQmlObjectListModel<Currency>* getModel() const;
 
     Currency *getCurrentCurrency() const;
@@ -44,6 +45,7 @@ signals:
 
 private:
     CurrencyStore();
+    CurrencyRepository currencyRepository;
     QQmlObjectListModel<Currency>* m_model = nullptr;
     Currency* m_currentCurrency = nullptr;
 

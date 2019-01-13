@@ -17,6 +17,8 @@ public:
     ExchangeRate(QObject * parent = Q_NULLPTR): Entity(parent){}
 
      ~ExchangeRate() override = default;
+
+    Q_DISABLE_COPY (ExchangeRate)
 };
 
 #endif // EXCHANGERATE_H

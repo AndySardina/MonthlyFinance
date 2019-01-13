@@ -6,17 +6,13 @@ import QtQuick.Controls.Material 2.12
 import QtGraphicalEffects 1.0
 
 import components 1.0
-//import '../../components'
 import assets 1.0
-//import Views.Currency 1.0 as Currency
 import Flux 1.0
 
 BaseView {
     id: listPage
 
     focus: true
-    //    bottomPadding: 24
-    //    topPadding: 16
     name: "CurrencyIndexView"
     depth: currencyNavPane.depth
 

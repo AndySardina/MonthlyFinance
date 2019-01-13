@@ -7,18 +7,17 @@
 class AppMiddleware final : public flux_qt::Middleware
 {
 public:
-    AppMiddleware();
-    ~AppMiddleware();
+    AppMiddleware() = default;
 
-    // Middleware interface
-public:
-    QSharedPointer<flux_qt::Action> process(const QSharedPointer<flux_qt::Action> &action);
+    ~AppMiddleware() override = default;
 
-private:
     AppMiddleware(const AppMiddleware&) = delete;
     AppMiddleware(AppMiddleware&&) = delete;
     AppMiddleware& operator=(const AppMiddleware&) = delete;
     AppMiddleware& operator=(AppMiddleware&&) = delete;
+
+    // Middleware interface
+    QSharedPointer<flux_qt::Action> process(const QSharedPointer<flux_qt::Action> &action) override;
 
 };
 

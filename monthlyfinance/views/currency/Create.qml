@@ -5,7 +5,6 @@ import QtQuick.Controls.Material 2.12
 
 import components 1.0
 import Views.Currency 1.0
-//import App.actions 1.0
 import Flux 1.0
 
 BaseView {
@@ -17,7 +16,7 @@ BaseView {
 
     footer: FooterCancelSave {
         id: footerButtons
-//        visible: form.isModified
+
         onButtonClickedChanged: {
             if(buttonClicked == footerButtons.buttonRESET) {
                 return;

@@ -17,7 +17,7 @@ public:
     MainStoreImpl& operator=(MainStoreImpl&&) = delete;
     ~MainStoreImpl() = default;
 
-    bool showFileDialog_;
+    bool showFileDialog_{};
     QString selectedFilename_;
     QString uploadStatus_;
 };
@@ -31,9 +31,7 @@ MainStore::MainStore()
 
 }
 
-MainStore::~MainStore()
-{
-}
+MainStore::~MainStore() = default;
 
 bool MainStore::getShowFileDialog() const
 {

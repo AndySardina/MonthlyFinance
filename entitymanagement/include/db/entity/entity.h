@@ -13,7 +13,9 @@ class ENTITYMANAGEMENTSHARED_EXPORT Entity : public QObject
 public:
     Entity(QObject * parent = Q_NULLPTR) : QObject(parent), m_id(0) {}
 
-     ~Entity() override = default;
+    ~Entity() override = default;
+
+    Q_DISABLE_COPY(Entity)
 };
 
 #endif // ENTITY_H
