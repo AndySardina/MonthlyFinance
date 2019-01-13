@@ -8,7 +8,7 @@
 #include "db/querydsl/constants.h"
 
 template<typename T>
-class btree
+class ENTITYMANAGEMENTSHARED_EXPORT btree
 {    
 private:
     struct bnode

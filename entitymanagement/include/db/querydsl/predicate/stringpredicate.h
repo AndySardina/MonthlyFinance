@@ -3,7 +3,7 @@
 
 #include "db/querydsl/expression/expression.h"
 
-class StringPredicate {
+class ENTITYMANAGEMENTSHARED_EXPORT StringPredicate {
 
 public:
     StringPredicate(QString fieldName);
