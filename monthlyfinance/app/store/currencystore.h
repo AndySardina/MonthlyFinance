@@ -42,6 +42,8 @@ signals:
     void askRequesUpdateCurency(Currency* currency);
     void currentCurrencyChanged();
     void readCurrencyFinished(bool hasError=false, const QString& msg="");
+    void removeCurrencyFinished(bool hasError=false, const QString& msg="");
+    void removeBulkCurrencyFinished(bool hasError=false, const QString& msg="");
 
 private:
     CurrencyStore();
@@ -56,6 +58,7 @@ private:
     void list(const QSharedPointer<flux_qt::Action>& action);
     void askRequestNewCurrency(const QSharedPointer<flux_qt::Action>& action);
     void askRequesUpdateCurency(const QSharedPointer<flux_qt::Action>& action);
+    void removeBulkCurrency(const QSharedPointer<flux_qt::Action>& action);
 
 };
 

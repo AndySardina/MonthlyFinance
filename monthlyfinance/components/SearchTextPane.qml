@@ -23,7 +23,7 @@ Pane {
     topPadding: 0
     z: 1
     RowLayout {
-        width: parent.width - 30
+//        width: parent.width - 30
         IconActive {
             id:icon
             imageName: "search.png"

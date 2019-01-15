@@ -43,6 +43,11 @@ void ActionProvider::removeCurrency(int id)
     flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::RemoveCurrency, id));
 }
 
+void ActionProvider::removeBulkCurrency(const QList<int> currencies)
+{
+    flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::RemoveBulkCurrency, QVariant::fromValue(currencies)));
+}
+
 void ActionProvider::listCurrency()
 {
     flux_qt::Dispatcher::instance().dispatch(flux_qt::Action::actionOf(ActionType::ListCurrency));

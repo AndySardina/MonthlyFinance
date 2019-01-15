@@ -3,6 +3,7 @@ import QtQuick 2.12
 
 Image {
     property string imageName: ""
+    fillMode: Image.PreserveAspectFit
     onImageNameChanged: {
         calculatePath()
     }

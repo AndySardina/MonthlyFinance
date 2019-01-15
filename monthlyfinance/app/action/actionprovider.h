@@ -23,6 +23,7 @@ public:
     Q_INVOKABLE void readCurrency(int id);
     Q_INVOKABLE void updateCurrency(Currency* currency);
     Q_INVOKABLE void removeCurrency(int id);
+    Q_INVOKABLE void removeBulkCurrency(const QList<int> currencies);
     Q_INVOKABLE void listCurrency(); // Provide also parameter to filter result
     Q_INVOKABLE void askRequesNewCurency();
     Q_INVOKABLE void askRequesUpdateCurency(Currency* currency);

@@ -1,4 +1,6 @@
 QT += core quick qml sql
+#CONFIG += c++14 qtquickcompiler # qtquickcompiler create qml cache files in complie time, check this for deploy
+
 CONFIG += c++14
 
 DEFINES += QT_DEPRECATED_WARNINGS

@@ -16,6 +16,7 @@ enum class ActionType
     UpdateCurrency,
     ListCurrency,
     RemoveCurrency,
+    RemoveBulkCurrency,
     SaveCurrencyFinished, // this action from response
     AskRequesNewCurency,
     AskRequesUpdateCurency,

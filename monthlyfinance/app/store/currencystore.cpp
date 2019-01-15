@@ -86,6 +86,7 @@ void CurrencyStore::remove(const QSharedPointer<flux_qt::Action> &action)
     auto id = action->getPayload<QString>();
     m_model->remove(m_model->indexOf(id));
     emit modelChange();
+    emit removeCurrencyFinished();
 }
 
 void CurrencyStore::list(const QSharedPointer<flux_qt::Action> &action)
@@ -97,7 +98,7 @@ void CurrencyStore::list(const QSharedPointer<flux_qt::Action> &action)
         return;
     }
 
-    m_model->append( currencyRepository.findAll() );
+    m_model->append(currencyRepository.findAll());
 
     emit modelChange();
 }
@@ -111,6 +112,18 @@ void CurrencyStore::askRequestNewCurrency(const QSharedPointer<flux_qt::Action> 
 void CurrencyStore::askRequesUpdateCurency(const QSharedPointer<flux_qt::Action> &action)
 {
     emit askRequesUpdateCurency(action->getPayload<Currency*>());
+}
+
+void CurrencyStore::removeBulkCurrency(const QSharedPointer<flux_qt::Action> &action)
+{
+    QList<int> currencies = action->getPayload<QList<int>>();
+
+    for(int id : currencies)
+    {
+        m_model->remove(m_model->indexOf(QString::number(id)));
+    }
+    emit modelChange();
+    emit removeBulkCurrencyFinished();
 }
 
 QQmlObjectListModel<Currency> *CurrencyStore::getModel() const
