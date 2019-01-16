@@ -20,23 +20,28 @@ Pane {
         anchors.right: parent.right
         anchors.left: parent.left
         RowLayout {
-            spacing: 20
+            spacing: 6
             Item {
                 Layout.preferredWidth: 1
                 Layout.fillWidth: true
             }
-            ButtonFlat {
+
+            Button {
                 Layout.preferredWidth: 1
-                text: qsTr("UPDATE")
-                textColor: Style.primaryColor
+                Layout.fillWidth: true
+                text: Style.isLandscape ?  qsTr("Update") : ''
+                icon.source: 'qrc:/images/'+ Style.iconOnPrimaryFolder + '/ic_mode_edit.png'
+                icon.color: Material.primary
                 onClicked: {
                     buttonClicked = buttonUpdate
                 }
             }
-            ButtonFlat {
+            Button {
                 Layout.preferredWidth: 1
-                text: qsTr("DELETE")
-                textColor: Style.accentColor
+                Layout.fillWidth: true
+                text: Style.isLandscape ?  qsTr("Delete") : ''
+                icon.source: 'qrc:/images/'+ Style.iconOnPrimaryFolder + '/ic_delete.png'
+                icon.color: Material.color(Material.Red, Material.Shade500)
                 onClicked: {
                     buttonClicked = buttonDelete
                 }

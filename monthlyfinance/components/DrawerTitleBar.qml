@@ -21,7 +21,7 @@ ToolBar {
             name: "drawerOpen"
             when: isDrawerNavBarOpen
             PropertyChanges {
-                target: iconBack
+                target: iconMenu
                 rotation: 90
             }
         }
@@ -32,7 +32,7 @@ ToolBar {
             to: "drawerOpen"
             reversible: true
             RotationAnimation {
-                target:iconBack
+                target:iconMenu
                 duration: 500
                 direction: RotationAnimation.Counterclockwise
             }
@@ -47,7 +47,7 @@ ToolBar {
             focusPolicy: Qt.NoFocus
             Layout.alignment: Qt.AlignLeft
             IconActive {
-                id:iconBack
+                id:iconMenu
                 anchors.centerIn: parent
                 imageName: "menu.png"
             }

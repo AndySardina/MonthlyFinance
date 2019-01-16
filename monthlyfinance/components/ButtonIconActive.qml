@@ -14,8 +14,7 @@ Button {
     contentItem: IconActive {
         id: theIcon
     }
-    background:
-        Rectangle {
+    background: Rectangle {
         id: buttonBackground
         implicitHeight: imageSize + 24
         implicitWidth: imageSize + 24

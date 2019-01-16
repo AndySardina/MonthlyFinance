@@ -6,16 +6,14 @@ import QtQuick.Controls.Material 2.12
 import QtGraphicalEffects 1.0
 
 import components 1.0
-//import '../../components'
 import assets 1.0
-//import '../../assets'
-
-//import App.stores 1.0
 
 import Flux 1.0
 
 BaseView {
     id: listPage
+
+    property bool selectAll: false
 
     signal newClicked()
 
@@ -61,8 +59,14 @@ BaseView {
 
                     CheckBox
                     {
-                        id:selectAll
+                        id:selectAllCheckBox
                         text: Style.isLandscape ? 'Select all':''
+
+                        Binding {
+                            target: listPage
+                            property: "selectAll"
+                            value: selectAllCheckBox.checked
+                        }
                     }
 
                     //                    Button {
@@ -74,17 +78,33 @@ BaseView {
                     //                        }
                     //                    }
                     Button {
-                        visible: selectAll.checked
+                        visible: selectAllCheckBox.checked
                         Behavior on visible {
                             PropertyAnimation { properties: "visible"; easing.type: Easing.InBounce;}
                         }
 
                         text: Style.isLandscape ? 'Delete' : ''
-                        icon.source: 'qrc:/images/'+ Style.iconOnPrimaryFolder + '/delete_sweep.png'
+                        icon.source: 'qrc:/images/'+ Style.iconOnPrimaryFolder + '/ic_delete.png'
+                        icon.color: Material.color(Material.Red, Material.Shade500)
+                        onClicked: {
+                            var currencies = new Array;
+                            for(var i = 0 ;  listView.model.count > i; i++)
+                            {
+                                var curreny = listView.model.get(i)
+                                console.log(curreny.id)
+                                console.log(curreny)
+                                currencies.push(curreny.id)
+                            }
+
+                            console.log(currencies)
+
+                            ActionProvider.removeBulkCurrency(currencies)
+                        }
                     }
 
                     SearchTextPane{
                         id:searchInput
+                        Layout.fillWidth: true
                         //                        Layout.alignment: Qt.AlignRight
                         //                        Layout.preferredWidth: tool.preferredWidth
                     }
@@ -112,7 +132,8 @@ BaseView {
             padding: 0
             text: " "
             down: pressed || swipe.complete
-            highlighted: selectAll.checked
+            highlighted: selectAll
+            checked: highlighted
             onHighlightedChanged: {
                 console.log("onHighlightedChanged: " + highlighted)
             }
