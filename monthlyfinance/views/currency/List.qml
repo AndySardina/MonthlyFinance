@@ -59,13 +59,13 @@ BaseView {
 
                     CheckBox
                     {
-                        id:slcAllCheckBox
+                        id:selectAllCheckBox
                         text: Style.isLandscape ? 'Select all':''
 
                         Binding {
                             target: listPage
                             property: "selectAll"
-                            value: slcAllCheckBox.checked
+                            value: selectAllCheckBox.checked
                         }
                     }
 
@@ -78,7 +78,7 @@ BaseView {
                     //                        }
                     //                    }
                     Button {
-                        visible: slcAllCheckBox.checked
+                        visible: selectAllCheckBox.checked
                         Behavior on visible {
                             PropertyAnimation { properties: "visible"; easing.type: Easing.InBounce;}
                         }
@@ -98,7 +98,7 @@ BaseView {
 
                             console.log(currencies)
 
-//                            ActionProvider.removeBulkCurrency()
+                            ActionProvider.removeBulkCurrency(currencies)
                         }
                     }
 
