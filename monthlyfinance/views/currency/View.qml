@@ -24,15 +24,26 @@ BaseView {
             }
 
             if(buttonClicked == crudButtons.buttonDelete) {
-                ActionProvider.removeCurrency(modelObj.id)
+                deleteMsgDialog.open()
                 reset()
                 return;
-            }    
+            }
+        }
+    }
+
+    MessageDialog {
+        id: deleteMsgDialog
+        anchors.centerIn: parent
+        title:qsTr("Delete Confirmation")
+        informativeText: qsTr("Do you want to delete this currency?")
+        standardButtons: Dialog.Ok | Dialog.Cancel
+        onAccepted:{
+            ActionProvider.removeCurrency(modelObj.id)
         }
     }
 
     Form {
-        id: form       
+        id: form
         anchors.fill:parent
         title:'Currency'
     }

@@ -1,4 +1,4 @@
-QT += core quick qml sql
+QT += core quick qml sql widgets
 #CONFIG += c++14 qtquickcompiler # qtquickcompiler create qml cache files in complie time, check this for deploy
 
 CONFIG += c++14

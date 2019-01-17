@@ -57,6 +57,7 @@ BaseView 1.0 BaseView.qml
 BaseForm 1.0 BaseForm.qml
 BehindDeleteComponent 1.0 BehindDeleteComponent.qml
 CrudToolBar 1.0 CrudToolBar.qml
+MessageDialog 1.0 MessageDialog.qml
 
 
 
