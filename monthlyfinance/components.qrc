@@ -59,5 +59,6 @@
         <file alias="ComboBoxButton.qml">components/ComboBoxButton.qml</file>
         <file alias="ComboBoxModal.qml">components/ComboBoxModal.qml</file>
         <file alias="CrudToolBar.qml">components/CrudToolBar.qml</file>
+        <file alias="MessageDialog.qml">components/MessageDialog.qml</file>
     </qresource>
 </RCC>

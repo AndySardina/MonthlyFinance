@@ -125,6 +125,12 @@ BaseView {
                 return;
             }
         }
+        onRemoveCurrencyFinished:{
+            console.log('onRemoveCurrencyFinished')
+            if(!hasError) {
+                currencyNavPane.popOnePage()
+            }
+        }
     }
 
     function handlerError(error) {

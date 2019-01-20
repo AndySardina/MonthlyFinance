@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include <QGuiApplication>
+#include <QApplication>
 #include <QQmlApplicationEngine>
 
 #include "app/appview.h"
@@ -14,7 +15,7 @@ int main(int argc, char *argv[])
     QCoreApplication::setOrganizationDomain("ingenii.com");
     QCoreApplication::setApplicationName("MonthlyFinance");
 
-    QGuiApplication app(argc, argv);
+    QApplication app(argc, argv);
 
     EntityManager entityManager;
 
@@ -25,7 +26,7 @@ int main(int argc, char *argv[])
     } catch (const std::runtime_error& e) {
         std::cerr << e.what();
 
-        QGuiApplication::exit(-1);
+        QApplication::exit(-1);
     }
 
     QQmlApplicationEngine engine;
@@ -38,5 +39,5 @@ int main(int argc, char *argv[])
     if (engine.rootObjects().isEmpty())
         return -1;
 
-    return QGuiApplication::exec();
+    return QApplication::exec();
 }
