@@ -39,10 +39,11 @@ EntitiesTest::EntitiesTest()
 
 void EntitiesTest::currencies()
 {
-     auto currencies = currencyRepository.findAll();
+    auto currencies = currencyRepository.findAll();
 
     QCOMPARE(currencies.size(), 3);
     QCOMPARE(currencies.at(0)->name(), "EUR");
+    QCOMPARE(currencies.at(0)->id(), 1);
 
     auto *nok = new Currency();
     nok->set_id(4);
