@@ -44,7 +44,8 @@ HEADERS += \
     include/db/querydsl/constants.h \
     include/db/querydsl/predicate/numberpredicate.h \
     include/exception/illegalargumentexception.h \
-    include/db/querydsl/predicate/stringpredicate.h
+    include/db/querydsl/predicate/stringpredicate.h \
+    include/db/entity/country.h
 
 unix {
     target.path = /usr/lib

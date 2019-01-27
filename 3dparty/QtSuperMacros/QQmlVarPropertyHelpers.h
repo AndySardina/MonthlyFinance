@@ -9,7 +9,7 @@
     protected: \
         Q_PROPERTY (type name READ MAKE_GETTER_NAME (name) WRITE set_##name NOTIFY name##Changed) \
     private: \
-        type m_##name; \
+        type m_##name{}; \
     public: \
         type MAKE_GETTER_NAME (name) (void) const { \
             return m_##name ; \
