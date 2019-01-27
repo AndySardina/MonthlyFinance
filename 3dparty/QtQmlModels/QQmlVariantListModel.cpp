@@ -42,8 +42,6 @@
 */
 QQmlVariantListModel::QQmlVariantListModel (QObject * parent) : QAbstractListModel (parent)
   , m_count(0)
-  , m_items()
-  , m_roles()
 {
     m_roles.insert (BASE_ROLE, QByteArrayLiteral ("qtVariant"));
 }
@@ -51,7 +49,7 @@ QQmlVariantListModel::QQmlVariantListModel (QObject * parent) : QAbstractListMod
 /*!
     \internal
 */
-QQmlVariantListModel::~QQmlVariantListModel (void) {
+QQmlVariantListModel::~QQmlVariantListModel () {
     clear ();
 }
 

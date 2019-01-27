@@ -9,11 +9,13 @@ class ENTITYMANAGEMENTSHARED_EXPORT Currency : public Entity
 {
     Q_OBJECT
     DSL_WRITABLE_CSTREF_PROPERTY(QString, name)
+    DSL_WRITABLE_VAR_PROPERTY(int, numericCode)
+    DSL_WRITABLE_CSTREF_PROPERTY(QString, alphabeticCode)
 
 public:
     Currency(QObject * parent = Q_NULLPTR): Entity(parent){}
 
-     ~Currency() override = default;
+    ~Currency() override = default;
 
     Q_DISABLE_COPY (Currency)
 };

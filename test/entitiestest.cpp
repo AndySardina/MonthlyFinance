@@ -41,7 +41,7 @@ void EntitiesTest::currencies()
 {
     auto currencies = currencyRepository.findAll();
 
-    QCOMPARE(currencies.size(), 3);
+    QCOMPARE(currencies.size(), 262);
     QCOMPARE(currencies.at(0)->name(), "EUR");
     QCOMPARE(currencies.at(0)->id(), 1);
 
@@ -58,34 +58,34 @@ void EntitiesTest::currencies()
 void EntitiesTest::predicates()
 {
     auto currency = Currency();
-    auto exp = currency.q_name.contains("U").AND(currency.q_name.contains("R"));
+    auto exp = currency.q_alphabeticCode.contains("U").AND(currency.q_alphabeticCode.contains("R"));
 
     QCOMPARE( QString("name LIKE \'%U%\' AND name LIKE \'%R%\'") , exp.getQuery());
 
-    auto entity = currencyRepository.findOne( currency.q_name.containsIgnoreCase("eu") );
+    auto entity = currencyRepository.findOne( currency.q_alphabeticCode.containsIgnoreCase("eu") );
     QTEST_ASSERT(entity != nullptr);
     QCOMPARE(entity->name(), "EUR");
 
-    entity = currencyRepository.findOne( currency.q_name.eq("CUC") );
+    entity = currencyRepository.findOne( currency.q_alphabeticCode.eq("CUC") );
     QTEST_ASSERT(entity != nullptr);
     QCOMPARE(entity->name(), "CUC");
 
-    entity = currencyRepository.findOne( currency.q_name.eqIgnoreCase("SeK") );
+    entity = currencyRepository.findOne( currency.q_alphabeticCode.eqIgnoreCase("SeK") );
     QTEST_ASSERT(entity != nullptr);
     QCOMPARE(entity->name(), "SEK");
 
-    entity = currencyRepository.findOne( currency.q_name.startWith("S") );
+    entity = currencyRepository.findOne( currency.q_alphabeticCode.startWith("S") );
     QTEST_ASSERT(entity != nullptr);
     QCOMPARE(entity->name(), "SEK");
 
-    entity = currencyRepository.findOne( currency.q_name.endWith("C") );
+    entity = currencyRepository.findOne( currency.q_alphabeticCode.endWith("C") );
     QTEST_ASSERT(entity != nullptr);
     QCOMPARE(entity->name(), "CUC");
 
-    QCOMPARE( currencyRepository.count( currency.q_name.neq("CUC")  ),  2 );
-    QCOMPARE( currencyRepository.count( currency.q_id.between(2, 3) ),  2 );
-    QCOMPARE( currencyRepository.count( currency.q_id.gt(5)         ),  0 );
-    QCOMPARE( currencyRepository.count( currency.q_id.lt(5)         ),  3 );
+    QCOMPARE( currencyRepository.count( currency.q_alphabeticCode.neq("CUC")  ),  2 );
+    QCOMPARE( currencyRepository.count( currency.q_id.between(150, 360) ),  30 );
+    QCOMPARE( currencyRepository.count( currency.q_id.gt(1000)         ),  0 );
+    QCOMPARE( currencyRepository.count( currency.q_id.lt(300)         ),  50 );
 }
 
 void EntitiesTest::cleanupTestCase()
