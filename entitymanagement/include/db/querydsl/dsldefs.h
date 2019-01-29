@@ -6,7 +6,7 @@
 
 #include "db/querydsl/predicate/stringpredicate.h"
 #include "db/querydsl/predicate/numberpredicate.h"
-
+#include "db/naming/namingstrategy.h"
 
 template<typename T>
 struct dsl_instantiation {
@@ -30,7 +30,7 @@ struct dsl_instantiation<double> {
 
 #define DSL_PROPERTY(type, name) \
     public: \
-        dsl_instantiation<type>::value_type q_##name = dsl_instantiation<type>::value_type(#name);
+        dsl_instantiation<type>::value_type q_##name = dsl_instantiation<type>::value_type(NamingStrategy::propertyToColumnName( #name ) );
 
 
 #define DSL_WRITABLE_CSTREF_PROPERTY(type, name) \

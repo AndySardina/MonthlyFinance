@@ -10,6 +10,7 @@
 #include <QMetaProperty>
 
 #include "db/querydsl/expression/expression.h"
+#include "db/naming/namingstrategy.h"
 
 template <typename Entity, typename ID>
 class Repository
@@ -171,7 +172,8 @@ private:
         QSqlRecord record = q.record();
 
         for(auto& property: m_properties){
-            const int fieldIndex = record.indexOf(property);
+            QString columName = NamingStrategy::propertyToColumnName( property );
+            const int fieldIndex = record.indexOf(columName);
             entity->setProperty(property.toLatin1(), q.value(fieldIndex));
         }
 
