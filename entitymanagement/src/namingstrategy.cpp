@@ -8,14 +8,27 @@ QString NamingStrategy::propertyToColumnName(const QString& property)
     if( ! property.contains(QRegExp("[A-Z]")) )
         return property;
 
-    QString columnName;
+    return getName(property);
+}
 
-    for(const QChar& ch : property){
+QString NamingStrategy::classToTableName(const QString &className)
+{
+    if( className.split(QRegExp("[A-Z]")).length() == 1 )
+        return className;
+
+    return className.at(0).toLower() + getName( className.right(className.size() - 1) );
+}
+
+QString NamingStrategy::getName(const QString &str)
+{
+    QString res;
+
+    for (const QChar& ch: str) {
         if( ch.isUpper() )
-            columnName.append(QStringLiteral("_") + ch.toLower());
+            res.append(QStringLiteral("_") + ch.toLower());
         else
-           columnName.append(ch);
+           res.append(ch);
     }
 
-    return columnName;
+    return res;
 }

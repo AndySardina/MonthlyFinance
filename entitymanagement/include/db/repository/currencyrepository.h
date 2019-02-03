@@ -5,6 +5,6 @@
 #include "repository.h"
 #include "db/entity/currency.h"
 
-typedef Repository<Currency, int> CurrencyRepository;
+using CurrencyRepository = Repository<Currency, int> ;
 
 #endif // CURRENCYREPOSITORY_H

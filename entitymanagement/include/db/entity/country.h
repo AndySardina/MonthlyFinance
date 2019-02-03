@@ -7,6 +7,7 @@
 class ENTITYMANAGEMENTSHARED_EXPORT Country:  public Entity
 {
     Q_OBJECT
+
     DSL_WRITABLE_CSTREF_PROPERTY(QString, name)
     DSL_WRITABLE_CSTREF_PROPERTY(QString, officialName)
     DSL_WRITABLE_VAR_PROPERTY(int, ccn3)

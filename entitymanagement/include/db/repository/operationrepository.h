@@ -5,6 +5,6 @@
 
 #include <db/entity/operation.h>
 
-typedef Repository<Operation, int> OperationRepository;
+using OperationRepository = Repository<Operation, int>;
 
 #endif // OPERATIONREPOSITORY_H

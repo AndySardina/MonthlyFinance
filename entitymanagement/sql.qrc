@@ -9,5 +9,7 @@
         <file>resources/data/01 - currency.sql</file>
         <file>resources/data/03 - country_currency.sql</file>
         <file>resources/data/02 - country.sql</file>
+        <file>resources/schema/07 - country.sql</file>
+        <file>resources/schema/08 - country_currency.sql</file>
     </qresource>
 </RCC>

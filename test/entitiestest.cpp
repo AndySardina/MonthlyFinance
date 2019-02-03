@@ -6,6 +6,8 @@
 
 #include "db/entitymanager.h"
 #include "db/repository/currencyrepository.h"
+#include "db/repository/countryrepository.h"
+#include "db/repository/countrycourrencyrepository.h"
 #include "db/querydsl/private/tree.h"
 
 
@@ -17,11 +19,14 @@ public:
 
 private slots:
     void currencies();
+    void countries();
     void predicates();
     void cleanupTestCase();
 
 private:
     CurrencyRepository currencyRepository;
+    CountryRepository countryRepository;
+    CountryCourrencyRepository concurrRepository;
 };
 
 
@@ -45,6 +50,57 @@ void EntitiesTest::currencies()
     QCOMPARE(currencies.at(1)->alphabeticCode(), "EUR");
     QCOMPARE(currencies.at(1)->id(), 2);
 }
+
+void EntitiesTest::countries()
+{
+    auto country = Country();
+
+
+    /***************************************************************************************************************
+     *
+     * Checking the currencies of Cuba
+     *
+    ****************************************************************************************************************/
+    auto entity = countryRepository.findOne( country.q_cca3.eq("CUB") );
+    QTEST_ASSERT(entity != nullptr);
+    QCOMPARE(entity->capital(), "Havana");
+
+    auto conCurr = CountryCurrency();
+    auto currenciesCode = concurrRepository.findAll( conCurr.q_countryCode.eq( entity->id() ) );
+
+    QCOMPARE(currenciesCode.length(), 2);
+
+    QList<int> currencyId;
+
+    std::transform (currenciesCode.begin(), currenciesCode.end(), std::back_inserter(currencyId),
+                    [&](CountryCurrency* cc) { return  cc->currencyCode(); });
+
+
+    auto currency = Currency();
+    auto currencies = currencyRepository.findAll( currency.q_id.in( currencyId  ) );
+
+    QCOMPARE(currencies.length(), 2);
+    QCOMPARE( currencies.at(0)->alphabeticCode(), "CUP" );
+    QCOMPARE( currencies.at(1)->alphabeticCode(), "CUC" );
+
+
+    /***************************************************************************************************************
+     *
+     * Checking the currencies of Åland
+     *
+    ****************************************************************************************************************/
+    entity = countryRepository.findOne( country.q_cca3.eq("ALA") );
+    QTEST_ASSERT(entity != nullptr);
+    QCOMPARE(entity->capital(), "Mariehamn");
+
+    currenciesCode = concurrRepository.findAll( conCurr.q_countryCode.eq( entity->id() ) );
+    QCOMPARE(currenciesCode.length(), 1);
+
+    currencies = currencyRepository.findAll( currency.q_id.eq( currenciesCode.at(0)->currencyCode()  ) );
+    QCOMPARE(currencies.length(), 1);
+    QCOMPARE( currencies.at(0)->alphabeticCode(), "EUR" );
+}
+
 
 void EntitiesTest::predicates()
 {

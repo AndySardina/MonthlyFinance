@@ -4,6 +4,6 @@
 #include "repository.h"
 #include <db/entity/invoice.h>
 
-typedef Repository<Invoice, int> InvoiceRepository;
+using InvoiceRepository = Repository<Invoice, int>;
 
 #endif // INVOICEREPOSITORY_H
