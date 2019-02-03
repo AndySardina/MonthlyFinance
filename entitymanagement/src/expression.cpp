@@ -10,6 +10,9 @@ public:
         case Type::STRING: case Type::DATE:
              m_res.append(QString("\'%1\'").arg(value));
              break;
+        case Type::LIST:
+            m_res.append("( " +  value + " )");
+            break;
         case Type::EQ:
             m_res.append(" = ");
             break;
@@ -40,6 +43,8 @@ public:
         case Type::LIKE:
             m_res.append(" LIKE ");
             break;
+        case Type::IN:
+            m_res.append(" IN ");
         }
     }
 

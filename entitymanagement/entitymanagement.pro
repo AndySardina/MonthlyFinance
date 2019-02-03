@@ -47,7 +47,10 @@ HEADERS += \
     include/exception/illegalargumentexception.h \
     include/db/querydsl/predicate/stringpredicate.h \
     include/db/entity/country.h \
-    include/db/naming/namingstrategy.h
+    include/db/naming/namingstrategy.h \
+    include/db/entity/country_currency.h \
+    include/db/repository/countrycourrencyrepository.h \
+    include/db/repository/countryrepository.h
 
 unix {
     target.path = /usr/lib

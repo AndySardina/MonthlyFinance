@@ -4,6 +4,6 @@
 #include "repository.h"
 #include "db/entity/exchangerate.h"
 
-typedef Repository<ExchangeRate, int> ExchangeRateRepository;
+using ExchangeRateRepository = Repository<ExchangeRate, int>;
 
 #endif // EXCHANGERATEREPOSITORY_H

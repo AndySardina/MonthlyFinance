@@ -56,6 +56,8 @@ void EntityManager::initializeDB()
         QSqlError error = query.lastError();
         if( error.isValid() )
             throw std::runtime_error(error.text().toStdString());
+
+        qDebug() << "Script: " << fileName << "  applied succesfully.\n";
     };
 
 

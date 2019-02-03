@@ -1,8 +1,9 @@
 #ifndef NUMBERPREDICATE_H
 #define NUMBERPREDICATE_H
 
-#include "db/querydsl/expression/expression.h"
+#include <QStringList>
 
+#include "db/querydsl/expression/expression.h"
 #include <exception/illegalargumentexception.h>
 
 template<typename T>
@@ -48,19 +49,33 @@ public:
         return createExpr(Type::BETWEEN, ini, end);
     }
 
+    Expression in(const QList<T>& values){
+        QStringList li;
+
+        for (auto value: values) {
+            li << QString::number(value);
+        }
+
+        return Expression(Type::IN, m_fieldName, li.join(", "), Type::LIST);
+    }
+
 private:
     Expression createExpr(const Type opr, const T &value){
         if( value < 0 )
             throw IllegalArgumentException();
 
-        return Expression(opr, m_fieldName, QString::number(value), Type::NUMBER);
+        return createExpr(opr, QString::number(value));
     }
 
     Expression createExpr(const Type opr, const T &v1, const T &v2){
         if( (v1 < 0) || (v2 < 0)  )
             throw IllegalArgumentException();
 
-        return Expression(opr, m_fieldName, QString::number(v1) + " AND " + QString::number(v2) , Type::NUMBER);
+        return createExpr(opr, QString::number(v1) + " AND " + QString::number(v2));
+    }
+
+    Expression createExpr(const Type opr, const QString &v){
+        return Expression(opr, m_fieldName, v , Type::NUMBER);
     }
 
     QString m_fieldName;

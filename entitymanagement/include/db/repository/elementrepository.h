@@ -4,6 +4,6 @@
 #include "repository.h"
 #include <db/entity/element.h>
 
-typedef Repository<Element, int> ElementRepository;
+using ElementRepository = Repository<Element, int>;
 
 #endif // ELEMENTREPOSITORY_H
