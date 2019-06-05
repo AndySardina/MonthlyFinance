@@ -4,7 +4,7 @@ import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 
 import components 1.0
-import Views.Currency 1.0
+import views.currency 1.0
 import Flux 1.0
 
 BaseView {

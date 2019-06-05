@@ -3,25 +3,12 @@ import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 
-//import components 1.0
-import '../../components'
+import components 1.0
 
 BaseForm {
     id:form
 
     property var getData: function () {
-
-        console.log('Form Data');
-        // TODO in next version implement this
-//        var itemChildren = form.children
-//        console.log(itemChildren.length)
-//        for (var i = 0; i < itemChildren.length; i++)
-//        {
-//            var item = itemChildren[i]
-//            console.log(item)
-//            console.log(item.id)
-//        }
-
         var data = {
             'name': nameTextField.text,
             'description': descriptionText.text
