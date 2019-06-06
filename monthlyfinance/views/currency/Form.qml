@@ -114,6 +114,7 @@ BaseForm {
                         TextAreaRow{
                             id: descriptionText
                             elevation: 3
+                            text: modelObj ? modelObj.description : ""
                             anchors.fill: parent
                         }
                     } // textField
