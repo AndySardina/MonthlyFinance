@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8073a8d3-0de5-4f53-9893-6592bd50abe8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/generators/impl/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generators/impl/currencies_generator_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +54,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/generators/impl/currencies_generator_impl.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
+                <state relative-caret-position="270">
                   <caret line="143" column="71" selection-start-line="143" selection-start-column="71" selection-end-line="143" selection-end-column="71" />
                   <folding>
                     <element signature="e#0#4#0" expanded="true" />
@@ -249,22 +248,6 @@
       <window_info anchor="right" id="R Packages" order="4" />
     </layout-to-restore>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/generators/impl/currencies_generator_impl.py</url>
-          <line>143</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/generators/impl/currencies_generator_impl.py</url>
-          <line>135</line>
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/requirements.txt" />
     <entry file="file://$PROJECT_DIR$/AUTHORS.rst">
@@ -348,7 +331,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/generators/impl/currencies_generator_impl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
+        <state relative-caret-position="270">
           <caret line="143" column="71" selection-start-line="143" selection-start-column="71" selection-end-line="143" selection-end-column="71" />
           <folding>
             <element signature="e#0#4#0" expanded="true" />
