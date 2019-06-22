@@ -3,14 +3,19 @@ entity_data_generator
 =====================
 
 
-Add a short description here!
+This projects contains a set of utilities for populating the needed data for different entities.
 
 
 Description
 ===========
 
-A longer description of your project goes here...
+Let's say that you want to create the SQL inserts for the currency entity. Then you should execute the following comand:
 
+```bash
+$ genEntity --entity-type currency --output-dir ./MontlyFinanceData
+```
+
+The ```genEntity``` will be available once you install the project.
 
 Note
 ====
