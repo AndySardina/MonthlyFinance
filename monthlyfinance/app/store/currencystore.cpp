@@ -47,7 +47,6 @@ void CurrencyStore::process(const QSharedPointer<flux_qt::Action> &action)
 void CurrencyStore::create(const QSharedPointer<flux_qt::Action> &action)
 {
     auto* currency = new Currency(this);
-    currency->set_name(action->getPayload<QString>());
     currency->set_id(m_model->count()+1);
 
     currencyRepository.save(currency);

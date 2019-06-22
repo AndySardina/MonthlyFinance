@@ -6,7 +6,7 @@ import sys
 import logging
 
 from generators import __version__
-from generators.impl import currencies_generator
+from generators.impl import *
 
 
 __author__ = "Andy Sardina"
@@ -45,7 +45,7 @@ def parse_args(args):
         '-o',
         '--output-dir',
         dest="output_dir",
-        help="Specify the type of entity to generate. Currently supported: [currency]",
+        help="Specify the type of entity to generate. Currently supported: [currency, language]",
         type=str,
         metavar="output-dir"
     )
@@ -82,7 +82,9 @@ def main(args):
     setup_logging(args.loglevel)
 
     generators = {
-        "currency": currencies_generator
+        "currency": currencies_generator,
+        "language": languages_generator,
+        "country" : countries_generator
     }
 
     log.info("Using the {} generator to create the SQL script.".format(args.entity))

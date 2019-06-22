@@ -1,15 +1,24 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/schema/01 - currency.sql</file>
-        <file>resources/schema/02 - exchange_rate.sql</file>
-        <file>resources/schema/03 - operation_type.sql</file>
-        <file>resources/schema/04 - element.sql</file>
-        <file>resources/schema/05 - invoice.sql</file>
-        <file>resources/schema/06 - operation.sql</file>
-        <file>resources/data/01 - currency.sql</file>
-        <file>resources/data/03 - country_currency.sql</file>
-        <file>resources/data/02 - country.sql</file>
-        <file>resources/schema/07 - country.sql</file>
-        <file>resources/schema/08 - country_currency.sql</file>
+        <file>resources/schema/001 - language_scope.sql</file>
+        <file>resources/schema/002 - language_types.sql</file>
+        <file>resources/schema/003 - language.sql</file>
+        <file>resources/schema/004 - currency.sql</file>
+        <file>resources/schema/005 - exchange_rate.sql</file>
+        <file>resources/schema/006 - operation_type.sql</file>
+        <file>resources/schema/007 - element.sql</file>
+        <file>resources/schema/008 - invoice.sql</file>
+        <file>resources/schema/009 - operation.sql</file>
+        <file>resources/schema/010 - country.sql</file>
+        <file>resources/schema/011 - country_currency.sql</file>
+        <file>resources/schema/012 - translation.sql</file>
+        <file>resources/data/001 - language_scopes.sql</file>
+        <file>resources/data/002 - language_types.sql</file>
+        <file>resources/data/003 - languages.sql</file>
+        <file>resources/data/004 - currency.sql</file>
+        <file>resources/data/005 - translation.sql</file>
+        <file>resources/data/006 - currency_translation.sql</file>
+        <file>resources/data/007 - country.sql</file>
+        <file>resources/data/008 - country_currency.sql</file>
     </qresource>
 </RCC>
