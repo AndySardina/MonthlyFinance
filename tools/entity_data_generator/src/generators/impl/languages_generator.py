@@ -114,7 +114,7 @@ class LanguageGen(BaseGenerator):
         ]
 
         self.write(
-            "languages.sql", working_dir, Entity.LANGUAGE, sql_inserts, [self.iso_639_3_url]
+           working_dir, Entity.LANGUAGE, sql_inserts, [self.iso_639_3_url]
         )
 
     def generate_language_type(self, working_dir):
@@ -129,7 +129,7 @@ class LanguageGen(BaseGenerator):
         ]
 
         self.write(
-            "language_types.sql", working_dir, Entity.LANGUAGE_TYPE, sql_inserts, [self.iso_639_3_url]
+            working_dir, Entity.LANGUAGE_TYPE, sql_inserts, [self.iso_639_3_url]
         )
 
     def generate_language_scopes(self, working_dir):
@@ -144,7 +144,7 @@ class LanguageGen(BaseGenerator):
         ]
 
         self.write(
-            "language_scopes.sql", working_dir, Entity.LANGUAGE_SCOPE, sql_inserts, [self.iso_639_3_url]
+            working_dir, Entity.LANGUAGE_SCOPE, sql_inserts, [self.iso_639_3_url]
         )
 
     def get_scope_index(self, value):
