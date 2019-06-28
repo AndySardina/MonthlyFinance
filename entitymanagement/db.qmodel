@@ -71,7 +71,7 @@
                          </base-DElement>
                          <object>{74c8dfdd-b9dd-4cfd-8ab1-6a96a1e750d0}</object>
                          <name>Currency</name>
-                         <pos>x:345;y:85</pos>
+                         <pos>x:455;y:155</pos>
                          <rect>x:-60;y:-55;w:120;h:110</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -93,7 +93,7 @@
                          </base-DElement>
                          <object>{62f5a807-42fd-410e-91c7-336b5431dcca}</object>
                          <name>ExchangeRate</name>
-                         <pos>x:640;y:100</pos>
+                         <pos>x:710;y:65</pos>
                          <rect>x:-80;y:-65;w:160;h:130</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -115,7 +115,7 @@
                          </base-DElement>
                          <object>{d266cd18-cd28-472f-b678-dc000124e419}</object>
                          <name>Invoice</name>
-                         <pos>x:220;y:400</pos>
+                         <pos>x:205;y:445</pos>
                          <rect>x:-85;y:-70;w:170;h:140</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -167,7 +167,7 @@
                          </base-DElement>
                          <object>{5dca9536-6ca6-4654-80b0-d7c4e1101c2f}</object>
                          <name>Element</name>
-                         <pos>x:530;y:480</pos>
+                         <pos>x:315;y:720</pos>
                          <rect>x:-65;y:-60;w:130;h:120</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
@@ -300,8 +300,8 @@
                          </base-DElement>
                          <object>{b3bad9e3-fb61-416b-9034-05aa0a0f7be1}</object>
                          <name>Category</name>
-                         <pos>x:265;y:640</pos>
-                         <rect>x:-80;y:-50;w:160;h:100</rect>
+                         <pos>x:115;y:670</pos>
+                         <rect>x:-80;y:-55;w:160;h:110</rect>
                          <auto-sized>false</auto-sized>
                          <visual-role>0</visual-role>
                         </DObject>
@@ -352,8 +352,51 @@
                          </base-DElement>
                          <object>{bc31a4ad-ef09-4db1-b1dc-a6b19e5832fb}</object>
                          <name>Country</name>
-                         <pos>x:540;y:325</pos>
+                         <pos>x:980;y:170</pos>
                          <rect>x:-70;y:-50;w:140;h:100</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{2782a484-9301-4573-b890-ed20598bac5b}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{084068a7-342a-47dc-a15a-648cffed1960}</object>
+                         <name>Translation</name>
+                         <pos>x:715;y:570</pos>
+                         <rect>x:-95;y:-65;w:190;h:130</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{65689032-4dbb-4745-be55-b217e5dcb081}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{2fb452a4-e32f-4fd7-9abc-5b8b2f093938}</object>
+                         <name>CountryTranslation</name>
+                         <pos>x:910;y:380</pos>
+                         <rect>x:-65;y:-50;w:130;h:100</rect>
                          <visual-role>0</visual-role>
                         </DObject>
                        </base-DObject>
@@ -368,11 +411,82 @@
                         <DRelation>
                          <base-DElement>
                           <DElement>
-                           <uid>{d310aec5-dfd7-4722-9047-b77bee7e309e}</uid>
+                           <uid>{f5aaa6e7-3f5d-4c1d-9a51-1f6519d43a7b}</uid>
                           </DElement>
                          </base-DElement>
-                         <object>{d506d442-d0c0-455e-ab2a-f58f18a80a05}</object>
-                         <a>{f3b89c1c-6a8e-4d79-a440-d1662b190ed8}</a>
+                         <object>{cb25afe4-6e5c-4dae-8365-1e1f6050b19c}</object>
+                         <a>{65689032-4dbb-4745-be55-b217e5dcb081}</a>
+                         <b>{f3b89c1c-6a8e-4d79-a440-d1662b190ed8}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{1a4f799c-932f-4470-9941-45435157adb1}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{69fee70d-b625-4ee0-9d2f-2f66a2d091be}</object>
+                         <a>{65689032-4dbb-4745-be55-b217e5dcb081}</a>
+                         <b>{2782a484-9301-4573-b890-ed20598bac5b}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{8b56e91e-ad28-43d7-aadb-a8197398ce49}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{9a02ae14-f3cd-4758-8c3a-d84342dc8d1a}</object>
+                         <name>CurrencyTranslation</name>
+                         <pos>x:520;y:395</pos>
+                         <rect>x:-65;y:-50;w:130;h:100</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{3d60e297-2569-4e3e-afdd-0005fc070968}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{814d27c1-c448-4a18-a3de-7d50700f18b4}</object>
+                         <a>{8b56e91e-ad28-43d7-aadb-a8197398ce49}</a>
                          <b>{af44e310-db32-4add-8a94-5028032c8f55}</b>
                         </DRelation>
                        </base-DRelation>
@@ -380,37 +494,252 @@
                         <DAssociationEnd>
                          <cradinality>*</cradinality>
                          <navigable>true</navigable>
+                         <kind>1</kind>
                         </DAssociationEnd>
                        </a>
-                       <b>
-                        <DAssociationEnd>
-                         <cradinality>*</cradinality>
-                         <kind>2</kind>
-                        </DAssociationEnd>
-                       </b>
                       </DAssociation>
                      </instance>
                     </item>
                     <item>
-                     <instance type="DAnnotation">
-                      <DAnnotation>
-                       <base-DElement>
-                        <DElement>
-                         <uid>{6774a137-7678-4487-b14e-6d04d3a0921b}</uid>
-                        </DElement>
-                       </base-DElement>
-                       <text>Un país puede usar más de una moneda,
-y una moneda es usada en varios países.</text>
-                       <pos>x:515;y:230</pos>
-                       <rect>x:0;y:0;w:243.266;h:42</rect>
-                       <auto-sized>false</auto-sized>
-                      </DAnnotation>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{6f76db65-6c65-4b6a-b0c2-75f78e380233}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{8395fe76-0449-4e30-824f-778f26dc0317}</object>
+                         <a>{8b56e91e-ad28-43d7-aadb-a8197398ce49}</a>
+                         <b>{2782a484-9301-4573-b890-ed20598bac5b}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{c4ec085e-e82c-4620-b307-1d4b5fb6a776}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{932a7562-fdfc-4881-b812-1e69dbd8be3a}</object>
+                         <name>Language</name>
+                         <pos>x:705;y:815</pos>
+                         <rect>x:-80;y:-80;w:160;h:160</rect>
+                         <auto-sized>false</auto-sized>
+                         <visual-role>0</visual-role>
+                         <visual-role2>1</visual-role2>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{81227149-5967-44a1-9e07-fdef4a5d67e4}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{bce02c61-214c-453f-9795-800f8331b67e}</object>
+                         <a>{2782a484-9301-4573-b890-ed20598bac5b}</a>
+                         <b>{c4ec085e-e82c-4620-b307-1d4b5fb6a776}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{146d378f-b015-4ea2-8102-c952cf71b7ac}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{ad02d2ac-c34f-444a-8a18-569c3132ea98}</object>
+                         <name>LanguageScope</name>
+                         <pos>x:980;y:705</pos>
+                         <rect>x:-55;y:-50;w:110;h:100</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{966565bc-4656-4e61-809b-8dca6cee7584}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{e721143d-e7cd-4d98-af4d-b4a79c15e83d}</object>
+                         <a>{c4ec085e-e82c-4620-b307-1d4b5fb6a776}</a>
+                         <b>{146d378f-b015-4ea2-8102-c952cf71b7ac}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{b563ea3a-da04-48b7-8b2e-a8bfc1a76961}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{b948b2bf-22df-4921-8fbd-93eb17e7a6b0}</object>
+                         <name>LanguageType</name>
+                         <pos>x:980;y:865</pos>
+                         <rect>x:-50;y:-50;w:100;h:100</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{51d562a1-4937-4edb-8bc6-4b79e146f660}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{e28fdcb3-fac4-44d7-adda-e226d6b41393}</object>
+                         <a>{c4ec085e-e82c-4620-b307-1d4b5fb6a776}</a>
+                         <b>{b563ea3a-da04-48b7-8b2e-a8bfc1a76961}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DClass">
+                      <DClass>
+                       <base-DObject>
+                        <DObject>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{4e0f378e-a9ef-493b-ad7a-99527cc26ca5}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{f543fd03-0426-43da-a17c-0820f88e231d}</object>
+                         <name>CountryCurrency</name>
+                         <pos>x:720;y:270</pos>
+                         <rect>x:-55;y:-50;w:110;h:100</rect>
+                         <visual-role>0</visual-role>
+                        </DObject>
+                       </base-DObject>
+                       <show-all-members>true</show-all-members>
+                      </DClass>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{1fccb382-b45c-426b-ac00-20e332c6c53d}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{d7814955-6965-40c3-a6ea-321a08c06440}</object>
+                         <a>{4e0f378e-a9ef-493b-ad7a-99527cc26ca5}</a>
+                         <b>{af44e310-db32-4add-8a94-5028032c8f55}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
+                     </instance>
+                    </item>
+                    <item>
+                     <instance type="DAssociation">
+                      <DAssociation>
+                       <base-DRelation>
+                        <DRelation>
+                         <base-DElement>
+                          <DElement>
+                           <uid>{e89cbed7-6be7-4979-b7ff-87b482ace973}</uid>
+                          </DElement>
+                         </base-DElement>
+                         <object>{97812733-ab0b-436f-8e3c-2e8be5a4de4b}</object>
+                         <a>{4e0f378e-a9ef-493b-ad7a-99527cc26ca5}</a>
+                         <b>{f3b89c1c-6a8e-4d79-a440-d1662b190ed8}</b>
+                        </DRelation>
+                       </base-DRelation>
+                       <a>
+                        <DAssociationEnd>
+                         <cradinality>*</cradinality>
+                         <navigable>true</navigable>
+                         <kind>1</kind>
+                        </DAssociationEnd>
+                       </a>
+                      </DAssociation>
                      </instance>
                     </item>
                    </qlist>
                   </elements>
-                  <last-modified>1548591203502</last-modified>
-                  <toolbarid>Deployment</toolbarid>
+                  <last-modified>1561758769467</last-modified>
+                  <toolbarid>Classes</toolbarid>
                  </MDiagram>
                 </base-MDiagram>
                </MCanvasDiagram>
@@ -480,28 +809,28 @@ y una moneda es usada en varios países.</text>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{13c51c10-ed1b-42ef-8de5-9ce770f393c5}</uid>
+                    <uid>{04829a01-878e-48b5-a07d-2a117633a8bc}</uid>
                     <type>1</type>
                     <declaration>id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{3e11b7e1-4359-484d-aba2-4ffafdda942e}</uid>
+                    <uid>{c63e436f-a406-4e6e-b024-796d89861a00}</uid>
                     <type>1</type>
                     <declaration>timestamp</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{333650a6-21ed-40c8-8890-7b936d0c705e}</uid>
+                    <uid>{b300c794-d83f-4197-9d6f-82763bbb63c4}</uid>
                     <type>1</type>
                     <declaration>type</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b02fdb77-30bb-4af3-9268-4eec4d674760}</uid>
+                    <uid>{82fdcfdc-9c98-4f4a-9a9f-70f3f43b04ec}</uid>
                     <type>1</type>
                     <declaration>currency_id</declaration>
                    </MClassMember>
@@ -630,28 +959,28 @@ y una moneda es usada en varios países.</text>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{bd99e3f4-3340-4e4a-811e-60f20c1ff623}</uid>
+                    <uid>{bff463fd-725d-4cc8-9719-b7af32f838da}</uid>
                     <type>1</type>
                     <declaration>id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{8a2e7289-d92f-45eb-abd7-cb7504809438}</uid>
+                    <uid>{ffdbda9d-bb6c-4c20-8c7b-287950acd355}</uid>
                     <type>1</type>
                     <declaration>name</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{cf044824-0549-4095-82e0-2f398db574ca}</uid>
+                    <uid>{f0268143-ab88-484b-9ad6-ad0f26cab27d}</uid>
                     <type>1</type>
                     <declaration>alphabeticCode</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{305cbb29-69f4-4bda-beda-835619435eb1}</uid>
+                    <uid>{21a75a88-d5d2-498c-a041-a46fa2e9c33f}</uid>
                     <type>1</type>
                     <declaration>minorUnit</declaration>
                    </MClassMember>
@@ -683,35 +1012,35 @@ y una moneda es usada en varios países.</text>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{41edeea1-96a1-4a97-a1f5-013442002ba2}</uid>
+                    <uid>{5087fb16-dffe-4d5e-a48c-81ccaa106cdc}</uid>
                     <type>1</type>
                     <declaration>id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b2b8b828-33b2-412a-8163-3c99e9d60f0c}</uid>
+                    <uid>{103459ef-c68d-4a40-91b3-584424ae246f}</uid>
                     <type>1</type>
                     <declaration>currency_from</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{48cb454d-ed30-46c2-ab0d-5a4b8ec2549f}</uid>
+                    <uid>{7ad2c1ac-38b9-4982-8e4e-fda9bea2343e}</uid>
                     <type>1</type>
                     <declaration>currency_to</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{f0b4ccf4-bd33-4bdb-bf19-5401dd3a1856}</uid>
+                    <uid>{700d9c40-7f73-4364-ace0-bed91154e306}</uid>
                     <type>1</type>
                     <declaration>timestamp</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{2a96308b-9e1c-40bf-b6e7-558101d07327}</uid>
+                    <uid>{cb2394f7-741e-43ac-80f3-ad996c9610dc}</uid>
                     <type>1</type>
                     <declaration>amount</declaration>
                    </MClassMember>
@@ -785,42 +1114,42 @@ y una moneda es usada en varios países.</text>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{79fb7fdd-381a-45f3-b170-d60dd9f9ff46}</uid>
+                    <uid>{281d7743-6072-4f46-bc25-a03d9858e516}</uid>
                     <type>1</type>
                     <declaration>id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{628ddb8a-db96-4b09-8f7f-f00a37394efc}</uid>
+                    <uid>{ba349f23-9d55-4e7b-b1aa-6537c134513c}</uid>
                     <type>1</type>
                     <declaration>element_id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{b2094086-b9b4-4918-b018-d52c7d90f504}</uid>
+                    <uid>{0685af2b-81fe-4c15-af0c-ae711e6accc2}</uid>
                     <type>1</type>
                     <declaration>amount</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{9c9b40f4-37a9-40a7-9578-d7c6b4481e8d}</uid>
+                    <uid>{1f0b7d61-04df-4ca9-95d3-1201fe6921b1}</uid>
                     <type>1</type>
                     <declaration>quantity</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{bc09a56c-107c-4dce-a279-4402feebe011}</uid>
+                    <uid>{17400436-7b16-4780-bd82-a2758faea0e9}</uid>
                     <type>1</type>
                     <declaration>operation_id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{1db84cb8-1b28-4b68-951c-4064b6f9f4d8}</uid>
+                    <uid>{f01571d4-952c-4d23-93f2-595bf4eafc9b}</uid>
                     <type>1</type>
                     <declaration>category_id</declaration>
                    </MClassMember>
@@ -894,21 +1223,21 @@ y una moneda es usada en varios países.</text>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{1f3d0ad8-731c-4308-ab05-70c54ea73bc4}</uid>
+                    <uid>{020c4652-6f8e-47ca-9a96-524614fa9945}</uid>
                     <type>1</type>
                     <declaration>id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{432f42b0-e031-447e-af24-24b2f53d3705}</uid>
+                    <uid>{3403d78f-310f-4a41-b2b6-b2743de6cf95}</uid>
                     <type>1</type>
                     <declaration>name</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{e0137246-4440-451e-b202-db615657e9b4}</uid>
+                    <uid>{db1b2dda-5a9c-4fed-b25a-a02777b430ca}</uid>
                     <type>1</type>
                     <declaration>description</declaration>
                    </MClassMember>
@@ -1004,21 +1333,21 @@ y una moneda es usada en varios países.</text>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{329434c0-d047-4390-9ef0-f012371a3d14}</uid>
+                    <uid>{eb9af153-4b54-406c-9bcb-94ae3eba3775}</uid>
                     <type>1</type>
                     <declaration>id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{df682859-e9d2-47e6-86f8-92feae3b8743}</uid>
+                    <uid>{dd47164e-b311-4110-85e2-4f9f644b8b9e}</uid>
                     <type>1</type>
                     <declaration>name</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{ebcb8f58-c777-4146-854a-65c033b348c5}</uid>
+                    <uid>{6c5047d7-134c-4786-819d-7b08776d350a}</uid>
                     <type>1</type>
                     <declaration>description</declaration>
                    </MClassMember>
@@ -1092,23 +1421,681 @@ y una moneda es usada en varios países.</text>
                  <qlist>
                   <item>
                    <MClassMember>
-                    <uid>{e1a62a7e-1b83-47f3-89bb-91523d4739ce}</uid>
+                    <uid>{88ce44b7-14e4-4fd6-bc80-2d9ee7378c83}</uid>
                     <type>1</type>
                     <declaration>id</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{4c8a888f-88ce-4e8d-bc1d-a751e9336023}</uid>
+                    <uid>{2a2b817d-7a9f-436e-9054-4875ef436256}</uid>
                     <type>1</type>
                     <declaration>currencyNumericCode</declaration>
                    </MClassMember>
                   </item>
                   <item>
                    <MClassMember>
-                    <uid>{715ce53d-ad8e-4676-96fe-7d1292c8c0a2}</uid>
+                    <uid>{a18148eb-f877-4e6e-b2a2-dbed56e572f4}</uid>
                     <type>1</type>
                     <declaration>name</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{084068a7-342a-47dc-a15a-648cffed1960}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{084068a7-342a-47dc-a15a-648cffed1960}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Translation</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{bce02c61-214c-453f-9795-800f8331b67e}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{bce02c61-214c-453f-9795-800f8331b67e}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{084068a7-342a-47dc-a15a-648cffed1960}</a>
+                             <b>{932a7562-fdfc-4881-b812-1e69dbd8be3a}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{b278eb03-266d-433e-af10-ddbe4b6e4883}</uid>
+                    <type>1</type>
+                    <declaration>id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a7af6810-9a37-4353-b6ed-8c80dc69043b}</uid>
+                    <type>1</type>
+                    <declaration>language_id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3220dd4f-aed3-4316-b51e-a62ec65f8ffe}</uid>
+                    <type>1</type>
+                    <declaration>data</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{2fb452a4-e32f-4fd7-9abc-5b8b2f093938}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{2fb452a4-e32f-4fd7-9abc-5b8b2f093938}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>CountryTranslation</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{cb25afe4-6e5c-4dae-8365-1e1f6050b19c}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{cb25afe4-6e5c-4dae-8365-1e1f6050b19c}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{2fb452a4-e32f-4fd7-9abc-5b8b2f093938}</a>
+                             <b>{bc31a4ad-ef09-4db1-b1dc-a6b19e5832fb}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{69fee70d-b625-4ee0-9d2f-2f66a2d091be}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{69fee70d-b625-4ee0-9d2f-2f66a2d091be}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{2fb452a4-e32f-4fd7-9abc-5b8b2f093938}</a>
+                             <b>{084068a7-342a-47dc-a15a-648cffed1960}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{8e9be271-217a-4c82-a179-616a82bcff34}</uid>
+                    <type>1</type>
+                    <declaration>id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{32d47b7d-613c-4432-bbc5-2de746fcf233}</uid>
+                    <type>1</type>
+                    <declaration>country_id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{b6364ec3-2b25-4f8f-a09b-d9ff755fd25d}</uid>
+                    <type>1</type>
+                    <declaration>translation_id</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{9a02ae14-f3cd-4758-8c3a-d84342dc8d1a}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{9a02ae14-f3cd-4758-8c3a-d84342dc8d1a}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>CurrencyTranslation</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{814d27c1-c448-4a18-a3de-7d50700f18b4}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{814d27c1-c448-4a18-a3de-7d50700f18b4}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{9a02ae14-f3cd-4758-8c3a-d84342dc8d1a}</a>
+                             <b>{74c8dfdd-b9dd-4cfd-8ab1-6a96a1e750d0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{8395fe76-0449-4e30-824f-778f26dc0317}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{8395fe76-0449-4e30-824f-778f26dc0317}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{9a02ae14-f3cd-4758-8c3a-d84342dc8d1a}</a>
+                             <b>{084068a7-342a-47dc-a15a-648cffed1960}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{19b603ed-a336-48e4-a154-6cb4807128a0}</uid>
+                    <type>1</type>
+                    <declaration>id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{94b03f05-3848-4629-a2c6-7fc157b64e04}</uid>
+                    <type>1</type>
+                    <declaration>currency_id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{988b14d5-0d18-4af4-b871-50796bc6c1cb}</uid>
+                    <type>1</type>
+                    <declaration>translation_id</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{932a7562-fdfc-4881-b812-1e69dbd8be3a}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{932a7562-fdfc-4881-b812-1e69dbd8be3a}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>Language</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{e721143d-e7cd-4d98-af4d-b4a79c15e83d}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{e721143d-e7cd-4d98-af4d-b4a79c15e83d}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{932a7562-fdfc-4881-b812-1e69dbd8be3a}</a>
+                             <b>{ad02d2ac-c34f-444a-8a18-569c3132ea98}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{e28fdcb3-fac4-44d7-adda-e226d6b41393}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{e28fdcb3-fac4-44d7-adda-e226d6b41393}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{932a7562-fdfc-4881-b812-1e69dbd8be3a}</a>
+                             <b>{b948b2bf-22df-4921-8fbd-93eb17e7a6b0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{1398e75b-6997-4285-8e38-31342c3e587a}</uid>
+                    <type>1</type>
+                    <declaration>id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{00ef437f-11b5-44ac-94bd-17b38ed0e146}</uid>
+                    <type>1</type>
+                    <declaration>name</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{6ee12ac5-dc6e-4d03-87bb-8f4998323220}</uid>
+                    <type>1</type>
+                    <declaration>type</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{c2581cf4-5a87-468b-9567-bc87ed9506d0}</uid>
+                    <type>1</type>
+                    <declaration>scope</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{69c3dd45-2c89-4c13-a756-f02b37794901}</uid>
+                    <type>1</type>
+                    <declaration>iso_6393</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{ad735756-c30f-4214-bd1a-2b1e37c070f9}</uid>
+                    <type>1</type>
+                    <declaration>iso_6392_B</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3e6b8322-4244-41f3-927d-86479186743a}</uid>
+                    <type>1</type>
+                    <declaration>iso_6392_T</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{2918fa5c-d788-4b86-8741-aa657f065091}</uid>
+                    <type>1</type>
+                    <declaration>iso_6391</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{ad02d2ac-c34f-444a-8a18-569c3132ea98}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{ad02d2ac-c34f-444a-8a18-569c3132ea98}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>LanguageScope</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{46e16554-70f2-4e34-86b1-ce9fc79e5e0f}</uid>
+                    <type>1</type>
+                    <declaration>id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{3f40a66e-ca92-4103-a9c3-982aea52f6a3}</uid>
+                    <type>1</type>
+                    <declaration>scope</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{f6b90d4b-30e3-49b6-a162-a1952f7e227d}</uid>
+                    <type>1</type>
+                    <declaration>name</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{b948b2bf-22df-4921-8fbd-93eb17e7a6b0}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{b948b2bf-22df-4921-8fbd-93eb17e7a6b0}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>LanguageType</name>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{bdcf146a-cbb8-4519-9dd2-3da299733a43}</uid>
+                    <type>1</type>
+                    <declaration>id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{9f8c0c42-ecab-4338-8d49-815e7c9ecb90}</uid>
+                    <type>1</type>
+                    <declaration>type</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{7a88f41e-ef71-464e-9d8b-de21892d2a60}</uid>
+                    <type>1</type>
+                    <declaration>name</declaration>
+                   </MClassMember>
+                  </item>
+                 </qlist>
+                </members>
+               </MClass>
+              </instance>
+             </target>
+            </handle>
+           </item>
+           <item>
+            <handle>
+             <uid>{f543fd03-0426-43da-a17c-0820f88e231d}</uid>
+             <target>
+              <instance type="MClass">
+               <MClass>
+                <base-MObject>
+                 <MObject>
+                  <base-MElement>
+                   <MElement>
+                    <uid>{f543fd03-0426-43da-a17c-0820f88e231d}</uid>
+                   </MElement>
+                  </base-MElement>
+                  <name>CountryCurrency</name>
+                  <relations>
+                   <handles>
+                    <handles>
+                     <qlist>
+                      <item>
+                       <handle>
+                        <uid>{d7814955-6965-40c3-a6ea-321a08c06440}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{d7814955-6965-40c3-a6ea-321a08c06440}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f543fd03-0426-43da-a17c-0820f88e231d}</a>
+                             <b>{74c8dfdd-b9dd-4cfd-8ab1-6a96a1e750d0}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                      <item>
+                       <handle>
+                        <uid>{97812733-ab0b-436f-8e3c-2e8be5a4de4b}</uid>
+                        <target>
+                         <instance type="MAssociation">
+                          <MAssociation>
+                           <base-MRelation>
+                            <MRelation>
+                             <base-MElement>
+                              <MElement>
+                               <uid>{97812733-ab0b-436f-8e3c-2e8be5a4de4b}</uid>
+                              </MElement>
+                             </base-MElement>
+                             <a>{f543fd03-0426-43da-a17c-0820f88e231d}</a>
+                             <b>{bc31a4ad-ef09-4db1-b1dc-a6b19e5832fb}</b>
+                            </MRelation>
+                           </base-MRelation>
+                           <a>
+                            <MAssociationEnd>
+                             <cardinality>*</cardinality>
+                             <navigable>true</navigable>
+                             <kind>1</kind>
+                            </MAssociationEnd>
+                           </a>
+                          </MAssociation>
+                         </instance>
+                        </target>
+                       </handle>
+                      </item>
+                     </qlist>
+                    </handles>
+                   </handles>
+                  </relations>
+                 </MObject>
+                </base-MObject>
+                <members>
+                 <qlist>
+                  <item>
+                   <MClassMember>
+                    <uid>{c4f0991a-c78a-4aef-b650-2150fa6dc6cb}</uid>
+                    <type>1</type>
+                    <declaration>id</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{bbdbaa46-7e0f-4302-9ef6-4c4b4c8eb74a}</uid>
+                    <type>1</type>
+                    <declaration>country_code</declaration>
+                   </MClassMember>
+                  </item>
+                  <item>
+                   <MClassMember>
+                    <uid>{a020d7c7-8873-4071-a85b-ddf186961207}</uid>
+                    <type>1</type>
+                    <declaration>currency_code</declaration>
                    </MClassMember>
                   </item>
                  </qlist>
