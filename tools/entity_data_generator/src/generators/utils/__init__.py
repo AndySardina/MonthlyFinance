@@ -32,6 +32,7 @@ def get_initial_id(file_path):
         return 1
 
     with open(file_path, "r+", encoding="utf-8") as file:
+
         # Move the pointer (similar to a cursor in a text editor) to the end of the file
         file.seek(0, os.SEEK_END)
 
@@ -41,13 +42,21 @@ def get_initial_id(file_path):
         pos = file.tell() - 1
 
         # Read each character in the file one at a time from the penultimate
-        # character going backwards, searching for a newline character
-        # If we find a new line, exit the search
-        while pos > 0 and file.read(1) != "(":
+        # character going backwards, searching for the second new line character
+        count = 1
+        while pos > 0:
+            if file.read(1) == "\n":
+                if count == 2:
+                    break
+                else:
+                    count += 1
+
             pos -= 1
             file.seek(pos, os.SEEK_SET)
 
         line = file.read()
-        return int(line.split(',')[0]) + 1
+
+        return int(line.split(',')[0].replace("(", "")) + 1
+
 
 

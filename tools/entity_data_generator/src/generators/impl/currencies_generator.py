@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 from generators import default_headers, get_logger
 from generators.impl.base_generator import BaseGenerator, Entity
+from generators.utils import get_initial_id
 
 
 class CurrencyGen(BaseGenerator):
@@ -179,8 +180,7 @@ class CurrencyGen(BaseGenerator):
         ]
 
         self.write(
-            "currency.sql", working_dir, Entity.CURRENCY, sql_inserts,
-            [self.iso_4217_url, self.currency_wiki_page]
+            working_dir, Entity.CURRENCY, sql_inserts, [self.iso_4217_url, self.currency_wiki_page]
         )
 
     def generate_translations_sql_inserts(self, df, working_dir):
@@ -191,7 +191,7 @@ class CurrencyGen(BaseGenerator):
         translation_data = []
         currency_translation_data = []
 
-        translation_id = 1
+        translation_id = get_initial_id(path.join(working_dir, Entity.get_file_name(Entity.TRANSLATION)))
 
         for index, row in df.iterrows():
             # Spanish Data
@@ -202,7 +202,10 @@ class CurrencyGen(BaseGenerator):
                 )
             )
 
-            currency_translation_data.append("({:4d}, {:4d}, {:4d})".format(translation_id, index + 1, translation_id))
+            currency_translation_data.append("({:4d}, {:4d}, {:4d})".format(
+                2 * index + 1, index + 1, translation_id
+              )
+            )
 
             # English Data
             translation_data.append(
@@ -214,20 +217,18 @@ class CurrencyGen(BaseGenerator):
             )
 
             currency_translation_data.append("({:4d}, {:4d}, {:4d})".format(
-                    translation_id + 1, index + 1, translation_id + 1
+                    2 * (index + 1), index + 1, translation_id + 1
                 )
             )
 
             translation_id += 2
 
         self.write(
-            "translation.sql", working_dir, Entity.TRANSLATION, translation_data,
-            [self.iso_4217_url, self.currency_wiki_page]
+            working_dir, Entity.TRANSLATION, translation_data, [self.iso_4217_url, self.currency_wiki_page]
         )
 
         self.write(
-            "currency_translation.sql", working_dir,
-            Entity.CURRENCY_TRANSLATION, currency_translation_data,
+            working_dir, Entity.CURRENCY_TRANSLATION, currency_translation_data,
             [self.iso_4217_url, self.currency_wiki_page]
         )
 
@@ -283,7 +284,7 @@ class CurrencyGen(BaseGenerator):
             if type(elem) == bs4.element.Tag:
 
                 if elem.name == 'p':
-                    description += elem.text.strip().replace("'", "''") + "\n"
+                    description += "<p>{}</p>".format(elem.text.strip().replace("'", "''"))
                 elif elem.name == 'div' and elem.has_attr('id') and elem.attrs['id'] == 'toc':
                     break
 
