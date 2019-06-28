@@ -12,13 +12,16 @@
         <file>resources/schema/010 - country.sql</file>
         <file>resources/schema/011 - country_currency.sql</file>
         <file>resources/schema/012 - translation.sql</file>
-        <file>resources/data/001 - language_scopes.sql</file>
-        <file>resources/data/002 - language_types.sql</file>
-        <file>resources/data/003 - languages.sql</file>
         <file>resources/data/004 - currency.sql</file>
-        <file>resources/data/005 - translation.sql</file>
-        <file>resources/data/006 - currency_translation.sql</file>
-        <file>resources/data/007 - country.sql</file>
-        <file>resources/data/008 - country_currency.sql</file>
+        <file>resources/data/001 - language_type.sql</file>
+        <file>resources/data/002 - language_scope.sql</file>
+        <file>resources/data/003 - language.sql</file>
+        <file>resources/data/005 - country.sql</file>
+        <file>resources/data/006 - country_currency.sql</file>
+        <file>resources/data/007 - translation.sql</file>
+        <file>resources/data/008 - currency_translation.sql</file>
+        <file>resources/data/009 - country_translation.sql</file>
+        <file>resources/schema/015 - country_translation.sql</file>
+        <file>resources/schema/014 - currency_translation.sql</file>
     </qresource>
 </RCC>

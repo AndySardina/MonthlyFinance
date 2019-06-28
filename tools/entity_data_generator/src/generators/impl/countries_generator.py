@@ -33,6 +33,9 @@ class CountryGen(BaseGenerator):
         self.log.info("Step 3. Generate the SQL inserts for the translation table")
         self.generate_translations_sql_inserts(df, working_dir)
 
+        self.log.info("Step 4. Generate the SQL inserts for the country_currency table")
+        self.generate_country_currency_sql_inserts(df, working_dir)
+
     def get_data(self, working_dir) -> pd.DataFrame:
         data_file_path = path.join(working_dir, self.data_file_name)
 
@@ -170,11 +173,20 @@ class CountryGen(BaseGenerator):
         row_count = 1
 
         for index, row in df.iterrows():
-            for currency in row["currencies"].split(','):
-                currency_index = currency_df.index[currency_df.AlphabeticCode == currency][0]
-                country_currency_data.append(
-                    "({:4d}, {:4d}, {:4d})".format(row_count, index + 1, currency_index)
-                )
+            currencies = row["currencies"]
+
+            if type(currencies) != str:
+                continue
+            else:
+                for currency in currencies.split(','):
+                    currency_index = currency_df.index[currency_df.AlphabeticCode == currency]
+
+                    if len(currency_index):
+                        country_currency_data.append(
+                            "({:4d}, {:4d}, {:4d})".format(row_count, index + 1, currency_index[0])
+                        )
+
+                        row_count += 1
 
         self.write(working_dir, Entity.COUNTRY_CURRENCY, country_currency_data, [self.countries_json_url])
 
