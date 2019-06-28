@@ -12,10 +12,10 @@ Description
 Let's say that you want to create the SQL inserts for the currency entity. Then you should execute the following comand:
 
 ```bash
-$ genEntity --entity-type currency --output-dir ./MontlyFinanceData
+$ genEntity --entity-type currency --output-dir ./MonthlyFinanceData
 ```
 
-The ```genEntity``` will be available once you install the project.
+The `genEntity` will be available once you install the project.
 
 Note
 ====

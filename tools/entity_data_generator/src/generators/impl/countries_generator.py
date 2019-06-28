@@ -1,4 +1,3 @@
-import json
 from os import path
 
 import pandas as pd
@@ -6,6 +5,7 @@ import requests
 
 from generators import get_logger, default_headers
 from generators.impl.base_generator import BaseGenerator, Entity
+from generators.utils import get_initial_id
 
 
 class CountryGen(BaseGenerator):
@@ -104,12 +104,12 @@ class CountryGen(BaseGenerator):
 
         sql_inserts = [
             "( {:3d}, {:5s}, {:5s}, {:28s} )".format(
-                index + 1, self.get_string(row['ccn3']), self.get_string(row['cca3']), self.get_string(row['idd'])
+             index + 1, self.scape_to_sql(row['ccn3']), self.scape_to_sql(row['cca3']), self.scape_to_sql(row['idd'])
             ) for index, row in df.iterrows()
         ]
 
         self.write(
-            "country.sql", working_dir, Entity.COUNTRY, sql_inserts, [self.countries_json_url]
+           working_dir, Entity.COUNTRY, sql_inserts, [self.countries_json_url]
         )
 
     def generate_translations_sql_inserts(self, df, working_dir):
@@ -120,19 +120,21 @@ class CountryGen(BaseGenerator):
         translation_data = []
         country_translation_data = []
 
-        translation_id = self.get_initial_translation_id(working_dir)
+        translation_id = get_initial_id(path.join(working_dir, Entity.get_file_name(Entity.TRANSLATION)))
 
         for index, row in df.iterrows():
             # Spanish Data
             translation_data.append(
                 "({:4d}, {:4d}, \'{}\')".format(
                     translation_id, spanish_index,
-                    json.dumps({"name": row["spanishOfficialName"], "officialName": row["spanishCommonName"]})
+                    "{{\"name\": \"{}\", \"officialName\": \"{}\"}}".format(
+                       self.scape_string(row["spanishOfficialName"]), self.scape_string(row["spanishCommonName"])
+                     )
                 )
             )
 
             country_translation_data.append("({:4d}, {:4d}, {:4d})".format(
-                   index + 1, index + 1, translation_id
+                   2 * index + 1, index + 1, translation_id
                )
             )
 
@@ -140,33 +142,41 @@ class CountryGen(BaseGenerator):
             translation_data.append(
                 "({:4d}, {:4d}, \'{}\')".format(
                     translation_id + 1, english_index,
-                    json.dumps(
-                        {
-                            "name": row["name"], "officialName": row["officialName"], "capital": row["capital"],
-                            "region": row["region"], "subregion": row["subregion"]
-                        }
+                    "{{\"name\": \"{}\", \"officialName\": \"{}\", \"capital\": \"{}\", \"region\": \"{}\", "
+                    "\"subregion\": \"{}\"}}".format(
+                        self.scape_string(row["name"]), self.scape_string(row["officialName"]),
+                        self.scape_string(row["capital"]), row["region"], row["subregion"]
                     )
                 )
             )
 
             country_translation_data.append("({:4d}, {:4d}, {:4d})".format(
-                    index + 1, index + 1, translation_id + 1
+                    2 * (index + 1), index + 1, translation_id + 1
                 )
             )
 
             translation_id += 2
 
-        self.write(
-           "translation.sql", working_dir, Entity.TRANSLATION, translation_data, [self.countries_json_url]
-        )
+        self.write(working_dir, Entity.TRANSLATION, translation_data, [self.countries_json_url])
 
-        self.write(
-            "currency_translation.sql", working_dir, Entity.CURRENCY_TRANSLATION,
-            country_translation_data, [self.countries_json_url]
-        )
+        self.write(working_dir, Entity.COUNTRY_TRANSLATION, country_translation_data, [self.countries_json_url])
 
     def generate_country_currency_sql_inserts(self, df, working_dir):
-        currency_df = pd.read_csv(path.join(working_dir, "currencies_complete_info.csv"), index_col=0)
+        currency_df = pd.read_csv(
+            path.join(working_dir, "currencies_complete_info.csv"), index_col=0, usecols=["Id", "AlphabeticCode"]
+        )
+
+        country_currency_data = []
+        row_count = 1
+
+        for index, row in df.iterrows():
+            for currency in row["currencies"].split(','):
+                currency_index = currency_df.index[currency_df.AlphabeticCode == currency][0]
+                country_currency_data.append(
+                    "({:4d}, {:4d}, {:4d})".format(row_count, index + 1, currency_index)
+                )
+
+        self.write(working_dir, Entity.COUNTRY_CURRENCY, country_currency_data, [self.countries_json_url])
 
     @staticmethod
     def insert(d, k, v):
@@ -176,24 +186,10 @@ class CountryGen(BaseGenerator):
             d[k].append(v)
 
     @staticmethod
-    def get_string(value):
-        return '\'{}\''.format(value.replace("'", "''")) if value.strip() else 'null'
+    def scape_string(value):
+        return value.replace("'", "''") if value.strip() else 'null'
 
     @staticmethod
-    def get_initial_translation_id(working_dir):
-        translation_file_path = path.join(working_dir, "translation.sql")
-
-        if not path.isfile(translation_file_path):
-            return 1
-
-        with open(translation_file_path, 'r') as f:
-            lines = f.readlines()
-
-            last_line_index = -1
-
-            while not lines[last_line_index].lstrip().startswith('('):
-                last_line_index -= 1
-
-            return int(lines[last_line_index].split(',')[0].replace('(', '')) + 1
-
+    def scape_to_sql(value):
+        return "\'{}\'".format(value.replace("'", "''")) if value.strip() else 'null'
 

@@ -2,51 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8073a8d3-0de5-4f53-9893-6592bd50abe8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/data/001 - language_scopes.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/data/002 - language_types.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/data/003 - languages.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/data/004 - currency.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/data/005 - translation.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/data/006 - currency_translation.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/data/007 - country.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/data/008 - country_currency.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/001 - language_scope.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/002 - language_types.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/003 - language.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/004 - currency.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/005 - exchange_rate.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/006 - operation_type.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/007 - element.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/008 - invoice.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/009 - operation.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/010 - country.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/011 - country_currency.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../entitymanagement/resources/schema/012 - translation.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generators/impl/base_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generators/impl/countries_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/generators/impl/languages_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/include/db/entity/currency.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../entitymanagement/include/db/entity/currency.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/data/01 - currency.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/data/02 - country.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/data/03 - country_currency.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/schema/01 - currency.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/schema/02 - exchange_rate.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/schema/03 - operation_type.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/schema/04 - element.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/schema/05 - invoice.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/schema/06 - operation.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/schema/07 - country.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/resources/schema/08 - country_currency.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../entitymanagement/sql.qrc" beforeDir="false" afterPath="$PROJECT_DIR$/../../entitymanagement/sql.qrc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../monthlyfinance/app/store/currencystore.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../monthlyfinance/app/store/currencystore.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../monthlyfinance/views/currency/Form.qml" beforeDir="false" afterPath="$PROJECT_DIR$/../../monthlyfinance/views/currency/Form.qml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/andy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/andy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/entity_data_generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/entity_data_generator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/generators/utils/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generators/impl/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generators/impl/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generators/impl/currencies_generator_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generators/impl/currencies_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generators/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generators/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.rst" beforeDir="false" afterPath="$PROJECT_DIR$/README.rst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/setup.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generators/impl/base_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generators/impl/base_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generators/impl/countries_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generators/impl/countries_generator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/generators/impl/currencies_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generators/impl/currencies_generator.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +17,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3804696">
+    <splitter split-orientation="horizontal" split-proportion="0.4855923">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -73,10 +35,22 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/generators/impl/base_generator.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="50" selection-start-line="50" selection-end-line="50" />
+                <state relative-caret-position="309">
+                  <caret line="21" column="23" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#15#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/generators/impl/currencies_generator.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2865">
+                  <caret line="200" column="47" selection-start-line="200" selection-start-column="40" selection-end-line="200" selection-end-column="47" />
+                  <folding>
+                    <element signature="e#0#34#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -98,14 +72,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/generators/impl/countries_generator.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1725">
-                  <caret line="122" column="22" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#0#11#0" expanded="true" />
-                  </folding>
+                <state relative-caret-position="513">
+                  <caret line="155" column="13" lean-forward="true" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/generators/utils/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="435">
+                  <caret line="29" column="18" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -117,18 +97,6 @@
                   <caret line="44" selection-start-line="44" selection-end-line="44" />
                   <folding>
                     <element signature="e#0#22#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/generators/impl/currencies_generator.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2158">
-                  <caret line="196" column="26" lean-forward="true" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
-                  <folding>
-                    <element signature="e#0#34#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -148,6 +116,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>to_</find>
+      <find>get_string</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,12 +133,14 @@
         <option value="$PROJECT_DIR$/src/generators/impl/countries_genertor.py" />
         <option value="$PROJECT_DIR$/src/generators/impl/__init__.py" />
         <option value="$PROJECT_DIR$/src/generators/main.py" />
-        <option value="$PROJECT_DIR$/setup.cfg" />
         <option value="$PROJECT_DIR$/src/generators/constant/__init__.py" />
-        <option value="$PROJECT_DIR$/src/generators/impl/countries_generator.py" />
         <option value="$PROJECT_DIR$/src/generators/impl/languages_generator.py" />
-        <option value="$PROJECT_DIR$/src/generators/impl/base_generator.py" />
+        <option value="$PROJECT_DIR$/setup.cfg" />
+        <option value="$PROJECT_DIR$/README.rst" />
         <option value="$PROJECT_DIR$/src/generators/impl/currencies_generator.py" />
+        <option value="$PROJECT_DIR$/src/generators/utils/__init__.py" />
+        <option value="$PROJECT_DIR$/src/generators/impl/base_generator.py" />
+        <option value="$PROJECT_DIR$/src/generators/impl/countries_generator.py" />
       </list>
     </option>
   </component>
@@ -211,6 +182,13 @@
               <item name="generators" type="462c0819:PsiDirectoryNode" />
               <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="entity_data_generator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="entity_data_generator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="generators" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -219,7 +197,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -239,7 +217,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Currency Generator">
+  <component name="RunManager" selected="Python.Country Generator">
     <configuration name="Country Generator" type="PythonConfigurationType" factoryName="Python">
       <module name="entity_data_generator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -305,8 +283,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.Country Generator" />
-      <item itemvalue="Python.Currency Generator" />
       <item itemvalue="Python.Language Generator " />
+      <item itemvalue="Python.Currency Generator" />
     </list>
     <recent_temporary>
       <list>
@@ -328,15 +306,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="36" width="1922" height="1045" extended-state="6" />
+    <frame x="-4" y="36" width="1928" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.1664888" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" weight="0.1664888" />
+      <window_info id="Structure" order="1" sideWeight="0.50162864" side_tool="true" weight="0.1664888" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32899022" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.1335505" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286026" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4994664" visible="true" weight="0.2128821" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4994664" weight="0.51140064" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -494,13 +472,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/setup.cfg">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/python3.7/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -540,10 +511,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/setup.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="32" column="26" lean-forward="true" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.rst">
+      <provider selected="true" editor-type-id="restructured-text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generators/impl/currencies_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2865">
+          <caret line="200" column="47" selection-start-line="200" selection-start-column="40" selection-end-line="200" selection-end-column="47" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/generators/impl/base_generator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="309">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="23" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -560,16 +551,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/generators/impl/countries_generator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="122" column="22" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/generators/impl/languages_generator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
@@ -580,13 +561,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/generators/impl/currencies_generator.py">
+    <entry file="file://$PROJECT_DIR$/src/generators/utils/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2158">
-          <caret line="196" column="26" lean-forward="true" selection-start-line="196" selection-start-column="26" selection-end-line="196" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="29" column="18" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/generators/impl/countries_generator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="155" column="13" lean-forward="true" selection-start-line="155" selection-start-column="13" selection-end-line="155" selection-end-column="13" />
         </state>
       </provider>
     </entry>

@@ -157,7 +157,7 @@ class CurrencyGen(BaseGenerator):
 
                         df = df.append(
                             pd.Series(
-                                [currency, iso_code, es_wiki_page_url, en_wiki_page_url, spanish_desc, english_desc],
+                                [currency, iso_code, es_wiki_page_url, en_wiki_page_url[0], spanish_desc, english_desc],
                                 index=columns), ignore_index=True
                         )
 
