@@ -15,6 +15,7 @@ enum class Type
     STRING,
     NUMBER,
     DATE,
+    LIST,
     COLUMN,
     AND,
     OR,
@@ -25,7 +26,8 @@ enum class Type
     GOE,
     LT,
     LOE,
-    LIKE
+    LIKE,
+    IN
 };
 
 #endif // CONSTANTS_H

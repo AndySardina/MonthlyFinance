@@ -18,7 +18,8 @@ INCLUDEPATH += \
 SOURCES += \
     src/entitymanager.cpp \
     src/stringpredicate.cpp \
-    src/expression.cpp
+    src/expression.cpp \
+    src/namingstrategy.cpp
 
 HEADERS += \
     include/entitymanagement_global.h \
@@ -44,7 +45,12 @@ HEADERS += \
     include/db/querydsl/constants.h \
     include/db/querydsl/predicate/numberpredicate.h \
     include/exception/illegalargumentexception.h \
-    include/db/querydsl/predicate/stringpredicate.h
+    include/db/querydsl/predicate/stringpredicate.h \
+    include/db/entity/country.h \
+    include/db/naming/namingstrategy.h \
+    include/db/entity/country_currency.h \
+    include/db/repository/countrycourrencyrepository.h \
+    include/db/repository/countryrepository.h
 
 unix {
     target.path = /usr/lib

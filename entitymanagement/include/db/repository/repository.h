@@ -10,6 +10,7 @@
 #include <QMetaProperty>
 
 #include "db/querydsl/expression/expression.h"
+#include "db/naming/namingstrategy.h"
 
 template <typename Entity, typename ID>
 class Repository
@@ -20,7 +21,7 @@ public:
         std::shared_ptr<Entity> entity = std::make_shared<Entity>();
         const QMetaObject* metaObject = entity->metaObject();
 
-        m_entityName = QString::fromLatin1(metaObject->className()).toLower();
+        m_entityName = NamingStrategy::classToTableName( QString::fromLatin1(metaObject->className()) );
         getEntityProperties(metaObject);
     }
 
@@ -35,7 +36,6 @@ public:
 
     QList<Entity*> findAll(){
         QSqlQuery q( QLatin1String("SELECT * FROM ") + m_entityName);
-
         return findAll(q);
     }
 
@@ -61,7 +61,6 @@ public:
      */
     QList<Entity*> findAll(Expression predicate){
         QSqlQuery q( QString("SELECT * FROM %1 WHERE %2").arg( m_entityName, predicate.getQuery() ) );
-
         return findAll(q);
     }
 
@@ -171,7 +170,8 @@ private:
         QSqlRecord record = q.record();
 
         for(auto& property: m_properties){
-            const int fieldIndex = record.indexOf(property);
+            QString columName = NamingStrategy::propertyToColumnName( property );
+            const int fieldIndex = record.indexOf(columName);
             entity->setProperty(property.toLatin1(), q.value(fieldIndex));
         }
 
